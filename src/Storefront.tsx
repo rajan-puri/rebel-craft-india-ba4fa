@@ -876,24 +876,46 @@ export default function Storefront() {
 
       {/* SECTION 9: CTA BLOCK */}
       <section className="w-full px-gutter-mobile md:px-margin py-space-xl reveal-on-scroll">
-        <div className="relative bg-primary text-on-primary rounded-[24px] shadow-md p-8 sm:p-14 overflow-hidden">
-          <div className="max-w-2xl relative z-10">
-            <span className="font-spec-code text-[11px] font-bold text-on-primary/80 uppercase tracking-widest block mb-2">
-              Ready to Fabricate?
+        <div className="relative bg-gradient-to-br from-[#0058be] via-[#004fa8] to-[#003b82] text-white rounded-[28px] shadow-lg p-8 sm:p-14 lg:p-16 overflow-hidden text-center flex flex-col items-center justify-center border border-white/10">
+          {/* Subtle Blueprint Grid Background Overlay */}
+          <div
+            className="absolute inset-0 opacity-15 pointer-events-none"
+            style={{
+              backgroundImage: 'radial-gradient(rgba(255,255,255,0.4) 1px, transparent 1px)',
+              backgroundSize: '24px 24px',
+            }}
+          />
+          {/* Ambient Lighting Glow */}
+          <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-96 h-96 bg-[#64a8fe]/25 rounded-full blur-3xl pointer-events-none" />
+
+          <div className="max-w-2xl mx-auto flex flex-col items-center relative z-10">
+            {/* Eyebrow Pill */}
+            <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/15 backdrop-blur-sm border border-white/20 font-spec-code text-[11px] font-bold text-white uppercase tracking-widest mb-4 shadow-xs">
+              <span className="w-2 h-2 rounded-full bg-[#64a8fe] animate-pulse"></span>
+              <span>Ready to Fabricate?</span>
             </span>
-            <h2 className="font-headline-lg text-[44px] sm:text-[68px] leading-[1.04] text-on-primary mb-4">
+
+            {/* Main Headline in Space Grotesk */}
+            <h2 className="font-body-md font-bold text-[36px] sm:text-[52px] lg:text-[60px] leading-[1.08] tracking-tight text-white mb-4 text-center">
               Got an idea? Send it over.
             </h2>
-            <p className="font-body-lg text-body-lg text-on-primary/90 mb-8 max-w-lg">
+
+            {/* Description */}
+            <p className="font-body-md text-[16px] sm:text-[18px] text-white/90 leading-relaxed mb-8 max-w-lg mx-auto text-center font-normal">
               Zero CAD experience needed. Free slicing consultation. Lock in your print before today's build queue closes.
             </p>
-            <div className="flex flex-wrap items-center gap-4">
-              <a className="px-7 py-3.5 bg-surface-container-lowest text-on-surface font-spec-code text-[13px] font-bold uppercase rounded-xl shadow-sm hover:bg-surface-container-low active:scale-[0.98] transition-all flex items-center gap-2" href="#custom-quote">
+
+            {/* Centered CTA Button & Disclaimer */}
+            <div className="flex flex-col items-center gap-3 w-full">
+              <a
+                className="px-8 py-3.5 sm:py-4 bg-surface-container-lowest text-on-surface font-spec-code text-[14px] font-bold uppercase rounded-xl shadow-md hover:shadow-xl hover:bg-surface-container-low hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] transition-all flex items-center justify-center gap-2.5"
+                href="#custom-quote"
+              >
                 <span>Upload Now</span>
-                <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
+                <span className="material-symbols-outlined text-[18px] text-primary">arrow_forward</span>
               </a>
-              <span className="font-spec-code text-[12px] text-on-primary/80">
-                • No credit card needed for quotes
+              <span className="font-spec-code text-[12px] text-white/75 font-medium tracking-wide">
+                • No credit card needed for quotes •
               </span>
             </div>
           </div>
@@ -903,74 +925,42 @@ export default function Storefront() {
     {/* Client-side Interactive Behavior */}
   </main>
 
-  {/* NEO-BRUTALIST INDUSTRIAL FOOTER (Adhering to DESIGN.md) */}
+  {/* CLEAN WEBSITE-MATCHED FOOTER */}
   <footer className="w-full bg-inverse-surface text-inverse-on-surface border-t-[3px] border-on-surface pt-space-xl pb-margin select-none relative overflow-hidden">
     <div className="w-full px-gutter md:px-margin">
-      {/* TOP TIER: Brand Logo & Workshop Status Bar */}
-      <div className="w-full pb-space-lg border-b-[3px] border-on-surface-variant/30 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
-        <div className="flex items-center gap-4">
-          <a
-            aria-label="REBEL CRAFT INDIA home"
-            className="inline-flex items-center p-2.5 sm:p-3 bg-surface-container-lowest border-[3px] border-on-surface rounded-2xl shadow-[4px_4px_0px_#121c2a] hover:-translate-y-0.5 active:translate-x-0.5 active:translate-y-0.5 transition-all"
-            data-path="shop"
-            href="#"
-          >
-            <img
-              src="/logo-rebel-craft.png"
-              alt="REBEL CRAFT INDIA"
-              className="h-9 sm:h-11 w-auto object-contain"
-            />
-          </a>
-          <div className="flex flex-col">
-            <span className="font-badge-md text-[18px] text-secondary-container leading-none uppercase">
-              Tactile Fabrication Studio
-            </span>
-            <span className="font-spec-code text-[12px] text-outline-variant uppercase tracking-wider mt-1">
-              0.12 - 0.28mm Precision QC
-            </span>
-          </div>
-        </div>
-
-        {/* Live Farm Status Chips */}
-        <div className="flex flex-wrap items-center gap-2.5">
-          <span className="inline-flex items-center gap-2 px-3 py-1.5 bg-on-surface border-[2px] border-secondary-container/50 rounded-xl font-spec-code text-[12px] text-secondary-container shadow-[2px_2px_0px_#121c2a]">
-            <span className="w-2 h-2 rounded-full bg-secondary-container animate-pulse"></span>
-            <span>32 Printers Active</span>
-          </span>
-          <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-on-surface border-[2px] border-surface-container-highest/20 rounded-xl font-spec-code text-[12px] text-surface-bright shadow-[2px_2px_0px_#121c2a]">
-            <span>Pan-India Express</span>
-          </span>
-          <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-primary/20 border-[2px] border-primary/50 rounded-xl font-spec-code text-[12px] text-[#adc6ff] shadow-[2px_2px_0px_#121c2a]">
-            <span>100% Reprint QC</span>
-          </span>
-        </div>
+      {/* Brand Logo Header */}
+      <div className="w-full pb-space-lg border-b border-on-surface-variant/20 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <a
+          aria-label="REBEL CRAFT INDIA home"
+          className="inline-flex items-center px-3.5 py-2 bg-surface-container-lowest rounded-xl shadow-xs transition-transform duration-200 hover:scale-[1.02]"
+          data-path="shop"
+          href="#"
+        >
+          <img
+            src="/logo-rebel-craft.png"
+            alt="REBEL CRAFT INDIA"
+            className="h-8 sm:h-9 w-auto object-contain"
+          />
+        </a>
+        <p className="font-spec-code text-[12px] text-outline-variant uppercase tracking-wider">
+          Precision 3D Fabrication Studio &bull; Calibrated Daily
+        </p>
       </div>
 
-      {/* MIDDLE TIER: 4-Column Neo-Brutalist Layout */}
+      {/* 4-Column Layout */}
       <div className="grid grid-cols-1 md:grid-cols-12 gap-space-lg py-space-xl">
-        {/* Column 1: Studio Story & Direct Support */}
-        <div className="md:col-span-4 space-y-4">
-          <h3 className="font-headline-sm text-headline-sm text-surface-bright">About The Studio</h3>
-          <p className="font-body-md text-body-md text-surface-container-highest/90 leading-relaxed max-w-sm">
+        {/* Column 1: Studio Story */}
+        <div className="md:col-span-4 space-y-3">
+          <h3 className="font-body-md font-bold text-[18px] text-surface-bright">About The Studio</h3>
+          <p className="font-body-md text-[14px] text-surface-container-highest/80 leading-relaxed max-w-sm">
             REBEL CRAFT INDIA is an industrial additive manufacturing and custom 3D prototyping lab. From one-off STL uploads to serialized mechanical batches—calibrated layer by layer to micron tolerances.
           </p>
-          <div className="pt-2 flex flex-wrap items-center gap-3">
-            <a
-              href="https://wa.me/919999999999?text=Hi%20Rebel%20Craft%2C%20I'm%20interested%20in%20a%203D%20print%20project!"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2 bg-on-surface border-[2px] border-surface-container-highest/40 rounded-xl text-surface-bright hover:bg-inverse-surface shadow-[3px_3px_0px_#121c2a] hover:-translate-y-0.5 active:translate-x-0.5 active:translate-y-0.5 transition-all font-spec-code text-[13px] font-bold"
-            >
-              <span className="material-symbols-outlined text-[18px] text-[#25D366]">chat</span>
-              <span>WhatsApp Concierge</span>
-            </a>
-          </div>
         </div>
 
         {/* Column 2: Fabrication Catalog Links */}
-        <div className="md:col-span-2 space-y-space-sm">
-          <h3 className="font-headline-sm text-headline-sm text-surface-bright">Fabrication</h3>
-          <ul className="space-y-2.5 font-body-md text-body-md">
+        <div className="md:col-span-2 space-y-3">
+          <h3 className="font-body-md font-bold text-[18px] text-surface-bright">Fabrication</h3>
+          <ul className="space-y-2.5 font-body-md text-[14px]">
             <li className="flex items-center gap-2">
               <span className="material-symbols-outlined text-[16px] text-secondary-container">arrow_forward</span>
               <a className="text-surface-container-highest hover:text-surface-bright transition-colors" data-path="shop" href="#">
@@ -1005,9 +995,9 @@ export default function Storefront() {
         </div>
 
         {/* Column 3: Quality & Policies */}
-        <div className="md:col-span-2 space-y-space-sm">
-          <h3 className="font-headline-sm text-headline-sm text-surface-bright">Quality &amp; QC</h3>
-          <ul className="space-y-2.5 font-body-md text-body-md">
+        <div className="md:col-span-2 space-y-3">
+          <h3 className="font-body-md font-bold text-[18px] text-surface-bright">Quality &amp; QC</h3>
+          <ul className="space-y-2.5 font-body-md text-[14px]">
             <li className="flex items-center gap-2">
               <span className="material-symbols-outlined text-[16px] text-secondary-container">arrow_forward</span>
               <a className="text-surface-container-highest hover:text-surface-bright transition-colors" href="#why-us">
@@ -1042,19 +1032,19 @@ export default function Storefront() {
         </div>
 
         {/* Column 4: Newsletter & Social Channels */}
-        <div className="md:col-span-4 space-y-space-sm">
-          <h3 className="font-headline-sm text-headline-sm text-surface-bright">Filament Drop Alerts</h3>
-          <p className="font-body-md text-body-md text-outline-variant">
+        <div className="md:col-span-4 space-y-3">
+          <h3 className="font-body-md font-bold text-[18px] text-surface-bright">Filament Drop Alerts</h3>
+          <p className="font-body-md text-[14px] text-outline-variant">
             Get notified about limited polymer drops, new composite materials, and batch slicing queue openings.
           </p>
-          <form className="flex flex-col sm:flex-row gap-3 pt-space-xs">
+          <form className="flex flex-col sm:flex-row gap-2.5 pt-1">
             <input
-              className="flex-1 px-4 py-3 bg-surface-container-lowest text-on-surface border-[3px] border-on-surface rounded-xl font-body-md text-body-md focus:outline-none shadow-[3px_3px_0px_#121c2a] placeholder:text-outline"
+              className="flex-1 px-4 py-3 bg-surface-container-lowest text-on-surface border border-on-surface/20 rounded-xl font-body-md text-[14px] focus:outline-none focus:border-primary shadow-xs placeholder:text-outline"
               placeholder="your.email@workshop.io"
               type="email"
             />
             <button
-              className="px-6 py-3 bg-primary text-on-primary font-badge-md text-badge-md border-[3px] border-on-surface rounded-xl shadow-[3px_3px_0px_#121c2a] hover:-translate-y-0.5 active:translate-x-0.5 active:translate-y-0.5 transition-all text-center flex-shrink-0"
+              className="px-6 py-3 bg-primary hover:bg-[#00479b] text-white font-spec-code text-[13px] font-bold uppercase rounded-xl shadow-sm hover:shadow-md active:scale-[0.98] transition-all text-center flex-shrink-0"
               type="button"
             >
               Get drop alerts
@@ -1064,7 +1054,7 @@ export default function Storefront() {
           {/* Social Badges */}
           <div className="pt-2 flex flex-wrap items-center gap-2.5">
             <a
-              className="inline-flex items-center gap-2 px-3 py-1.5 bg-on-surface border-[2px] border-surface-container-highest rounded-lg text-surface-container-highest hover:text-surface-bright hover:bg-inverse-surface shadow-[2px_2px_0px_#121c2a] transition-all font-spec-code text-[12px]"
+              className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-on-surface/70 hover:bg-on-surface border border-surface-container-highest/20 rounded-xl text-surface-container-highest hover:text-surface-bright transition-all font-spec-code text-[12px] font-semibold"
               href="https://instagram.com"
               target="_blank"
               rel="noopener noreferrer"
@@ -1073,7 +1063,7 @@ export default function Storefront() {
               Instagram
             </a>
             <a
-              className="inline-flex items-center gap-2 px-3 py-1.5 bg-on-surface border-[2px] border-surface-container-highest rounded-lg text-surface-container-highest hover:text-surface-bright hover:bg-inverse-surface shadow-[2px_2px_0px_#121c2a] transition-all font-spec-code text-[12px]"
+              className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-on-surface/70 hover:bg-on-surface border border-surface-container-highest/20 rounded-xl text-surface-container-highest hover:text-surface-bright transition-all font-spec-code text-[12px] font-semibold"
               href="https://youtube.com"
               target="_blank"
               rel="noopener noreferrer"
@@ -1082,7 +1072,7 @@ export default function Storefront() {
               YouTube
             </a>
             <a
-              className="inline-flex items-center gap-2 px-3 py-1.5 bg-on-surface border-[2px] border-surface-container-highest rounded-lg text-surface-container-highest hover:text-surface-bright hover:bg-inverse-surface shadow-[2px_2px_0px_#121c2a] transition-all font-spec-code text-[12px]"
+              className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-on-surface/70 hover:bg-on-surface border border-surface-container-highest/20 rounded-xl text-surface-container-highest hover:text-surface-bright transition-all font-spec-code text-[12px] font-semibold"
               href="https://wa.me/919999999999"
               target="_blank"
               rel="noopener noreferrer"
@@ -1095,23 +1085,23 @@ export default function Storefront() {
       </div>
 
       {/* BOTTOM TIER: Copyright & Created by Mates Creation Attribution */}
-      <div className="pt-space-lg border-t-[2px] border-on-surface-variant/20 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
-        <p className="font-spec-sm text-spec-sm text-outline-variant">
+      <div className="pt-space-lg border-t border-on-surface-variant/20 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+        <p className="font-spec-sm text-[12px] text-outline-variant">
           © 2026 REBEL CRAFT INDIA. All rights reserved. Handcrafted precision.
         </p>
 
-        <div className="flex flex-wrap items-center justify-center gap-4 font-spec-sm text-spec-sm text-outline-variant">
+        <div className="flex flex-wrap items-center justify-center gap-4 font-spec-sm text-[12px] text-outline-variant">
           <a className="hover:text-surface-bright transition-colors" href="#">Privacy Policy</a>
-          <span>•</span>
+          <span>&bull;</span>
           <a className="hover:text-surface-bright transition-colors" href="#">Terms of Fabrication</a>
-          <span>•</span>
+          <span>&bull;</span>
 
           {/* User Requested Attribution Badge: Created by Mates Creation */}
           <a
             href="https://matescreation.com/"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-surface-container-lowest text-on-surface border-[2px] border-on-surface rounded-xl font-spec-code text-[12px] font-bold tracking-wide shadow-[2px_2px_0px_#121c2a] hover:-translate-y-0.5 hover:bg-surface-bright active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all group"
+            className="inline-flex items-center gap-1.5 px-3 py-1 bg-surface-container-lowest text-on-surface border border-on-surface/20 rounded-full font-spec-code text-[11px] font-bold tracking-wide hover:border-primary hover:text-primary transition-all shadow-xs group"
           >
             <span className="text-primary group-hover:scale-110 transition-transform">✦</span>
             <span>Created by Mates Creation</span>
