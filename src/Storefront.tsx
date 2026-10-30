@@ -23,11 +23,12 @@ export default function Storefront() {
     <header className="site-header">
     <div className="site-header-shell">
       <div className="site-header-card">
-        <a aria-label="LAYERED home" className="site-logo" data-path="shop" href="#">
-          <span aria-hidden="true" className="site-logo-mark">
-            <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z" /><path d="M2 17l10 5 10-5" /><path d="M2 12l10 5 10-5" /></svg>
-          </span>
-          <span className="site-logo-word">LAYERED</span>
+        <a aria-label="REBEL CRAFT home" className="site-logo" data-path="shop" href="#">
+          <img
+            src="/logo-rebel-craft.png"
+            alt="REBEL CRAFT INDIA"
+            className="h-10 sm:h-11 w-auto object-contain transition-transform duration-200 hover:scale-[1.03]"
+          />
         </a>
         <nav aria-label="Primary" className="site-nav hidden lg:flex items-center gap-7">
           <a aria-current="page" className="site-nav-link is-active" data-path="shop" href="#">Shop</a>
