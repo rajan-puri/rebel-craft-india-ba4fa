@@ -1,7 +1,11 @@
 import { useEffect, useState } from "react"
 import { createPortal } from "react-dom"
+import gsap from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
 import KeycapOrb, { type Keycap } from "./components/ui/keycap-orb"
 import Storefront from "./Storefront"
+
+gsap.registerPlugin(ScrollTrigger)
 
 const orbKeys: Keycap[] = [
   { label: "STL", finish: "ink", hotkey: "s" },
@@ -150,25 +154,201 @@ function useStorefrontInteractions() {
       }
     }))
 
-    // Emil Kowalski Scroll-Triggered Reveal Animations via IntersectionObserver
-    const revealElements = Array.from(document.querySelectorAll<HTMLElement>(".reveal-on-scroll"))
-    if ("IntersectionObserver" in window && revealElements.length > 0) {
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("is-visible")
-              observer.unobserve(entry.target)
-            }
-          })
-        },
-        { threshold: 0.12, rootMargin: "0px 0px -40px 0px" },
+    // GSAP Scroll-Triggered Fade & Slide Animations
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    const ctx = gsap.context(() => {
+      if (prefersReducedMotion) {
+        gsap.set(".reveal-on-scroll", { opacity: 1, y: 0 })
+        return
+      }
+
+      // Hero Elements smooth intro
+      gsap.fromTo(
+        ".hero-copy",
+        { opacity: 0, y: 28 },
+        { opacity: 1, y: 0, duration: 1, ease: "power3.out", delay: 0.15 },
       )
-      revealElements.forEach((el) => observer.observe(el))
-      cleanups.push(() => observer.disconnect())
-    } else {
-      revealElements.forEach((el) => el.classList.add("is-visible"))
-    }
+      gsap.fromTo(
+        ".hero-visual",
+        { opacity: 0, scale: 0.94 },
+        { opacity: 1, scale: 1, duration: 1.2, ease: "power2.out", delay: 0.25 },
+      )
+
+      // Section Headings & Section Cards Reveal
+      const sections = gsap.utils.toArray<HTMLElement>("main section")
+      sections.forEach((section) => {
+        const heading = section.querySelector(".section-heading")
+        if (heading) {
+          gsap.fromTo(
+            heading,
+            { opacity: 0, y: 24 },
+            {
+              opacity: 1,
+              y: 0,
+              duration: 0.85,
+              ease: "power2.out",
+              scrollTrigger: {
+                trigger: section,
+                start: "top 82%",
+                toggleActions: "play none none none",
+              },
+            },
+          )
+        }
+      })
+
+      // Category Cards Staggered Wave
+      const categoryCards = gsap.utils.toArray<HTMLElement>(".categories-grid > a")
+      if (categoryCards.length > 0) {
+        gsap.fromTo(
+          categoryCards,
+          { opacity: 0, y: 32 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            stagger: 0.08,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: ".categories-grid",
+              start: "top 85%",
+              toggleActions: "play none none none",
+            },
+          },
+        )
+      }
+
+      // Featured Drops Cards Stagger
+      const dropCards = gsap.utils.toArray<HTMLElement>("#featured-drops article")
+      if (dropCards.length > 0) {
+        gsap.fromTo(
+          dropCards,
+          { opacity: 0, y: 30 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            stagger: 0.07,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: "#featured-drops",
+              start: "top 80%",
+              toggleActions: "play none none none",
+            },
+          },
+        )
+      }
+
+      // Custom Quote Workbench Container
+      const quoteBox = document.querySelector<HTMLElement>("#custom-quote > div")
+      if (quoteBox) {
+        gsap.fromTo(
+          quoteBox,
+          { opacity: 0, y: 32 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.9,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: "#custom-quote",
+              start: "top 82%",
+              toggleActions: "play none none none",
+            },
+          },
+        )
+      }
+
+      // How It Works Steps Stagger
+      const steps = gsap.utils.toArray<HTMLElement>("#how-it-works .grid > div")
+      if (steps.length > 0) {
+        gsap.fromTo(
+          steps,
+          { opacity: 0, y: 28 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            stagger: 0.1,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: "#how-it-works",
+              start: "top 80%",
+              toggleActions: "play none none none",
+            },
+          },
+        )
+      }
+
+      // Ready-to-Ship Product Slider
+      const productSliderEl = document.getElementById("product-slider")
+      if (productSliderEl) {
+        gsap.fromTo(
+          productSliderEl,
+          { opacity: 0, y: 28 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.85,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: "#ready-to-ship",
+              start: "top 82%",
+              toggleActions: "play none none none",
+            },
+          },
+        )
+      }
+
+      // Community / Wild Proof Column Items Stagger
+      const communityCols = gsap.utils.toArray<HTMLElement>("section:has(#faq-container) - prev, .faq-section, section:has(#custom-quote) + section")
+      const wildSection = document.querySelector("section.bg-\\[\\#f4f7fb\\].border-y")
+      if (wildSection) {
+        const wildItems = wildSection.querySelectorAll(".grid > div")
+        gsap.fromTo(
+          wildItems,
+          { opacity: 0, y: 28 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.85,
+            stagger: 0.12,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: wildSection,
+              start: "top 82%",
+              toggleActions: "play none none none",
+            },
+          },
+        )
+      }
+
+      // FAQ Container
+      const faqBox = document.getElementById("faq-container")
+      if (faqBox) {
+        gsap.fromTo(
+          faqBox.children,
+          { opacity: 0, y: 20 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.7,
+            stagger: 0.08,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: ".faq-section",
+              start: "top 82%",
+              toggleActions: "play none none none",
+            },
+          },
+        )
+      }
+    })
+
+    cleanups.push(() => {
+      ctx.revert()
+      ScrollTrigger.getAll().forEach((st) => st.kill())
+    })
 
     // Emil Kowalski Hero Subtle Parallax on Mouse Move (Desktop Only, Reduced Motion Respected)
     const heroVisual = document.querySelector<HTMLElement>(".hero-visual")
