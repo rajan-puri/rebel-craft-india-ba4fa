@@ -876,18 +876,18 @@ export default function Storefront() {
 
       {/* SECTION 9: CTA BLOCK */}
       <section className="w-full px-gutter-mobile md:px-margin py-space-xl reveal-on-scroll">
-        <div className="relative bg-primary text-on-primary rounded-[24px] shadow-md p-8 sm:p-14 overflow-hidden">
-          <div className="max-w-4xl relative z-10">
+        <div className="relative bg-primary text-on-primary rounded-[24px] shadow-md p-8 sm:p-14 overflow-hidden text-center flex flex-col items-center justify-center">
+          <div className="max-w-4xl mx-auto flex flex-col items-center relative z-10 text-center">
             <span className="font-spec-code text-[11px] font-bold text-on-primary/80 uppercase tracking-widest block mb-2">
               Ready to Fabricate?
             </span>
-            <h2 className="font-headline-lg text-[32px] sm:text-[46px] lg:text-[56px] xl:text-[62px] leading-[1.08] text-on-primary mb-4 whitespace-normal sm:whitespace-nowrap">
+            <h2 className="font-headline-lg text-[32px] sm:text-[46px] lg:text-[56px] xl:text-[62px] leading-[1.08] text-on-primary mb-4 whitespace-normal sm:whitespace-nowrap text-center">
               Got an idea? Send it over.
             </h2>
-            <p className="font-body-lg text-body-lg text-on-primary/90 mb-8 max-w-lg">
+            <p className="font-body-lg text-body-lg text-on-primary/90 mb-8 max-w-lg mx-auto text-center">
               Zero CAD experience needed. Free slicing consultation. Lock in your print before today's build queue closes.
             </p>
-            <div className="flex flex-wrap items-center gap-4">
+            <div className="flex flex-wrap items-center justify-center gap-4">
               <a className="px-7 py-3.5 bg-surface-container-lowest text-on-surface font-spec-code text-[13px] font-bold uppercase rounded-xl shadow-sm hover:bg-surface-container-low active:scale-[0.98] transition-all flex items-center gap-2" href="#custom-quote">
                 <span>Upload Now</span>
                 <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
