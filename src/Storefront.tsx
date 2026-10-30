@@ -901,7 +901,225 @@ export default function Storefront() {
       </section>
     </div>
     {/* Client-side Interactive Behavior */}
-  </main><footer className="w-full bg-inverse-surface text-inverse-on-surface border-t-[3px] border-on-surface pt-space-xl pb-margin"><div className="w-full px-gutter md:px-margin"><div className="w-full pb-space-lg border-b-[3px] border-on-surface-variant/30 flex flex-col md:flex-row items-baseline justify-between gap-4"><span className="font-headline-lg text-[64px] sm:text-[96px] md:text-[120px] leading-none tracking-tight text-secondary-container select-none">LAYERED</span><span className="font-spec-code text-spec-code text-outline-variant uppercase tracking-wider">Tactile Fabrication Studio // 0.12 - 0.28mm Precision</span></div><div className="grid grid-cols-1 md:grid-cols-12 gap-space-lg py-space-xl"><div className="md:col-span-4 space-y-space-sm"><h3 className="font-headline-sm text-headline-sm text-surface-bright">Quick Links</h3><ul className="space-y-2 font-body-md text-body-md"><li className="flex items-center gap-2"><span className="material-symbols-outlined text-[16px] text-secondary-container">arrow_forward</span><a className="text-surface-container-highest hover:text-surface-bright transition-colors" data-path="shop" href="#">Shop</a></li><li className="flex items-center gap-2"><span className="material-symbols-outlined text-[16px] text-secondary-container">arrow_forward</span><a className="text-surface-container-highest hover:text-surface-bright transition-colors" data-path="custom-print" href="#">Custom print</a></li><li className="flex items-center gap-2"><span className="material-symbols-outlined text-[16px] text-secondary-container">arrow_forward</span><a className="text-surface-container-highest hover:text-surface-bright transition-colors" data-path="gallery" href="#">Gallery</a></li><li className="flex items-center gap-2"><span className="material-symbols-outlined text-[16px] text-secondary-container">arrow_forward</span><a className="text-surface-container-highest hover:text-surface-bright transition-colors" data-path="shipping" href="#">Shipping</a></li><li className="flex items-center gap-2"><span className="material-symbols-outlined text-[16px] text-secondary-container">arrow_forward</span><a className="text-surface-container-highest hover:text-surface-bright transition-colors" data-path="returns" href="#">Returns</a></li><li className="flex items-center gap-2"><span className="material-symbols-outlined text-[16px] text-secondary-container">arrow_forward</span><a className="text-surface-container-highest hover:text-surface-bright transition-colors" data-path="contact" href="#">Contact</a></li></ul></div><div className="md:col-span-3 space-y-space-sm"><h3 className="font-headline-sm text-headline-sm text-surface-bright">Socials</h3><ul className="space-y-3 font-body-md text-body-md"><li><a className="inline-flex items-center gap-2 px-3 py-1.5 bg-on-surface border-[2px] border-surface-container-highest rounded-lg text-surface-container-highest hover:text-surface-bright hover:bg-inverse-surface neo-shadow-sm transition-all" href="#"><span className="material-symbols-outlined text-[18px]">photo_camera</span>Instagram</a></li><li><a className="inline-flex items-center gap-2 px-3 py-1.5 bg-on-surface border-[2px] border-surface-container-highest rounded-lg text-surface-container-highest hover:text-surface-bright hover:bg-inverse-surface neo-shadow-sm transition-all" href="#"><span className="material-symbols-outlined text-[18px]">smart_display</span>YouTube</a></li><li><a className="inline-flex items-center gap-2 px-3 py-1.5 bg-on-surface border-[2px] border-surface-container-highest rounded-lg text-surface-container-highest hover:text-surface-bright hover:bg-inverse-surface neo-shadow-sm transition-all" href="#"><span className="material-symbols-outlined text-[18px]">chat</span>WhatsApp</a></li></ul></div><div className="md:col-span-5 space-y-space-sm"><h3 className="font-headline-sm text-headline-sm text-surface-bright">Newsletter</h3><p className="font-body-md text-body-md text-outline-variant">Get notified about limited filament drops, new materials, and community model batches.</p><form className="flex flex-col sm:flex-row gap-3 pt-space-xs"><input className="flex-1 px-4 py-3 bg-surface-container-lowest text-on-surface border-[3px] border-on-surface rounded-xl font-body-md text-body-md focus:outline-none neo-shadow-sm placeholder:text-outline" placeholder="your.email@workshop.io" type="email" /><button className="px-6 py-3 bg-primary-container text-on-primary font-badge-md text-badge-md border-[3px] border-on-surface rounded-xl neo-shadow hover:-translate-y-0.5 active:translate-x-0.5 active:translate-y-0.5 transition-all text-center flex-shrink-0" type="button">Get drop alerts</button></form></div></div><div className="pt-space-lg border-t-[2px] border-on-surface-variant/20 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left"><p className="font-spec-sm text-spec-sm text-outline-variant">© 2024 LAYERED 3D Printing Store. All rights reserved. Handcrafted precision.</p><div className="flex items-center gap-4 font-spec-sm text-spec-sm text-outline-variant"><a className="hover:text-surface-bright transition-colors" href="#">Privacy Policy</a><span>•</span><a className="hover:text-surface-bright transition-colors" href="#">Terms of Fabrication</a></div></div></div></footer>
+  </main>
+
+  {/* NEO-BRUTALIST INDUSTRIAL FOOTER (Adhering to DESIGN.md) */}
+  <footer className="w-full bg-inverse-surface text-inverse-on-surface border-t-[3px] border-on-surface pt-space-xl pb-margin select-none relative overflow-hidden">
+    <div className="w-full px-gutter md:px-margin">
+      {/* TOP TIER: Brand Logo & Workshop Status Bar */}
+      <div className="w-full pb-space-lg border-b-[3px] border-on-surface-variant/30 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+        <div className="flex items-center gap-4">
+          <a
+            aria-label="REBEL CRAFT INDIA home"
+            className="inline-flex items-center p-2.5 sm:p-3 bg-surface-container-lowest border-[3px] border-on-surface rounded-2xl shadow-[4px_4px_0px_#121c2a] hover:-translate-y-0.5 active:translate-x-0.5 active:translate-y-0.5 transition-all"
+            data-path="shop"
+            href="#"
+          >
+            <img
+              src="/logo-rebel-craft.png"
+              alt="REBEL CRAFT INDIA"
+              className="h-9 sm:h-11 w-auto object-contain"
+            />
+          </a>
+          <div className="flex flex-col">
+            <span className="font-badge-md text-[18px] text-secondary-container leading-none uppercase">
+              Tactile Fabrication Studio
+            </span>
+            <span className="font-spec-code text-[12px] text-outline-variant uppercase tracking-wider mt-1">
+              0.12 - 0.28mm Precision QC
+            </span>
+          </div>
+        </div>
+
+        {/* Live Farm Status Chips */}
+        <div className="flex flex-wrap items-center gap-2.5">
+          <span className="inline-flex items-center gap-2 px-3 py-1.5 bg-on-surface border-[2px] border-secondary-container/50 rounded-xl font-spec-code text-[12px] text-secondary-container shadow-[2px_2px_0px_#121c2a]">
+            <span className="w-2 h-2 rounded-full bg-secondary-container animate-pulse"></span>
+            <span>32 Printers Active</span>
+          </span>
+          <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-on-surface border-[2px] border-surface-container-highest/20 rounded-xl font-spec-code text-[12px] text-surface-bright shadow-[2px_2px_0px_#121c2a]">
+            <span>Pan-India Express</span>
+          </span>
+          <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-primary/20 border-[2px] border-primary/50 rounded-xl font-spec-code text-[12px] text-[#adc6ff] shadow-[2px_2px_0px_#121c2a]">
+            <span>100% Reprint QC</span>
+          </span>
+        </div>
+      </div>
+
+      {/* MIDDLE TIER: 4-Column Neo-Brutalist Layout */}
+      <div className="grid grid-cols-1 md:grid-cols-12 gap-space-lg py-space-xl">
+        {/* Column 1: Studio Story & Direct Support */}
+        <div className="md:col-span-4 space-y-4">
+          <h3 className="font-headline-sm text-headline-sm text-surface-bright">About The Studio</h3>
+          <p className="font-body-md text-body-md text-surface-container-highest/90 leading-relaxed max-w-sm">
+            REBEL CRAFT INDIA is an industrial additive manufacturing and custom 3D prototyping lab. From one-off STL uploads to serialized mechanical batches—calibrated layer by layer to micron tolerances.
+          </p>
+          <div className="pt-2 flex flex-wrap items-center gap-3">
+            <a
+              href="https://wa.me/919999999999?text=Hi%20Rebel%20Craft%2C%20I'm%20interested%20in%20a%203D%20print%20project!"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-on-surface border-[2px] border-surface-container-highest/40 rounded-xl text-surface-bright hover:bg-inverse-surface shadow-[3px_3px_0px_#121c2a] hover:-translate-y-0.5 active:translate-x-0.5 active:translate-y-0.5 transition-all font-spec-code text-[13px] font-bold"
+            >
+              <span className="material-symbols-outlined text-[18px] text-[#25D366]">chat</span>
+              <span>WhatsApp Concierge</span>
+            </a>
+          </div>
+        </div>
+
+        {/* Column 2: Fabrication Catalog Links */}
+        <div className="md:col-span-2 space-y-space-sm">
+          <h3 className="font-headline-sm text-headline-sm text-surface-bright">Fabrication</h3>
+          <ul className="space-y-2.5 font-body-md text-body-md">
+            <li className="flex items-center gap-2">
+              <span className="material-symbols-outlined text-[16px] text-secondary-container">arrow_forward</span>
+              <a className="text-surface-container-highest hover:text-surface-bright transition-colors" data-path="shop" href="#">
+                Shop Catalog
+              </a>
+            </li>
+            <li className="flex items-center gap-2">
+              <span className="material-symbols-outlined text-[16px] text-secondary-container">arrow_forward</span>
+              <a className="text-surface-container-highest hover:text-surface-bright transition-colors" data-path="custom-print" href="#custom-quote">
+                Custom Slicer
+              </a>
+            </li>
+            <li className="flex items-center gap-2">
+              <span className="material-symbols-outlined text-[16px] text-secondary-container">arrow_forward</span>
+              <a className="text-surface-container-highest hover:text-surface-bright transition-colors" data-path="how-it-works" href="#how-it-works">
+                How It Works
+              </a>
+            </li>
+            <li className="flex items-center gap-2">
+              <span className="material-symbols-outlined text-[16px] text-secondary-container">arrow_forward</span>
+              <a className="text-surface-container-highest hover:text-surface-bright transition-colors" data-path="gallery" href="#featured-drops">
+                Featured Drops
+              </a>
+            </li>
+            <li className="flex items-center gap-2">
+              <span className="material-symbols-outlined text-[16px] text-secondary-container">arrow_forward</span>
+              <a className="text-surface-container-highest hover:text-surface-bright transition-colors" href="#why-us">
+                Materials &amp; Specs
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        {/* Column 3: Quality & Policies */}
+        <div className="md:col-span-2 space-y-space-sm">
+          <h3 className="font-headline-sm text-headline-sm text-surface-bright">Quality &amp; QC</h3>
+          <ul className="space-y-2.5 font-body-md text-body-md">
+            <li className="flex items-center gap-2">
+              <span className="material-symbols-outlined text-[16px] text-secondary-container">arrow_forward</span>
+              <a className="text-surface-container-highest hover:text-surface-bright transition-colors" href="#why-us">
+                Micron Standard
+              </a>
+            </li>
+            <li className="flex items-center gap-2">
+              <span className="material-symbols-outlined text-[16px] text-secondary-container">arrow_forward</span>
+              <a className="text-surface-container-highest hover:text-surface-bright transition-colors" href="#wild-proof">
+                Community Builds
+              </a>
+            </li>
+            <li className="flex items-center gap-2">
+              <span className="material-symbols-outlined text-[16px] text-secondary-container">arrow_forward</span>
+              <a className="text-surface-container-highest hover:text-surface-bright transition-colors" href="#faq-container">
+                FAQ &amp; Queries
+              </a>
+            </li>
+            <li className="flex items-center gap-2">
+              <span className="material-symbols-outlined text-[16px] text-secondary-container">arrow_forward</span>
+              <a className="text-surface-container-highest hover:text-surface-bright transition-colors" href="#faq-container">
+                Express Shipping
+              </a>
+            </li>
+            <li className="flex items-center gap-2">
+              <span className="material-symbols-outlined text-[16px] text-secondary-container">arrow_forward</span>
+              <a className="text-surface-container-highest hover:text-surface-bright transition-colors" href="#">
+                Reprint Guarantee
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        {/* Column 4: Newsletter & Social Channels */}
+        <div className="md:col-span-4 space-y-space-sm">
+          <h3 className="font-headline-sm text-headline-sm text-surface-bright">Filament Drop Alerts</h3>
+          <p className="font-body-md text-body-md text-outline-variant">
+            Get notified about limited polymer drops, new composite materials, and batch slicing queue openings.
+          </p>
+          <form className="flex flex-col sm:flex-row gap-3 pt-space-xs">
+            <input
+              className="flex-1 px-4 py-3 bg-surface-container-lowest text-on-surface border-[3px] border-on-surface rounded-xl font-body-md text-body-md focus:outline-none shadow-[3px_3px_0px_#121c2a] placeholder:text-outline"
+              placeholder="your.email@workshop.io"
+              type="email"
+            />
+            <button
+              className="px-6 py-3 bg-primary text-on-primary font-badge-md text-badge-md border-[3px] border-on-surface rounded-xl shadow-[3px_3px_0px_#121c2a] hover:-translate-y-0.5 active:translate-x-0.5 active:translate-y-0.5 transition-all text-center flex-shrink-0"
+              type="button"
+            >
+              Get drop alerts
+            </button>
+          </form>
+
+          {/* Social Badges */}
+          <div className="pt-2 flex flex-wrap items-center gap-2.5">
+            <a
+              className="inline-flex items-center gap-2 px-3 py-1.5 bg-on-surface border-[2px] border-surface-container-highest rounded-lg text-surface-container-highest hover:text-surface-bright hover:bg-inverse-surface shadow-[2px_2px_0px_#121c2a] transition-all font-spec-code text-[12px]"
+              href="https://instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span className="material-symbols-outlined text-[16px]">photo_camera</span>
+              Instagram
+            </a>
+            <a
+              className="inline-flex items-center gap-2 px-3 py-1.5 bg-on-surface border-[2px] border-surface-container-highest rounded-lg text-surface-container-highest hover:text-surface-bright hover:bg-inverse-surface shadow-[2px_2px_0px_#121c2a] transition-all font-spec-code text-[12px]"
+              href="https://youtube.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span className="material-symbols-outlined text-[16px]">smart_display</span>
+              YouTube
+            </a>
+            <a
+              className="inline-flex items-center gap-2 px-3 py-1.5 bg-on-surface border-[2px] border-surface-container-highest rounded-lg text-surface-container-highest hover:text-surface-bright hover:bg-inverse-surface shadow-[2px_2px_0px_#121c2a] transition-all font-spec-code text-[12px]"
+              href="https://wa.me/919999999999"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span className="material-symbols-outlined text-[16px]">chat</span>
+              WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+
+      {/* BOTTOM TIER: Copyright & Created by Mates Creation Attribution */}
+      <div className="pt-space-lg border-t-[2px] border-on-surface-variant/20 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+        <p className="font-spec-sm text-spec-sm text-outline-variant">
+          © 2026 REBEL CRAFT INDIA. All rights reserved. Handcrafted precision.
+        </p>
+
+        <div className="flex flex-wrap items-center justify-center gap-4 font-spec-sm text-spec-sm text-outline-variant">
+          <a className="hover:text-surface-bright transition-colors" href="#">Privacy Policy</a>
+          <span>•</span>
+          <a className="hover:text-surface-bright transition-colors" href="#">Terms of Fabrication</a>
+          <span>•</span>
+
+          {/* User Requested Attribution Badge: Created by Mates Creation */}
+          <a
+            href="https://matescreation.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-surface-container-lowest text-on-surface border-[2px] border-on-surface rounded-xl font-spec-code text-[12px] font-bold tracking-wide shadow-[2px_2px_0px_#121c2a] hover:-translate-y-0.5 hover:bg-surface-bright active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all group"
+          >
+            <span className="text-primary group-hover:scale-110 transition-transform">✦</span>
+            <span>Created by Mates Creation</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
 </div>
   )
 }

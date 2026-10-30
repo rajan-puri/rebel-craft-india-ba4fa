@@ -714,13 +714,6 @@ input:focus-visible {
 .orb-react-host { width: 100%; min-height: 0; }
 .orb-react-host > * { width: 100%; }
 
-footer form input { min-width: 0; }
-footer > div {
-  width: 100% !important;
-  max-width: calc(var(--workshop-max) + (2 * var(--workshop-gutter))) !important;
-  margin-inline: auto;
-  padding-inline: var(--workshop-gutter) !important;
-}
 
 /* ===== Tablet ===== */
 @media (max-width: 1023px) {
@@ -730,8 +723,6 @@ footer > div {
   .category-tile { min-height: 8.6rem; }
   .product-grid > * { flex-basis: 47%; }
   .site-nav { display: none; }
-  footer form { flex-direction: column !important; }
-  footer form button { width: 100%; }
 }
 
 /* ===== Mobile ===== */
