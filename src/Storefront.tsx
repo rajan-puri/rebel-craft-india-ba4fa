@@ -31,10 +31,10 @@ export default function Storefront() {
         </a>
         <nav aria-label="Primary" className="site-nav hidden lg:flex items-center gap-7">
           <a aria-current="page" className="site-nav-link is-active" data-path="shop" href="#">Shop</a>
-          <a className="site-nav-link" data-path="custom-print" href="#">Custom print</a>
-          <a className="site-nav-link" data-path="how-it-works" href="#">How it works</a>
-          <a className="site-nav-link" data-path="gallery" href="#">Gallery</a>
-          <a className="site-nav-link" data-path="faq" href="#">FAQ</a>
+          <a className="site-nav-link" data-path="custom-print" href="#custom-quote">Custom print</a>
+          <a className="site-nav-link" data-path="how-it-works" href="#how-it-works">How it works</a>
+          <a className="site-nav-link" data-path="gallery" href="#featured-drops">Featured Drops</a>
+          <a className="site-nav-link" data-path="faq" href="#faq-container">FAQ</a>
         </nav>
         <div className="site-actions">
           <button aria-label="Search catalog" className="site-icon-btn neo-btn-active" type="button"><span aria-hidden="true" className="material-symbols-outlined">search</span></button>
@@ -52,10 +52,10 @@ export default function Storefront() {
       <div className="site-mobile-nav" hidden={!navOpen} id="site-mobile-nav">
         <nav aria-label="Mobile navigation" className="site-mobile-list">
           <a aria-current="page" className="site-mobile-link" data-path="shop" href="#" onClick={() => setNavOpen(false)}><span aria-hidden="true">01</span>Shop</a>
-          <a className="site-mobile-link" data-path="custom-print" href="#" onClick={() => setNavOpen(false)}><span aria-hidden="true">02</span>Custom print</a>
-          <a className="site-mobile-link" data-path="how-it-works" href="#" onClick={() => setNavOpen(false)}><span aria-hidden="true">03</span>How it works</a>
-          <a className="site-mobile-link" data-path="gallery" href="#" onClick={() => setNavOpen(false)}><span aria-hidden="true">04</span>Gallery</a>
-          <a className="site-mobile-link" data-path="faq" href="#" onClick={() => setNavOpen(false)}><span aria-hidden="true">05</span>FAQ</a>
+          <a className="site-mobile-link" data-path="custom-print" href="#custom-quote" onClick={() => setNavOpen(false)}><span aria-hidden="true">02</span>Custom print</a>
+          <a className="site-mobile-link" data-path="how-it-works" href="#how-it-works" onClick={() => setNavOpen(false)}><span aria-hidden="true">03</span>How it works</a>
+          <a className="site-mobile-link" data-path="gallery" href="#featured-drops" onClick={() => setNavOpen(false)}><span aria-hidden="true">04</span>Featured Drops</a>
+          <a className="site-mobile-link" data-path="faq" href="#faq-container" onClick={() => setNavOpen(false)}><span aria-hidden="true">05</span>FAQ</a>
         </nav>
         <a className="site-mobile-cta" data-path="custom-print" href="#custom-quote" onClick={() => setNavOpen(false)}>
           Upload &amp; print
@@ -67,42 +67,42 @@ export default function Storefront() {
   <main className="w-full bg-surface pt-28 sm:pt-32 lg:pt-36"><div className="flex flex-col w-full">
       {/* SECTION 1: HERO */}
       <section className="hero-section w-full px-gutter-mobile md:px-margin pt-space-lg pb-space-xl">
-        <div className="hero-layout grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-6 xl:gap-8 items-center max-w-[1440px] mx-auto">
+        <div className="hero-layout grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 xl:gap-10 items-center max-w-[1440px] mx-auto">
           {/* Left Column: Copy & CTAs */}
-          <div className="hero-copy lg:col-span-6 flex flex-col space-y-space-md">
-            <div className="status-label inline-flex items-center gap-2 self-start bg-secondary-container text-on-surface border-[3px] border-on-surface rounded-full px-4 py-1.5 neo-shadow-sm rotate-[-1deg]">
-              <span className="w-2.5 h-2.5 rounded-full bg-primary border-[2px] border-on-surface animate-pulse" />
-              <span className="font-spec-code text-spec-sm uppercase font-bold tracking-wider">Nozzle hot: 215°C • Batch #84 Slicing</span>
+          <div className="hero-copy lg:col-span-6 flex flex-col space-y-4">
+            <div className="status-label inline-flex items-center gap-2 self-start bg-surface-container-lowest text-on-surface px-3.5 py-1.5 rounded-full border border-on-surface/15 shadow-sm">
+              <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+              <span className="font-spec-code text-[12px] uppercase font-bold tracking-wider text-on-surface">Nozzle Hot: 215°C • Batch #84 Slicing</span>
             </div>
-            <h1 className="font-headline-lg text-[54px] sm:text-[76px] lg:text-[96px] leading-[1.02] text-on-surface tracking-tight">
-              If you can imagine it, we can 
-              <span className="inline-block bg-primary text-on-primary font-badge-display text-[58px] sm:text-[80px] lg:text-[98px] px-4 py-1 border-[3px] border-on-surface neo-shadow rounded-xl -rotate-2 leading-none align-middle mx-1">
+            <h1 className="font-headline-lg text-[52px] sm:text-[72px] lg:text-[88px] leading-[1.02] text-on-surface tracking-tight">
+              If you can imagine it, we can{" "}
+              <span className="inline-block bg-primary text-on-primary font-badge-display text-[54px] sm:text-[76px] lg:text-[92px] px-3.5 py-1 rounded-xl shadow-sm leading-none align-middle mx-1">
                 print it.
               </span>
             </h1>
             <p className="font-body-lg text-body-lg text-on-surface-variant max-w-xl">
-              Send a photo, sketch or file. Pick the size. We print it, finish it and ship it straight off our calibrated build plates.
+              Send a photo, sketch or CAD file. Pick the scale and material. We print, finish and ship straight off our calibrated build plates.
             </p>
-            {/* CTA Buttons */}
-            <div className="flex flex-wrap items-center gap-space-sm pt-space-xs">
-              <a className="px-8 py-4 bg-primary text-on-primary font-badge-md text-badge-md rounded-xl border-[3px] border-on-surface neo-shadow-md hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[6px_6px_0px_#121c2a] active:translate-x-1 active:translate-y-1 active:shadow-none transition-all flex items-center gap-2" href="#custom-quote">
-                Upload your design
-                <span className="material-symbols-outlined text-[24px]">cloud_upload</span>
+            {/* CTA Buttons with Emil Kowalski spring and active scale */}
+            <div className="flex flex-wrap items-center gap-3.5 pt-2">
+              <a className="btn-primary-specimen px-8 py-3.5 bg-primary text-on-primary font-badge-md text-badge-md rounded-xl border border-primary hover:bg-[#00479b] shadow-sm flex items-center gap-2" href="#custom-quote">
+                <span>Upload your design</span>
+                <span className="material-symbols-outlined text-[22px]">cloud_upload</span>
               </a>
-              <a className="px-8 py-4 bg-surface-container-lowest text-on-surface font-badge-md text-badge-md rounded-xl border-[3px] border-on-surface neo-shadow-md hover:bg-surface-container-high hover:-translate-x-0.5 hover:-translate-y-0.5 active:translate-x-1 active:translate-y-1 active:shadow-none transition-all" href="#ready-to-ship">
+              <a className="btn-secondary-specimen px-8 py-3.5 bg-surface-container-lowest text-on-surface font-badge-md text-badge-md rounded-xl border border-on-surface/20 hover:border-on-surface/40 hover:bg-surface-container-low shadow-sm" href="#ready-to-ship">
                 Shop ready-made
               </a>
             </div>
             {/* Trust Row */}
-            <div className="pt-space-sm flex flex-wrap items-center gap-3 text-on-surface font-spec-code text-spec-sm font-bold opacity-90">
-              <span className="trust-mark flex items-center gap-1.5 bg-surface-container-lowest px-3 py-1 border-[2px] border-on-surface rounded-lg neo-shadow-sm">
-                <span className="material-symbols-outlined text-primary text-[18px]">verified</span> 500+ prints delivered
+            <div className="pt-3 flex flex-wrap items-center gap-2.5 text-on-surface font-spec-code text-[12px] font-bold opacity-90">
+              <span className="trust-mark-pill flex items-center gap-1.5 bg-surface-container-lowest px-3 py-1 border border-on-surface/15 rounded-full">
+                <span className="material-symbols-outlined text-primary text-[16px]">verified</span> 500+ prints delivered
               </span>
-              <span className="trust-mark flex items-center gap-1.5 bg-surface-container-lowest px-3 py-1 border-[2px] border-on-surface rounded-lg neo-shadow-sm">
-                <span className="material-symbols-outlined text-primary text-[18px]">straighten</span> Any size up to 40cm
+              <span className="trust-mark-pill flex items-center gap-1.5 bg-surface-container-lowest px-3 py-1 border border-on-surface/15 rounded-full">
+                <span className="material-symbols-outlined text-primary text-[16px]">straighten</span> Any size up to 40cm
               </span>
-              <span className="trust-mark flex items-center gap-1.5 bg-surface-container-lowest px-3 py-1 border-[2px] border-on-surface rounded-lg neo-shadow-sm">
-                <span className="material-symbols-outlined text-primary text-[18px]">view_in_ar</span> PLA, PETG, Resin
+              <span className="trust-mark-pill flex items-center gap-1.5 bg-surface-container-lowest px-3 py-1 border border-on-surface/15 rounded-full">
+                <span className="material-symbols-outlined text-primary text-[16px]">view_in_ar</span> PLA, PETG, Resin
               </span>
             </div>
           </div>
@@ -113,124 +113,136 @@ export default function Storefront() {
           </div>
         </div>
       </section>
-      {/* SECTION: CATEGORY NAVIGATION (replaces the technical ticker) */}
-      <section aria-label="Shop by category" className="categories-section">
-        <div className="section-heading flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+      {/* SECTION: CATEGORY NAVIGATION (Specimen Classification) */}
+      <section aria-label="Shop by category" className="categories-section w-full px-gutter-mobile md:px-margin py-space-lg">
+        <div className="section-heading flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-6">
           <div>
-            <span className="eyebrow eyebrow--blueprint" data-no="01">Category Map</span>
-            <h2 className="font-headline-lg text-[36px] sm:text-[52px] text-on-surface">
+            <span className="eyebrow-subtle font-spec-code text-[11px] font-bold text-primary tracking-widest uppercase">Specimen Classification</span>
+            <h2 className="font-headline-lg text-[32px] sm:text-[44px] text-on-surface mt-1">
               Start with what you&rsquo;re making
             </h2>
           </div>
-          <div className="flex items-center gap-2.5 self-start bg-surface-container px-3.5 py-2 border-[2px] border-on-surface rounded-lg neo-shadow-sm">
-            <span aria-hidden="true" className="material-symbols-outlined text-primary text-[18px]">category</span>
-            <span className="font-spec-code text-spec-code">06 categories &middot; every file QC&rsquo;d</span>
+          <div className="flex items-center gap-2 self-start bg-surface-container-low px-3.5 py-1.5 border border-on-surface/10 rounded-full">
+            <span aria-hidden="true" className="material-symbols-outlined text-primary text-[17px]">category</span>
+            <span className="font-spec-code text-[12px] text-on-surface/80">06 categories &middot; verified build geometries</span>
           </div>
         </div>
-        <div className="categories-grid">
-          <a className="category-tile" href="#custom-quote">
-            <span className="category-tile-head">
-              <span className="category-no">01</span>
-              <span aria-hidden="true" className="category-arrow"><span className="material-symbols-outlined">arrow_forward</span></span>
-            </span>
-            <span className="category-name">Functional Parts</span>
-            <span className="category-desc">Load-bearing brackets, mounts and printed jigs.</span>
+        <div className="categories-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <a className="category-specimen-tile group p-5 bg-surface-container-lowest border border-on-surface/10 rounded-2xl hover:border-primary/40 hover:shadow-md transition-all flex flex-col justify-between" href="#custom-quote">
+            <div className="flex items-start justify-between">
+              <span className="font-spec-code text-[12px] font-bold text-primary">01 / ENG</span>
+              <span className="material-symbols-outlined text-on-surface-variant group-hover:text-primary group-hover:translate-x-0.5 transition-all text-[20px]">arrow_forward</span>
+            </div>
+            <div className="mt-4">
+              <h3 className="font-headline-sm text-[20px] text-on-surface group-hover:text-primary transition-colors">Functional Parts</h3>
+              <p className="font-body-md text-[14px] text-on-surface-variant mt-1">Load-bearing brackets, motor mounts and printed tooling jigs.</p>
+            </div>
           </a>
-          <a className="category-tile" href="#ready-to-ship">
-            <span className="category-tile-head">
-              <span className="category-no">02</span>
-              <span aria-hidden="true" className="category-arrow"><span className="material-symbols-outlined">arrow_forward</span></span>
-            </span>
-            <span className="category-name">Desk &amp; Home</span>
-            <span className="category-desc">Organizers, lamps and small-space upgrades.</span>
+          <a className="category-specimen-tile group p-5 bg-surface-container-lowest border border-on-surface/10 rounded-2xl hover:border-primary/40 hover:shadow-md transition-all flex flex-col justify-between" href="#ready-to-ship">
+            <div className="flex items-start justify-between">
+              <span className="font-spec-code text-[12px] font-bold text-primary">02 / INTERIOR</span>
+              <span className="material-symbols-outlined text-on-surface-variant group-hover:text-primary group-hover:translate-x-0.5 transition-all text-[20px]">arrow_forward</span>
+            </div>
+            <div className="mt-4">
+              <h3 className="font-headline-sm text-[20px] text-on-surface group-hover:text-primary transition-colors">Desk &amp; Home</h3>
+              <p className="font-body-md text-[14px] text-on-surface-variant mt-1">Organizers, Voronoi lamps and small-space architectural upgrades.</p>
+            </div>
           </a>
-          <a className="category-tile" href="#ready-to-ship">
-            <span className="category-tile-head">
-              <span className="category-no">03</span>
-              <span aria-hidden="true" className="category-arrow"><span className="material-symbols-outlined">arrow_forward</span></span>
-            </span>
-            <span className="category-name">Miniatures</span>
-            <span className="category-desc">Tabletop armies, figures and scatter terrain.</span>
+          <a className="category-specimen-tile group p-5 bg-surface-container-lowest border border-on-surface/10 rounded-2xl hover:border-primary/40 hover:shadow-md transition-all flex flex-col justify-between" href="#ready-to-ship">
+            <div className="flex items-start justify-between">
+              <span className="font-spec-code text-[12px] font-bold text-primary">03 / DETAIL</span>
+              <span className="material-symbols-outlined text-on-surface-variant group-hover:text-primary group-hover:translate-x-0.5 transition-all text-[20px]">arrow_forward</span>
+            </div>
+            <div className="mt-4">
+              <h3 className="font-headline-sm text-[20px] text-on-surface group-hover:text-primary transition-colors">Miniatures</h3>
+              <p className="font-body-md text-[14px] text-on-surface-variant mt-1">High-density tabletop figures, dioramas and scatter terrain.</p>
+            </div>
           </a>
-          <a className="category-tile" href="#custom-quote">
-            <span className="category-tile-head">
-              <span className="category-no">04</span>
-              <span aria-hidden="true" className="category-arrow"><span className="material-symbols-outlined">arrow_forward</span></span>
-            </span>
-            <span className="category-name">Nameplates &amp; Tags</span>
-            <span className="category-desc">Keychains, signage and dual-color badges.</span>
+          <a className="category-specimen-tile group p-5 bg-surface-container-lowest border border-on-surface/10 rounded-2xl hover:border-primary/40 hover:shadow-md transition-all flex flex-col justify-between" href="#custom-quote">
+            <div className="flex items-start justify-between">
+              <span className="font-spec-code text-[12px] font-bold text-primary">04 / IDENT</span>
+              <span className="material-symbols-outlined text-on-surface-variant group-hover:text-primary group-hover:translate-x-0.5 transition-all text-[20px]">arrow_forward</span>
+            </div>
+            <div className="mt-4">
+              <h3 className="font-headline-sm text-[20px] text-on-surface group-hover:text-primary transition-colors">Nameplates &amp; Tags</h3>
+              <p className="font-body-md text-[14px] text-on-surface-variant mt-1">Dual-color tactile keychains, signage, badges and tags.</p>
+            </div>
           </a>
-          <a className="category-tile" href="#custom-quote">
-            <span className="category-tile-head">
-              <span className="category-no">05</span>
-              <span aria-hidden="true" className="category-arrow"><span className="material-symbols-outlined">arrow_forward</span></span>
-            </span>
-            <span className="category-name">Prototypes</span>
-            <span className="category-desc">Same-week fit checks before production runs.</span>
+          <a className="category-specimen-tile group p-5 bg-surface-container-lowest border border-on-surface/10 rounded-2xl hover:border-primary/40 hover:shadow-md transition-all flex flex-col justify-between" href="#custom-quote">
+            <div className="flex items-start justify-between">
+              <span className="font-spec-code text-[12px] font-bold text-primary">05 / PROTO</span>
+              <span className="material-symbols-outlined text-on-surface-variant group-hover:text-primary group-hover:translate-x-0.5 transition-all text-[20px]">arrow_forward</span>
+            </div>
+            <div className="mt-4">
+              <h3 className="font-headline-sm text-[20px] text-on-surface group-hover:text-primary transition-colors">Prototypes</h3>
+              <p className="font-body-md text-[14px] text-on-surface-variant mt-1">Same-week mechanical fit validation before high-volume molding.</p>
+            </div>
           </a>
-          <a className="category-tile" href="#ready-to-ship">
-            <span className="category-tile-head">
-              <span className="category-no">06</span>
-              <span aria-hidden="true" className="category-arrow"><span className="material-symbols-outlined">arrow_forward</span></span>
-            </span>
-            <span className="category-name">Gifts &amp; Custom</span>
-            <span className="category-desc">Weddings, milestone portraits and pet busts.</span>
+          <a className="category-specimen-tile group p-5 bg-surface-container-lowest border border-on-surface/10 rounded-2xl hover:border-primary/40 hover:shadow-md transition-all flex flex-col justify-between" href="#ready-to-ship">
+            <div className="flex items-start justify-between">
+              <span className="font-spec-code text-[12px] font-bold text-primary">06 / CUSTOM</span>
+              <span className="material-symbols-outlined text-on-surface-variant group-hover:text-primary group-hover:translate-x-0.5 transition-all text-[20px]">arrow_forward</span>
+            </div>
+            <div className="mt-4">
+              <h3 className="font-headline-sm text-[20px] text-on-surface group-hover:text-primary transition-colors">Gifts &amp; Custom</h3>
+              <p className="font-body-md text-[14px] text-on-surface-variant mt-1">Milestone portraits, customized lithophanes and pet busts.</p>
+            </div>
           </a>
         </div>
       </section>
 
       {/* SECTION: FEATURED DROPS */}
-      <section aria-label="Featured Drops" className="featured-drops-section w-full px-gutter-mobile md:px-margin py-space-xl bg-surface-container-low border-y-[3px] border-on-surface" id="featured-drops">
+      <section aria-label="Featured Drops" className="featured-drops-section w-full px-gutter-mobile md:px-margin py-space-xl bg-[#f4f7fb] border-y border-on-surface/10" id="featured-drops">
         <div className="w-full max-w-[1440px] mx-auto">
           {/* Header */}
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-6 sm:mb-8">
             <div>
-              <span className="eyebrow eyebrow--hot" data-no="★">Limited Releases</span>
-              <h2 className="font-headline-lg text-[32px] sm:text-[48px] text-on-surface leading-none mt-1">
+              <span className="eyebrow-subtle font-spec-code text-[11px] font-bold text-primary tracking-widest uppercase">Specimen Releases</span>
+              <h2 className="font-headline-lg text-[32px] sm:text-[44px] text-on-surface leading-tight mt-1">
                 Featured Drops
               </h2>
             </div>
             <a
               href="#ready-to-ship"
-              className="inline-flex items-center gap-2 self-start sm:self-auto px-5 py-2.5 bg-surface-container-lowest text-on-surface font-badge-md text-badge-md uppercase border-[3px] border-on-surface rounded-xl neo-shadow-sm hover:bg-secondary-container hover:-translate-x-0.5 hover:-translate-y-0.5 active:translate-x-1 active:translate-y-1 active:shadow-none transition-all"
+              className="inline-flex items-center gap-1.5 self-start sm:self-auto px-5 py-2.5 bg-surface-container-lowest text-on-surface font-spec-code text-[13px] font-bold uppercase border border-on-surface/15 rounded-xl shadow-sm hover:border-on-surface/30 hover:bg-surface-container-low active:scale-[0.98] transition-all"
             >
               View catalog →
             </a>
           </div>
 
-          {/* 8-Card Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
+          {/* 8-Card Grid (Specimen Catalogue layout) */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {featuredDrops.map((drop) => (
               <article
                 key={drop.id}
-                className="group bg-surface-container-lowest border-[3px] border-on-surface rounded-[20px] neo-shadow-md overflow-hidden flex flex-col hover:-translate-y-1 hover:shadow-[6px_6px_0px_#121c2a] transition-all"
+                className="group bg-surface-container-lowest border border-on-surface/10 rounded-2xl shadow-sm overflow-hidden flex flex-col hover:border-primary/40 hover:shadow-md transition-all duration-200"
               >
-                <div className="relative aspect-square w-full bg-surface-container border-b-[3px] border-on-surface overflow-hidden">
+                <div className="relative aspect-square w-full bg-[#eef3f9] overflow-hidden">
                   <img
                     src={drop.image}
                     alt={drop.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    className="w-full h-full object-cover group-hover:scale-[1.04] transition-transform duration-300"
                     loading="lazy"
                   />
                   {drop.badge && (
-                    <span className="absolute top-2.5 left-2.5 bg-secondary-container text-on-surface font-spec-code text-[11px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-md border-[2px] border-on-surface neo-shadow-sm">
+                    <span className="absolute top-3 left-3 bg-surface-container-lowest/90 backdrop-blur-sm text-primary font-spec-code text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full border border-primary/20 shadow-xs">
                       {drop.badge}
                     </span>
                   )}
                 </div>
                 <div className="p-4 flex flex-col flex-1 justify-between gap-3">
                   <div>
-                    <h3 className="font-body-md font-bold text-[14px] sm:text-[15px] text-on-surface line-clamp-2 leading-snug">
+                    <h3 className="font-body-md font-bold text-[15px] text-on-surface line-clamp-2 leading-snug group-hover:text-primary transition-colors">
                       {drop.title}
                     </h3>
-                    <div className="mt-2.5">
-                      <div className="font-badge-display text-[26px] sm:text-[28px] text-primary leading-tight">
+                    <div className="mt-2.5 flex items-baseline justify-between">
+                      <div className="font-badge-display text-[26px] text-primary leading-tight">
                         {drop.price}
                       </div>
                       {drop.originalPrice && (
-                        <div className="flex items-center gap-2 mt-1 font-spec-code text-[11px]">
-                          <span className="text-on-surface-variant line-through">{drop.originalPrice}</span>
-                          <span className="bg-secondary-container text-on-surface font-spec-code text-[11px] font-bold px-1.5 py-0.5 rounded border border-on-surface neo-shadow-sm">
+                        <div className="flex items-center gap-1.5 font-spec-code text-[11px]">
+                          <span className="text-on-surface-variant line-through opacity-70">{drop.originalPrice}</span>
+                          <span className="text-primary font-bold">
                             {drop.discount}
                           </span>
                         </div>
@@ -239,7 +251,7 @@ export default function Storefront() {
                   </div>
                   <a
                     href={drop.href}
-                    className="w-full py-3 px-4 bg-primary hover:bg-[#004395] text-on-primary font-badge-md text-badge-md rounded-xl border-[3px] border-on-surface neo-shadow-sm hover:-translate-x-0.5 hover:-translate-y-0.5 active:translate-x-1 active:translate-y-1 active:shadow-none transition-all flex items-center justify-center gap-1.5 text-center"
+                    className="w-full py-2.5 px-4 bg-primary hover:bg-[#00479b] text-on-primary font-spec-code text-[12px] font-bold uppercase rounded-xl border border-primary shadow-xs active:scale-[0.98] transition-all flex items-center justify-center gap-1.5 text-center"
                   >
                     {drop.ctaText}
                   </a>
@@ -252,9 +264,9 @@ export default function Storefront() {
           <div className="mt-8 sm:mt-10 text-center">
             <a
               href="#ready-to-ship"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-surface-container-lowest text-on-surface font-badge-md text-badge-md border-[3px] border-on-surface rounded-xl neo-shadow-md hover:bg-secondary-container hover:-translate-x-0.5 hover:-translate-y-0.5 active:translate-x-1 active:translate-y-1 active:shadow-none transition-all"
+              className="inline-flex items-center gap-2 px-7 py-3 bg-surface-container-lowest text-on-surface font-spec-code text-[13px] font-bold uppercase border border-on-surface/20 rounded-xl shadow-sm hover:border-on-surface/40 hover:bg-surface-container-low active:scale-[0.98] transition-all"
             >
-              Explore all 24 workshop prints →
+              Explore all 24 workshop specimens →
             </a>
           </div>
         </div>
@@ -262,270 +274,268 @@ export default function Storefront() {
 
       {/* SECTION 2: CUSTOM PRINT UPLOADER (Interactive Estimator) */}
       <section className="w-full px-gutter-mobile md:px-margin py-space-xl" id="custom-quote">
-        <div className="w-full bg-surface-container-lowest border-[3px] border-on-surface rounded-[24px] neo-shadow-md p-6 sm:p-10">
+        <div className="w-full bg-surface-container-lowest border border-on-surface/12 rounded-[24px] shadow-sm p-6 sm:p-10">
           {/* Box Header */}
-          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between pb-6 border-b-[3px] border-on-surface gap-4">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between pb-6 border-b border-on-surface/10 gap-4">
             <div>
-              <span className="eyebrow eyebrow--blueprint" data-no="02">Instant Fabrication Estimator</span>
-              <h2 className="font-headline-lg text-headline-lg text-on-surface">Instant Slicer &amp; Quote Estimator</h2>
+              <span className="eyebrow-subtle font-spec-code text-[11px] font-bold text-primary tracking-widest uppercase">Instant Fabrication Workbench</span>
+              <h2 className="font-headline-lg text-[28px] sm:text-[38px] text-on-surface mt-1">Instant Slicer &amp; Quote Estimator</h2>
             </div>
-            <div className="flex items-center gap-3 bg-surface-container px-4 py-2 border-[2px] border-on-surface rounded-xl">
-              <span className="material-symbols-outlined text-primary text-[22px]">precision_manufacturing</span>
-              <span className="font-spec-code text-spec-code">Bed: 400 × 400 × 450 mm</span>
+            <div className="flex items-center gap-2.5 bg-surface-container-low px-4 py-2 border border-on-surface/10 rounded-full">
+              <span className="material-symbols-outlined text-primary text-[20px]">precision_manufacturing</span>
+              <span className="font-spec-code text-[12px] text-on-surface/80">Max Build: 400 × 400 × 450 mm</span>
             </div>
           </div>
           {/* Main Slicer Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-space-lg pt-space-md">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 pt-6">
             {/* Left Dropzone */}
             <div className="lg:col-span-6 flex flex-col">
-              <label className="block font-spec-code text-spec-code font-bold uppercase mb-2 text-on-surface">1. Upload Cad or 2D Reference</label>
-              <div className="flex-1 flex flex-col items-center justify-center border-[3px] border-dashed border-on-surface rounded-[20px] bg-surface-container-low p-8 text-center hover:bg-surface-container-high transition-colors cursor-pointer group" id="drop-area">
-                <div className="w-16 h-16 rounded-2xl bg-secondary-container border-[3px] border-on-surface flex items-center justify-center neo-shadow-sm group-hover:scale-105 transition-transform mb-4">
-                  <span className="material-symbols-outlined text-[36px] text-on-surface">upload_file</span>
+              <label className="block font-spec-code text-[12px] font-bold uppercase tracking-wider mb-2.5 text-on-surface">1. Upload CAD or 2D Reference</label>
+              <div className="flex-1 flex flex-col items-center justify-center border-2 border-dashed border-on-surface/20 rounded-2xl bg-[#f8faff] hover:bg-surface-container-low p-8 text-center transition-all cursor-pointer group" id="drop-area">
+                <div className="w-14 h-14 rounded-2xl bg-primary/10 text-primary flex items-center justify-center group-hover:scale-105 transition-transform mb-4">
+                  <span className="material-symbols-outlined text-[32px]">upload_file</span>
                 </div>
-                <h3 className="font-headline-sm text-headline-sm text-on-surface mb-2">Drop image or file here</h3>
-                <p className="font-body-md text-on-surface-variant max-w-sm mb-6">
+                <h3 className="font-headline-sm text-[20px] text-on-surface mb-1.5">Drop image or 3D file here</h3>
+                <p className="font-body-md text-[14px] text-on-surface-variant max-w-sm mb-5">
                   Accepts <strong>STL, OBJ, STEP, 3MF</strong>, or 2D phone photos, sketches &amp; vector logos.
                 </p>
                 <input accept=".stl,.obj,.step,.3mf,.png,.jpg,.jpeg" className="hidden" id="file-selector" type="file" />
-                <button className="px-6 py-3 bg-surface-container-lowest text-on-surface font-badge-md text-badge-md border-[3px] border-on-surface rounded-xl neo-shadow-sm hover:bg-secondary-container active:translate-x-0.5 active:translate-y-0.5 transition-all" onClick={() => document.getElementById("file-selector")?.click()} type="button">
+                <button className="px-6 py-2.5 bg-surface-container-lowest text-on-surface font-spec-code text-[13px] font-bold uppercase border border-on-surface/20 rounded-xl shadow-xs hover:border-on-surface/40 hover:bg-surface-container-low active:scale-[0.98] transition-all" onClick={() => document.getElementById("file-selector")?.click()} type="button">
                   Browse Workshop Files
                 </button>
-                <p className="font-spec-code text-spec-sm text-on-surface-variant mt-4">Max file size: 120MB per item</p>
+                <p className="font-spec-code text-[11px] text-on-surface-variant/80 mt-3.5">Max file size: 120MB per item</p>
               </div>
             </div>
             {/* Right Options & Live Quote */}
-            <div className="lg:col-span-6 flex flex-col space-y-space-md">
+            <div className="lg:col-span-6 flex flex-col space-y-5">
               {/* Size Selector */}
               <div>
                 <div className="flex justify-between items-baseline mb-2">
-                  <span className="font-spec-code text-spec-code font-bold uppercase text-on-surface">2. Select Scale / Height</span>
-                  <span className="font-spec-code text-spec-sm text-on-surface-variant">Z-Axis Dimensions</span>
+                  <span className="font-spec-code text-[12px] font-bold uppercase tracking-wider text-on-surface">2. Select Scale / Height</span>
+                  <span className="font-spec-code text-[11px] text-on-surface-variant">Z-Axis Dimensions</span>
                 </div>
-                <div className="flex flex-wrap gap-2.5" id="size-chip-group">
-                  <button className="size-chip px-4 py-2 rounded-xl border-[3px] border-on-surface font-spec-code text-spec-code font-bold bg-surface-container-lowest text-on-surface neo-shadow-sm transition-all" data-multiplier="0.8" type="button">5cm</button>
-                  <button className="size-chip active-chip px-4 py-2 rounded-xl border-[3px] border-on-surface font-spec-code text-spec-code font-bold bg-primary text-on-primary neo-shadow-sm transition-all" data-multiplier={1.0} type="button">10cm</button>
-                  <button className="size-chip px-4 py-2 rounded-xl border-[3px] border-on-surface font-spec-code text-spec-code font-bold bg-surface-container-lowest text-on-surface neo-shadow-sm transition-all" data-multiplier="1.6" type="button">15cm</button>
-                  <button className="size-chip px-4 py-2 rounded-xl border-[3px] border-on-surface font-spec-code text-spec-code font-bold bg-surface-container-lowest text-on-surface neo-shadow-sm transition-all" data-multiplier="2.2" type="button">20cm</button>
-                  <button className="size-chip px-4 py-2 rounded-xl border-[3px] border-on-surface font-spec-code text-spec-code font-bold bg-surface-container-lowest text-on-surface neo-shadow-sm transition-all" data-multiplier="3.5" type="button">Custom (Up to 40cm)</button>
+                <div className="flex flex-wrap gap-2" id="size-chip-group">
+                  <button className="size-chip px-4 py-2 rounded-xl border border-on-surface/15 font-spec-code text-[12px] font-bold bg-surface-container-lowest text-on-surface hover:border-on-surface/30 active:scale-[0.98] transition-all" data-multiplier="0.8" type="button">5cm</button>
+                  <button className="size-chip active-chip px-4 py-2 rounded-xl border border-primary font-spec-code text-[12px] font-bold bg-primary text-on-primary shadow-xs active:scale-[0.98] transition-all" data-multiplier={1.0} type="button">10cm</button>
+                  <button className="size-chip px-4 py-2 rounded-xl border border-on-surface/15 font-spec-code text-[12px] font-bold bg-surface-container-lowest text-on-surface hover:border-on-surface/30 active:scale-[0.98] transition-all" data-multiplier="1.6" type="button">15cm</button>
+                  <button className="size-chip px-4 py-2 rounded-xl border border-on-surface/15 font-spec-code text-[12px] font-bold bg-surface-container-lowest text-on-surface hover:border-on-surface/30 active:scale-[0.98] transition-all" data-multiplier="2.2" type="button">20cm</button>
+                  <button className="size-chip px-4 py-2 rounded-xl border border-on-surface/15 font-spec-code text-[12px] font-bold bg-surface-container-lowest text-on-surface hover:border-on-surface/30 active:scale-[0.98] transition-all" data-multiplier="3.5" type="button">Custom (Up to 40cm)</button>
                 </div>
               </div>
               {/* Material Selector */}
               <div>
                 <div className="flex justify-between items-baseline mb-2">
-                  <span className="font-spec-code text-spec-code font-bold uppercase text-on-surface">3. Filament / Resin Polymer</span>
-                  <span className="font-spec-code text-spec-sm text-on-surface-variant">Density &amp; Toughness</span>
+                  <span className="font-spec-code text-[12px] font-bold uppercase tracking-wider text-on-surface">3. Filament / Resin Polymer</span>
+                  <span className="font-spec-code text-[11px] text-on-surface-variant">Density &amp; Toughness</span>
                 </div>
-                <div className="flex flex-wrap gap-2.5" id="mat-chip-group">
-                  <button className="mat-chip active-chip px-4 py-2 rounded-xl border-[3px] border-on-surface font-spec-code text-spec-code font-bold bg-primary text-on-primary neo-shadow-sm transition-all" data-cost={0} type="button">PLA Pure</button>
-                  <button className="mat-chip px-4 py-2 rounded-xl border-[3px] border-on-surface font-spec-code text-spec-code font-bold bg-surface-container-lowest text-on-surface neo-shadow-sm transition-all" data-cost={120} type="button">PETG Tough</button>
-                  <button className="mat-chip px-4 py-2 rounded-xl border-[3px] border-on-surface font-spec-code text-spec-code font-bold bg-surface-container-lowest text-on-surface neo-shadow-sm transition-all" data-cost={280} type="button">8K Resin</button>
-                  <button className="mat-chip px-4 py-2 rounded-xl border-[3px] border-on-surface font-spec-code text-spec-code font-bold bg-surface-container-lowest text-on-surface neo-shadow-sm transition-all" data-cost={190} type="button">TPU Flex</button>
+                <div className="flex flex-wrap gap-2" id="mat-chip-group">
+                  <button className="mat-chip active-chip px-4 py-2 rounded-xl border border-primary font-spec-code text-[12px] font-bold bg-primary text-on-primary shadow-xs active:scale-[0.98] transition-all" data-cost={0} type="button">PLA Pure</button>
+                  <button className="mat-chip px-4 py-2 rounded-xl border border-on-surface/15 font-spec-code text-[12px] font-bold bg-surface-container-lowest text-on-surface hover:border-on-surface/30 active:scale-[0.98] transition-all" data-cost={120} type="button">PETG Tough</button>
+                  <button className="mat-chip px-4 py-2 rounded-xl border border-on-surface/15 font-spec-code text-[12px] font-bold bg-surface-container-lowest text-on-surface hover:border-on-surface/30 active:scale-[0.98] transition-all" data-cost={280} type="button">8K Resin</button>
+                  <button className="mat-chip px-4 py-2 rounded-xl border border-on-surface/15 font-spec-code text-[12px] font-bold bg-surface-container-lowest text-on-surface hover:border-on-surface/30 active:scale-[0.98] transition-all" data-cost={190} type="button">TPU Flex</button>
                 </div>
               </div>
               {/* Finish Selector */}
               <div>
                 <div className="flex justify-between items-baseline mb-2">
-                  <span className="font-spec-code text-spec-code font-bold uppercase text-on-surface">4. Post-Processing Finish</span>
+                  <span className="font-spec-code text-[12px] font-bold uppercase tracking-wider text-on-surface">4. Post-Processing Finish</span>
                 </div>
-                <div className="flex flex-wrap gap-2.5" id="finish-chip-group">
-                  <button className="finish-chip active-chip px-3.5 py-1.5 rounded-xl border-[3px] border-on-surface font-spec-code text-spec-sm font-bold bg-primary text-on-primary neo-shadow-sm transition-all" data-cost={0} type="button">Raw Layer Lines</button>
-                  <button className="finish-chip px-3.5 py-1.5 rounded-xl border-[3px] border-on-surface font-spec-code text-spec-sm font-bold bg-surface-container-lowest text-on-surface neo-shadow-sm transition-all" data-cost={150} type="button">Sanded Matte</button>
-                  <button className="finish-chip px-3.5 py-1.5 rounded-xl border-[3px] border-on-surface font-spec-code text-spec-sm font-bold bg-surface-container-lowest text-on-surface neo-shadow-sm transition-all" data-cost={390} type="button">Studio Painted</button>
+                <div className="flex flex-wrap gap-2" id="finish-chip-group">
+                  <button className="finish-chip active-chip px-4 py-2 rounded-xl border border-primary font-spec-code text-[12px] font-bold bg-primary text-on-primary shadow-xs active:scale-[0.98] transition-all" data-cost={0} type="button">Raw Layer Lines</button>
+                  <button className="finish-chip px-4 py-2 rounded-xl border border-on-surface/15 font-spec-code text-[12px] font-bold bg-surface-container-lowest text-on-surface hover:border-on-surface/30 active:scale-[0.98] transition-all" data-cost={150} type="button">Sanded Matte</button>
+                  <button className="finish-chip px-4 py-2 rounded-xl border border-on-surface/15 font-spec-code text-[12px] font-bold bg-surface-container-lowest text-on-surface hover:border-on-surface/30 active:scale-[0.98] transition-all" data-cost={390} type="button">Studio Painted</button>
                 </div>
               </div>
               {/* Live Price Banner Card */}
-              <div className="bg-secondary-container border-[3px] border-on-surface rounded-[20px] p-5 neo-shadow flex items-center justify-between gap-4">
+              <div className="bg-[#f0f5fc] border border-primary/20 rounded-2xl p-5 flex items-center justify-between gap-4">
                 <div>
-                  <span className="font-spec-code text-spec-sm text-on-surface font-bold uppercase tracking-wider block">Estimated Build Cost</span>
-                  <span className="font-badge-display text-[44px] text-on-surface leading-none" id="price-display">Rs 480</span>
+                  <span className="font-spec-code text-[11px] text-on-surface/70 font-bold uppercase tracking-wider block">Estimated Build Cost</span>
+                  <span className="font-badge-display text-[42px] text-primary leading-none" id="price-display">Rs 480</span>
                 </div>
                 <div className="text-right">
-                  <span className="lead-time-tag font-spec-code text-spec-code font-bold bg-surface-container-lowest px-3 py-1 border-[2px] border-on-surface rounded-full inline-block">
+                  <span className="lead-time-tag font-spec-code text-[11px] font-bold bg-surface-container-lowest px-3 py-1 border border-on-surface/15 rounded-full inline-block text-on-surface">
                     Ready in ~3 days
                   </span>
-                  <p className="font-spec-sm text-spec-sm text-on-surface mt-1">Includes support removal</p>
+                  <p className="font-spec-code text-[11px] text-on-surface/60 mt-1">Includes support removal</p>
                 </div>
               </div>
               {/* Action Button */}
-              <button className="w-full py-4 bg-primary text-on-primary font-badge-md text-badge-md border-[3px] border-on-surface rounded-xl neo-shadow-md hover:bg-secondary hover:-translate-y-0.5 active:translate-x-1 active:translate-y-1 active:shadow-none transition-all flex items-center justify-center gap-3" type="button">
-                <span>Get my quote</span>
-                <span className="material-symbols-outlined text-[24px]">arrow_forward</span>
+              <button className="w-full py-3.5 bg-primary text-on-primary font-spec-code text-[13px] font-bold uppercase rounded-xl border border-primary shadow-xs hover:bg-[#00479b] active:scale-[0.98] transition-all flex items-center justify-center gap-2" type="button">
+                <span>Lock in fabrication quote</span>
+                <span className="material-symbols-outlined text-[20px]">arrow_forward</span>
               </button>
               {/* Disclaimer Note */}
-              <p className="font-spec-code text-spec-sm text-on-surface text-center">
-                * No 3D file? Any 2D image works. Our team converts and slices it for you.
+              <p className="font-spec-code text-[11px] text-on-surface-variant/80 text-center">
+                * No CAD file? Any photo or napkin sketch works. Our engineering team prepares geometry.
               </p>
             </div>
           </div>
         </div>
       </section>
       {/* SECTION 3: HOW IT WORKS */}
-      <section className="w-full px-gutter-mobile md:px-margin py-space-xl">
-        <div className="section-heading flex flex-col space-y-space-md mb-space-lg">
-          <div className="process-label inline-block self-start font-spec-code text-spec-sm font-bold uppercase px-3 py-1 bg-surface-container-highest border-[2px] border-on-surface rounded-lg">
-            Direct Flow Procedure
-          </div>
-          <h2 className="font-headline-lg text-[44px] sm:text-[64px] leading-tight text-on-surface">
-            From your brain to your desk in 4 steps
+      <section className="w-full px-gutter-mobile md:px-margin py-space-xl" id="how-it-works">
+        <div className="section-heading flex flex-col space-y-2 mb-8">
+          <span className="eyebrow-subtle font-spec-code text-[11px] font-bold text-primary tracking-widest uppercase">
+            Fabrication Protocol
+          </span>
+          <h2 className="font-headline-lg text-[32px] sm:text-[46px] leading-tight text-on-surface">
+            From your concept to your desk in 4 steps
           </h2>
         </div>
-        {/* Decorative Nozzle Squiggle Path */}
-        <div className="w-full relative">
-          <div className="hidden lg:block absolute top-12 left-10 right-10 h-6 -z-0 pointer-events-none">
-            <svg className="w-full h-full text-on-surface" fill="none" preserveAspectRatio="none" viewBox="0 0 1000 24">
-              <path d="M 0 12 Q 125 0, 250 12 T 500 12 T 750 12 T 1000 12" stroke="currentColor" strokeDasharray="6 6" strokeWidth={3} />
-            </svg>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative z-10">
+        <div className="w-full">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
             {/* Step 1 */}
-            <div className="bg-surface-container-lowest border-[3px] border-on-surface rounded-[20px] p-5 neo-shadow hover:-translate-y-1 transition-transform">
-              <div className="flex items-baseline justify-between mb-4">
-                <span className="font-badge-display text-[48px] text-primary leading-none">01</span>
-                <span className="spec-tag font-spec-code text-spec-sm bg-surface-container px-2 py-0.5 border-[2px] border-on-surface rounded">FILE / SKETCH</span>
+            <div className="bg-surface-container-lowest border border-on-surface/10 rounded-2xl p-5 shadow-sm hover:border-primary/40 hover:shadow-md transition-all">
+              <div className="flex items-baseline justify-between mb-3">
+                <span className="font-badge-display text-[38px] text-primary leading-none">01</span>
+                <span className="font-spec-code text-[11px] font-bold text-on-surface/70 bg-surface-container-low px-2 py-0.5 rounded border border-on-surface/10">CAD / SKETCH</span>
               </div>
-              <h3 className="font-headline-sm text-headline-sm text-on-surface mb-2">Upload</h3>
-              <p className="font-body-md text-body-md text-on-surface-variant mb-4">
-                Drop any CAD file, napkin sketch, screenshot or photo.
+              <h3 className="font-headline-sm text-[20px] text-on-surface mb-1.5">Upload Concept</h3>
+              <p className="font-body-md text-[14px] text-on-surface-variant mb-4">
+                Drop any 3D model, napkin sketch, screenshot or camera photo.
               </p>
-              <div className="w-full h-36 rounded-xl overflow-hidden border-[2px] border-on-surface bg-surface-container">
+              <div className="w-full h-36 rounded-xl overflow-hidden border border-on-surface/10 bg-surface-container">
                 <img className="w-full h-full object-cover" data-alt="A blueprint engineering sketch and wireframe 3D model CAD viewport displayed on a laptop screen next to a coffee cup and mechanical pencil." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRWnfnpmun0Z6eQi4Kcp2HxZag1x0GwJNWZ-UL6VJ5W3v5g5D8Q_BJMZ14QHU5BhgGfoimPqLnAOwbCs6dxtSwxSIUdS6W2Li4JtawTW7P_qiawf6--PA9RLynncMwg3fWAzUkrtiut3BdcCF_Ng73MW1X5CP-NGeYTRhIwk56kiBiThIEkQQwzC3f2M0JKxMeRXlHDMEv1YPpiBAf7Hw1PTDZC3NWLXXGWIEpMrQ" />
               </div>
             </div>
             {/* Step 2 */}
-            <div className="bg-surface-container-lowest border-[3px] border-on-surface rounded-[20px] p-5 neo-shadow hover:-translate-y-1 transition-transform">
-              <div className="flex items-baseline justify-between mb-4">
-                <span className="font-badge-display text-[48px] text-secondary-container leading-none">02</span>
-                <span className="spec-tag font-spec-code text-spec-sm bg-surface-container px-2 py-0.5 border-[2px] border-on-surface rounded">SPECS</span>
+            <div className="bg-surface-container-lowest border border-on-surface/10 rounded-2xl p-5 shadow-sm hover:border-primary/40 hover:shadow-md transition-all">
+              <div className="flex items-baseline justify-between mb-3">
+                <span className="font-badge-display text-[38px] text-primary leading-none">02</span>
+                <span className="font-spec-code text-[11px] font-bold text-on-surface/70 bg-surface-container-low px-2 py-0.5 rounded border border-on-surface/10">DIMENSIONS</span>
               </div>
-              <h3 className="font-headline-sm text-headline-sm text-on-surface mb-2">Choose size</h3>
-              <p className="font-body-md text-body-md text-on-surface-variant mb-4">
-                Pick scale, infill density &amp; material finish to match your use.
+              <h3 className="font-headline-sm text-[20px] text-on-surface mb-1.5">Configure Spec</h3>
+              <p className="font-body-md text-[14px] text-on-surface-variant mb-4">
+                Pick scale, wall density and polymer finish to match your load requirements.
               </p>
-              <div className="w-full h-36 rounded-xl overflow-hidden border-[2px] border-on-surface bg-surface-container">
+              <div className="w-full h-36 rounded-xl overflow-hidden border border-on-surface/10 bg-surface-container">
                 <img className="w-full h-full object-cover" data-alt="Precision stainless steel digital vernier calipers measuring the exact diameter of a vibrant blue filament spool with millimeter markings visible." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAz4BVyXxVT8xbre7TfhwNLG5Pd6shCx899Gb0NbPLHf5HFmWIlM3Hlo01fuXslcSNUY7bG-DuLBInOIVrJUgszumIxangmbct1g5V6oFcyfFdOXnZUSA0RCjIAK0vr-Z0kENXV66KvQEFboL_qbI8pZ1LpoaR_reRTz2wvcftuZc30uDTo-XbL1xTI0IFjqR1mWBoQGLhXS1T_cbvWJOtBrAl9Hi2Ok3CwNnpl2x4" />
               </div>
             </div>
             {/* Step 3 */}
-            <div className="bg-surface-container-lowest border-[3px] border-on-surface rounded-[20px] p-5 neo-shadow hover:-translate-y-1 transition-transform">
-              <div className="flex items-baseline justify-between mb-4">
-                <span className="font-badge-display text-[48px] text-primary leading-none">03</span>
-                <span className="spec-tag font-spec-code text-spec-sm bg-surface-container px-2 py-0.5 border-[2px] border-on-surface rounded">HOTEND ACTIVE</span>
+            <div className="bg-surface-container-lowest border border-on-surface/10 rounded-2xl p-5 shadow-sm hover:border-primary/40 hover:shadow-md transition-all">
+              <div className="flex items-baseline justify-between mb-3">
+                <span className="font-badge-display text-[38px] text-primary leading-none">03</span>
+                <span className="font-spec-code text-[11px] font-bold text-on-surface/70 bg-surface-container-low px-2 py-0.5 rounded border border-on-surface/10">HOTEND ACTIVE</span>
               </div>
-              <h3 className="font-headline-sm text-headline-sm text-on-surface mb-2">We print</h3>
-              <p className="font-body-md text-body-md text-on-surface-variant mb-4">
-                Precision extruders lay down molten polymers layer-by-layer.
+              <h3 className="font-headline-sm text-[20px] text-on-surface mb-1.5">Precision Print</h3>
+              <p className="font-body-md text-[14px] text-on-surface-variant mb-4">
+                High-flow nozzles extrude molten engineering polymers layer-by-layer.
               </p>
-              <div className="w-full h-36 rounded-xl overflow-hidden border-[2px] border-on-surface bg-surface-container">
+              <div className="w-full h-36 rounded-xl overflow-hidden border border-on-surface/10 bg-surface-container">
                 <img className="w-full h-full object-cover" data-alt="Extreme macro shot of a brass 3D printer nozzle extruding clean lines of blue molten thermoplastic polymer onto a textured heated bed." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0WN6_lFDSsh1q_z7VwOk-VsS86yMas1fLnWgQP6unP7XLycq9kuRvu9Y0Y8e8xZsoHxWcNuJFTqdUoF9hPOaw3FO_tU0V0cgAYIbvEQjMMpQ7CIPyPJwvaxPyulwXEKLDeILkle_pi67Y7YsBZqUsPd1rsM_ZxKPQO-QlsMxpDLo0cyU5-Hz1jyIFtM5nybDU_ASl23Vlr7lWx0KROoZqpOw4aCHg4tAvfA2Gvw0" />
               </div>
             </div>
             {/* Step 4 */}
-            <div className="bg-surface-container-lowest border-[3px] border-on-surface rounded-[20px] p-5 neo-shadow hover:-translate-y-1 transition-transform">
-              <div className="flex items-baseline justify-between mb-4">
-                <span className="font-badge-display text-[48px] text-on-surface leading-none">04</span>
-                <span className="spec-tag font-spec-code text-spec-sm bg-surface-container px-2 py-0.5 border-[2px] border-on-surface rounded">EXPEDITE</span>
+            <div className="bg-surface-container-lowest border border-on-surface/10 rounded-2xl p-5 shadow-sm hover:border-primary/40 hover:shadow-md transition-all">
+              <div className="flex items-baseline justify-between mb-3">
+                <span className="font-badge-display text-[38px] text-on-surface leading-none">04</span>
+                <span className="font-spec-code text-[11px] font-bold text-on-surface/70 bg-surface-container-low px-2 py-0.5 rounded border border-on-surface/10">DISPATCH</span>
               </div>
-              <h3 className="font-headline-sm text-headline-sm text-on-surface mb-2">Delivered</h3>
-              <p className="font-body-md text-body-md text-on-surface-variant mb-4">
-                Cleaned, inspected and boxed straight to your door safely.
+              <h3 className="font-headline-sm text-[20px] text-on-surface mb-1.5">Inspected &amp; Shipped</h3>
+              <p className="font-body-md text-[14px] text-on-surface-variant mb-4">
+                Cleaned, dimensional QC verified, and safely packed straight to your door.
               </p>
-              <div className="w-full h-36 rounded-xl overflow-hidden border-[2px] border-on-surface bg-surface-container">
+              <div className="w-full h-36 rounded-xl overflow-hidden border border-on-surface/10 bg-surface-container">
                 <img className="w-full h-full object-cover" data-alt="Kraft cardboard shipping box carefully packed with honeycomb paper cushion and custom 3D printed mechanical parts ready for express shipping." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDO71TlPCt1W35KR5kJgARcA0KIuJFWsepZe6-EmDWpaF_E17Zk7GywOO_s4V2ovGf3oCxLYEDTpYPI_TGfKvjBW2neb6F-F7iQkE1rNsq9aw-_PUKwYyiaBNazEhzBJZsMPutNi8wMU_1ChA04zO0_tWtgQtHIbyrFwtzIUswsV5XIQt8hGtPKu6CEjZO0ion7ZWX_FVpmD9w0Q5ZH6oUVXtGza7uUARGvq-w6Wm0" />
               </div>
             </div>
           </div>
         </div>
       </section>
-      {/* SECTION 4: WHAT CAN WE PRINT (Bento Grid) */}
+
+      {/* SECTION 4: WHAT CAN WE PRINT (Specimen Showcase Grid) */}
       <section className="w-full px-gutter-mobile md:px-margin py-space-xl">
-        <div className="section-heading flex flex-col sm:flex-row items-baseline justify-between gap-4 mb-space-lg">
-          <h2 className="font-headline-lg text-[40px] sm:text-[60px] text-on-surface">
-            What can we print? <span className="text-primary">(Literally whatever)</span>
-          </h2>
-          <span className="blueprint-label font-spec-code text-spec-code text-on-surface font-bold bg-secondary-container px-3 py-1 border-[2px] border-on-surface rounded-lg">
+        <div className="section-heading flex flex-col sm:flex-row items-baseline justify-between gap-4 mb-8">
+          <div>
+            <span className="eyebrow-subtle font-spec-code text-[11px] font-bold text-primary tracking-widest uppercase">Print Portfolio</span>
+            <h2 className="font-headline-lg text-[32px] sm:text-[46px] text-on-surface mt-1">
+              What can we print? <span className="text-primary">(Any geometry)</span>
+            </h2>
+          </div>
+          <span className="font-spec-code text-[12px] font-bold text-on-surface bg-surface-container-low px-3.5 py-1.5 border border-on-surface/10 rounded-full">
             0.12 - 0.28mm Precision
           </span>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-5">
           {/* Tile 1 (Large 7 cols): Figurines */}
-          <div className="md:col-span-7 bg-surface-container-lowest border-[3px] border-on-surface rounded-[20px] p-6 neo-shadow hover:-translate-y-1 transition-transform flex flex-col justify-between">
+          <div className="md:col-span-7 bg-surface-container-lowest border border-on-surface/10 rounded-2xl p-6 shadow-sm hover:border-primary/40 hover:shadow-md transition-all flex flex-col justify-between">
             <div className="flex items-center justify-between mb-4">
-              <h3 className="font-headline-sm text-[26px] text-on-surface">Figurines and gifts</h3>
-              <span className="spec-tag font-spec-code text-spec-sm px-2.5 py-1 bg-surface-container border-[2px] border-on-surface rounded-full">RESIN &amp; HIGH-RES PLA</span>
+              <h3 className="font-headline-sm text-[22px] text-on-surface">Figurines and gifts</h3>
+              <span className="font-spec-code text-[11px] font-bold px-2.5 py-1 bg-surface-container-low text-primary border border-primary/20 rounded-full">RESIN &amp; HIGH-RES PLA</span>
             </div>
-            <div className="w-full h-72 rounded-xl overflow-hidden border-[2px] border-on-surface bg-surface-container mb-4">
-              <img className="w-full h-full object-cover" data-alt="Collection of highly detailed tabletop fantasy miniature figures printed in resin and matte grey filament with ultra-crisp armor textures on a wooden crafting table." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCW5JYnbf5KihUitv567Scu_dIkejBnsgljcoaAbpEyxZ_19L0rhkOSkmfyFuXJ_ABxMsCjT1H-8r7qAGib9iVOtg6J2BTVZeN339XlG8ZDCN0AXmvY1Al_XNr_AZYkY1oUsm4-Z28lzbLkXxFv9cBxHq-qPJdP6Pi2M0RJhMsRF75ZR4hX6_BDQ2b7rc6K8pDjJW4hBIQ6P7OiNoKv2PXjGRQo_VEpUjgH3faS9vE" />
+            <div className="w-full h-72 rounded-xl overflow-hidden border border-on-surface/10 bg-[#eef3f9] mb-4">
+              <img className="w-full h-full object-cover hover:scale-[1.03] transition-transform duration-300" data-alt="Collection of highly detailed tabletop fantasy miniature figures printed in resin and matte grey filament with ultra-crisp armor textures on a wooden crafting table." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCW5JYnbf5KihUitv567Scu_dIkejBnsgljcoaAbpEyxZ_19L0rhkOSkmfyFuXJ_ABxMsCjT1H-8r7qAGib9iVOtg6J2BTVZeN339XlG8ZDCN0AXmvY1Al_XNr_AZYkY1oUsm4-Z28lzbLkXxFv9cBxHq-qPJdP6Pi2M0RJhMsRF75ZR4hX6_BDQ2b7rc6K8pDjJW4hBIQ6P7OiNoKv2PXjGRQo_VEpUjgH3faS9vE" />
             </div>
-            <p className="font-body-md text-on-surface-variant">Custom portraits, anime collectibles, and customized avatars ready for desktop display.</p>
+            <p className="font-body-md text-[14px] text-on-surface-variant">Custom portraits, anime collectibles, and customized avatars ready for desktop display.</p>
           </div>
           {/* Tile 2 (5 cols): Cosplay & Props */}
-          <div className="md:col-span-5 bg-surface-container-lowest border-[3px] border-on-surface rounded-[20px] p-6 neo-shadow hover:-translate-y-1 transition-transform flex flex-col justify-between">
+          <div className="md:col-span-5 bg-surface-container-lowest border border-on-surface/10 rounded-2xl p-6 shadow-sm hover:border-primary/40 hover:shadow-md transition-all flex flex-col justify-between">
             <div className="flex items-center justify-between mb-4">
-              <h3 className="font-headline-sm text-[26px] text-on-surface">Cosplay and props</h3>
-              <span className="spec-tag font-spec-code text-spec-sm px-2.5 py-1 bg-surface-container border-[2px] border-on-surface rounded-full">LARGE VOLUME</span>
+              <h3 className="font-headline-sm text-[22px] text-on-surface">Cosplay and props</h3>
+              <span className="font-spec-code text-[11px] font-bold px-2.5 py-1 bg-surface-container-low text-primary border border-primary/20 rounded-full">LARGE VOLUME</span>
             </div>
-            <div className="w-full h-72 rounded-xl overflow-hidden border-[2px] border-on-surface bg-surface-container mb-4">
-              <img className="w-full h-full object-cover" data-alt="A life-sized wearable futuristic cyberpunk sci-fi helmet printed in split sections with visible interlocking tabs and smooth satin surface finish." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBD5-DI0nDKUP7Yhp-P7u-UR8I4Ha09Moo2saB4enFKK_fWrjfE1VR9lJ_Bg5HU6VOVf3kFqCPHgRgk-SrQDs-sKVVJUpeOQaHLlE9pg2LPoi3cyFI0U91_T1AByKCkxiNx0rVT8xMwqH2cQ9xsFZm7IXpRYsdezHYsGPTjfIcBXExIHMl1Q5tQ6tPt0Ze1jrPJ0DBgt0JRSnjo9xyZNp3xlFNuGs3TgFblDinwuag" />
+            <div className="w-full h-72 rounded-xl overflow-hidden border border-on-surface/10 bg-[#eef3f9] mb-4">
+              <img className="w-full h-full object-cover hover:scale-[1.03] transition-transform duration-300" data-alt="A life-sized wearable futuristic cyberpunk sci-fi helmet printed in split sections with visible interlocking tabs and smooth satin surface finish." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBD5-DI0nDKUP7Yhp-P7u-UR8I4Ha09Moo2saB4enFKK_fWrjfE1VR9lJ_Bg5HU6VOVf3kFqCPHgRgk-SrQDs-sKVVJUpeOQaHLlE9pg2LPoi3cyFI0U91_T1AByKCkxiNx0rVT8xMwqH2cQ9xsFZm7IXpRYsdezHYsGPTjfIcBXExIHMl1Q5tQ6tPt0Ze1jrPJ0DBgt0JRSnjo9xyZNp3xlFNuGs3TgFblDinwuag" />
             </div>
-            <p className="font-body-md text-on-surface-variant">Multi-part wearable gear, weapons, masks, and life-size convention display pieces.</p>
+            <p className="font-body-md text-[14px] text-on-surface-variant">Multi-part wearable gear, weapons, masks, and life-size convention display pieces.</p>
           </div>
           {/* Tile 3 (4 cols): Lamps and decor */}
-          <div className="md:col-span-4 bg-surface-container-lowest border-[3px] border-on-surface rounded-[20px] p-6 neo-shadow hover:-translate-y-1 transition-transform flex flex-col justify-between">
-            <div className="flex items-center justify-between mb-4">
-              <h3 className="font-headline-sm text-headline-sm text-on-surface">Lamps &amp; decor</h3>
+          <div className="md:col-span-4 bg-surface-container-lowest border border-on-surface/10 rounded-2xl p-5 shadow-sm hover:border-primary/40 hover:shadow-md transition-all flex flex-col justify-between">
+            <div className="flex items-center justify-between mb-3">
+              <h3 className="font-headline-sm text-[18px] text-on-surface">Lamps &amp; decor</h3>
             </div>
-            <div className="w-full h-52 rounded-xl overflow-hidden border-[2px] border-on-surface bg-surface-container mb-3">
-              <img className="w-full h-full object-cover" data-alt="Complex 3D printed translucent geometric parametric lampshade casting intricate cellular shadow patterns on a bedroom wall." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYJkOEiu-VwCFnlqS5nTONrXLtz06SbCuI939MenqA47P8xVsDOil8TuyczK_juiWsJ33ZuW5NA1e2jpC2p02biT1mi7ECQ2VtzXwZ6d0p9RNjUrkLUrnGji3xWxUqWCNuxPRO2kyC3ewl--uPkChhDSNXhXWhvbcN_J6xFCID8oxkRLgHrWDOaBD_VQPegK-WHFl-Mbq59oC16Q2ndlMaEE4J88_-HSjlk9ddNIg" />
+            <div className="w-full h-52 rounded-xl overflow-hidden border border-on-surface/10 bg-[#eef3f9] mb-3">
+              <img className="w-full h-full object-cover hover:scale-[1.03] transition-transform duration-300" data-alt="Complex 3D printed translucent geometric parametric lampshade casting intricate cellular shadow patterns on a bedroom wall." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYJkOEiu-VwCFnlqS5nTONrXLtz06SbCuI939MenqA47P8xVsDOil8TuyczK_juiWsJ33ZuW5NA1e2jpC2p02biT1mi7ECQ2VtzXwZ6d0p9RNjUrkLUrnGji3xWxUqWCNuxPRO2kyC3ewl--uPkChhDSNXhXWhvbcN_J6xFCID8oxkRLgHrWDOaBD_VQPegK-WHFl-Mbq59oC16Q2ndlMaEE4J88_-HSjlk9ddNIg" />
             </div>
-            <p className="font-body-md text-on-surface-variant">Diffusion shades, Voronoi vases, and wall art.</p>
+            <p className="font-body-md text-[13px] text-on-surface-variant">Diffusion shades, Voronoi vases, and ambient wall art.</p>
           </div>
           {/* Tile 4 (4 cols): Gadgets and stands */}
-          <div className="md:col-span-4 bg-surface-container-lowest border-[3px] border-on-surface rounded-[20px] p-6 neo-shadow hover:-translate-y-1 transition-transform flex flex-col justify-between">
-            <div className="flex items-center justify-between mb-4">
-              <h3 className="font-headline-sm text-headline-sm text-on-surface">Gadgets &amp; stands</h3>
+          <div className="md:col-span-4 bg-surface-container-lowest border border-on-surface/10 rounded-2xl p-5 shadow-sm hover:border-primary/40 hover:shadow-md transition-all flex flex-col justify-between">
+            <div className="flex items-center justify-between mb-3">
+              <h3 className="font-headline-sm text-[18px] text-on-surface">Gadgets &amp; stands</h3>
             </div>
-            <div className="w-full h-52 rounded-xl overflow-hidden border-[2px] border-on-surface bg-surface-container mb-3">
-              <img className="w-full h-full object-cover" data-alt="Minimalist ergonomic mechanical keyboard stand and braided cable organizer dock printed in matte textured polymer on an organized workstation." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwX2DNHvU4GgerXPIOn3W_eXRUIobSnZNaScL5kLaYUtqDkH6_CQrpTkpCNMIHDMSC6qsEh9C3bh5r8TEalcospgkW7Ciae7-gO6BRYAq82h7dW9t-T7X-NJRmAXOADULFbgXH3RBenF_PQ34yKMhqcM9yuG_Vq752UuBPXTV1W6vYhXMVSAQhWSfsB5HwaznfNQowK4UAACgxvYUHGQGga1foe-oghWykTTeMpdg" />
+            <div className="w-full h-52 rounded-xl overflow-hidden border border-on-surface/10 bg-[#eef3f9] mb-3">
+              <img className="w-full h-full object-cover hover:scale-[1.03] transition-transform duration-300" data-alt="Minimalist ergonomic mechanical keyboard stand and braided cable organizer dock printed in matte textured polymer on an organized workstation." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwX2DNHvU4GgerXPIOn3W_eXRUIobSnZNaScL5kLaYUtqDkH6_CQrpTkpCNMIHDMSC6qsEh9C3bh5r8TEalcospgkW7Ciae7-gO6BRYAq82h7dW9t-T7X-NJRmAXOADULFbgXH3RBenF_PQ34yKMhqcM9yuG_Vq752UuBPXTV1W6vYhXMVSAQhWSfsB5HwaznfNQowK4UAACgxvYUHGQGga1foe-oghWykTTeMpdg" />
             </div>
-            <p className="font-body-md text-on-surface-variant">Desk organizers, MagSafe cradles, headset trees.</p>
+            <p className="font-body-md text-[13px] text-on-surface-variant">Desk organizers, MagSafe cradles, headset trees.</p>
           </div>
           {/* Tile 5 (4 cols): Spare parts */}
-          <div className="md:col-span-4 bg-surface-container-lowest border-[3px] border-on-surface rounded-[20px] p-6 neo-shadow hover:-translate-y-1 transition-transform flex flex-col justify-between">
-            <div className="flex items-center justify-between mb-4">
-              <h3 className="font-headline-sm text-headline-sm text-on-surface">Spare parts</h3>
+          <div className="md:col-span-4 bg-surface-container-lowest border border-on-surface/10 rounded-2xl p-5 shadow-sm hover:border-primary/40 hover:shadow-md transition-all flex flex-col justify-between">
+            <div className="flex items-center justify-between mb-3">
+              <h3 className="font-headline-sm text-[18px] text-on-surface">Spare parts</h3>
             </div>
-            <div className="w-full h-52 rounded-xl overflow-hidden border-[2px] border-on-surface bg-surface-container mb-3">
-              <img className="w-full h-full object-cover" data-alt="Functional engineering prototype mechanical gears, brackets, and motor couplings in tough PETG filament alongside metal bolts and nuts." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA12zLC1w8lwTCsKGMPUIzv9yNb4MnCWuEoAQkGF-JOgrsy6vdZRY8yVc8srNX0s0QFpVrRw4C2KbXhicH7LYETVGTQapT1lI3ZhNh_9zqPtdSuR-lBkKhkgGVWdHvgzwhpE6pkGUFHWoc6HrSeasqfKgqrDTUznMy3vP_7PstH0Lc1NODzzlM4MFv95EHfZFhJvgRgUOzUTO6cBfeIWxmDm12PvHMrSJp6X02b87o" />
+            <div className="w-full h-52 rounded-xl overflow-hidden border border-on-surface/10 bg-[#eef3f9] mb-3">
+              <img className="w-full h-full object-cover hover:scale-[1.03] transition-transform duration-300" data-alt="Functional engineering prototype mechanical gears, brackets, and motor couplings in tough PETG filament alongside metal bolts and nuts." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA12zLC1w8lwTCsKGMPUIzv9yNb4MnCWuEoAQkGF-JOgrsy6vdZRY8yVc8srNX0s0QFpVrRw4C2KbXhicH7LYETVGTQapT1lI3ZhNh_9zqPtdSuR-lBkKhkgGVWdHvgzwhpE6pkGUFHWoc6HrSeasqfKgqrDTUznMy3vP_7PstH0Lc1NODzzlM4MFv95EHfZFhJvgRgUOzUTO6cBfeIWxmDm12PvHMrSJp6X02b87o" />
             </div>
-            <p className="font-body-md text-on-surface-variant">Discontinued appliance gears, latches &amp; brackets.</p>
+            <p className="font-body-md text-[13px] text-on-surface-variant">Discontinued appliance gears, latches &amp; mounts.</p>
           </div>
           {/* Tile 6 (6 cols): Nameplates and keychains */}
-          <div className="md:col-span-6 bg-surface-container-lowest border-[3px] border-on-surface rounded-[20px] p-6 neo-shadow hover:-translate-y-1 transition-transform flex flex-col justify-between">
-            <div className="flex items-center justify-between mb-4">
-              <h3 className="font-headline-sm text-headline-sm text-on-surface">Nameplates &amp; keychains</h3>
-              <span className="spec-tag font-spec-code text-spec-sm font-bold bg-secondary-container px-2 py-0.5 border-[2px] border-on-surface rounded">DUAL COLOR</span>
+          <div className="md:col-span-6 bg-surface-container-lowest border border-on-surface/10 rounded-2xl p-6 shadow-sm hover:border-primary/40 hover:shadow-md transition-all flex flex-col justify-between">
+            <div className="flex items-center justify-between mb-3">
+              <h3 className="font-headline-sm text-[20px] text-on-surface">Nameplates &amp; keychains</h3>
+              <span className="font-spec-code text-[11px] font-bold text-primary bg-surface-container-low px-2.5 py-0.5 rounded border border-primary/20">DUAL COLOR</span>
             </div>
-            <div className="w-full h-44 rounded-xl overflow-hidden border-[2px] border-on-surface bg-surface-container mb-3">
-              <img className="w-full h-full object-cover" data-alt="Top-down shot of vibrant dual-extrusion tactile keychains with embossed typography and bold contrasting lettering on a desk." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEl2ZEwG1PZ9qQPsML4gSyTAEP3wo31HlsotJwGgRl9UDHvoUGbQReQ-b7TjrakA-_zsQ5UXDecACuAs04BHyRUlZFJLSMZVOjvcm52Mjc1A51HEC80u3Thxdl0sAvNS2MkJ1blouhxpvHkDxWqPE-HQvcrxcepxiwtwhT5QGDJD5-yyvKFuQULMS_FYFbUFG9eI1mBKL5Kiwy-uIvyZNX4sye5KESenZtAzmIzWA" />
+            <div className="w-full h-48 rounded-xl overflow-hidden border border-on-surface/10 bg-[#eef3f9] mb-3">
+              <img className="w-full h-full object-cover hover:scale-[1.03] transition-transform duration-300" data-alt="Top-down shot of vibrant dual-extrusion tactile keychains with embossed typography and bold contrasting lettering on a desk." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEl2ZEwG1PZ9qQPsML4gSyTAEP3wo31HlsotJwGgRl9UDHvoUGbQReQ-b7TjrakA-_zsQ5UXDecACuAs04BHyRUlZFJLSMZVOjvcm52Mjc1A51HEC80u3Thxdl0sAvNS2MkJ1blouhxpvHkDxWqPE-HQvcrxcepxiwtwhT5QGDJD5-yyvKFuQULMS_FYFbUFG9eI1mBKL5Kiwy-uIvyZNX4sye5KESenZtAzmIzWA" />
             </div>
-            <p className="font-body-md text-on-surface-variant">Custom gamer tags, luggage labels, and company tokens.</p>
+            <p className="font-body-md text-[14px] text-on-surface-variant">Custom gamer tags, luggage labels, and company tokens.</p>
           </div>
-          {/* Tile 7 (6 cols): Solid blue interactive WhatsApp tile */}
-          <div className="md:col-span-6 bg-primary text-on-primary border-[3px] border-on-surface rounded-[20px] p-6 neo-shadow hover:-translate-y-1 transition-transform flex flex-col justify-between">
+          {/* Tile 7 (6 cols): Atelier WhatsApp concierge */}
+          <div className="md:col-span-6 bg-primary text-on-primary rounded-2xl p-6 shadow-sm hover:bg-[#00479b] transition-all flex flex-col justify-between">
             <div>
-              <span className="eyebrow eyebrow--signal font-spec-code text-spec-sm font-bold uppercase tracking-widest text-on-primary opacity-80">Have a Wild Concept?</span>
-              <h3 className="font-headline-lg text-[34px] sm:text-[40px] text-on-primary leading-tight mt-1 mb-2">
-                Something weird? Ask us on WhatsApp.
+              <span className="font-spec-code text-[11px] font-bold uppercase tracking-widest text-on-primary/80">Direct Concierge</span>
+              <h3 className="font-headline-lg text-[28px] sm:text-[34px] text-on-primary leading-tight mt-1 mb-2">
+                Have a unique design in mind?
               </h3>
-              <p className="font-body-md text-on-primary opacity-90 max-w-md">
-                Our fabrication engineers respond in minutes. No CAD skill required—send sketches, photos, or voice notes.
+              <p className="font-body-md text-[14px] text-on-primary/90 max-w-md">
+                Our fabrication engineers respond promptly. No CAD skill required—send sketches, photos, or voice notes.
               </p>
             </div>
             <div className="pt-6">
-              <a className="inline-flex items-center gap-3 px-6 py-3.5 bg-surface-container-lowest text-on-surface font-badge-md text-badge-md border-[3px] border-on-surface rounded-xl neo-shadow-sm hover:bg-secondary-container active:translate-x-0.5 active:translate-y-0.5 transition-all" href="#">
-                <span>Chat with Slicer Engineer</span>
-                <span className="material-symbols-outlined text-[20px]">chat</span>
+              <a className="inline-flex items-center gap-2 px-6 py-3 bg-surface-container-lowest text-on-surface font-spec-code text-[12px] font-bold uppercase rounded-xl shadow-xs hover:bg-surface-container-low active:scale-[0.98] transition-all" href="#">
+                <span>Chat with Fabrication Engineer</span>
+                <span className="material-symbols-outlined text-[18px]">chat</span>
               </a>
             </div>
           </div>
@@ -605,192 +615,192 @@ export default function Storefront() {
         </div>
       </section>
       {/* SECTION 6: SHOW US YOUR WEIRD (Community Proof) */}
-      <section className="w-full px-gutter-mobile md:px-margin py-space-xl bg-surface-container-low border-y-[3px] border-on-surface">
-        <div className="section-heading flex flex-col space-y-space-xs mb-space-lg">
-          <div className="eyebrow eyebrow--field inline-block self-start font-spec-code text-spec-sm font-bold uppercase px-3 py-1 bg-secondary-container border-[2px] border-on-surface rounded-lg rotate-1">
-            Verified Field Prints
-          </div>
-          <h2 className="font-headline-lg text-[44px] sm:text-[64px] text-on-surface">Show us your weird</h2>
-          <p className="font-body-lg text-body-lg text-on-surface-variant">Real customer prints tagged from the wild. Zero mockups, pure layer lines.</p>
+      <section className="w-full px-gutter-mobile md:px-margin py-space-xl bg-[#f4f7fb] border-y border-on-surface/10">
+        <div className="section-heading flex flex-col space-y-2 mb-8">
+          <span className="eyebrow-subtle font-spec-code text-[11px] font-bold text-primary tracking-widest uppercase">
+            Field Inspection Log
+          </span>
+          <h2 className="font-headline-lg text-[32px] sm:text-[46px] text-on-surface">Specimens in the wild</h2>
+          <p className="font-body-lg text-body-lg text-on-surface-variant">Real customer fabrications tagged from the wild. Zero mockups, authentic layer lines.</p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
           {/* Community Item 1 */}
-          <div className="md:col-span-4 flex flex-col space-y-4">
-            <div className="bg-surface-container-lowest border-[3px] border-on-surface rounded-[20px] p-4 neo-shadow rotate-[-1deg]">
-              <div className="w-full h-64 rounded-xl overflow-hidden border-[2px] border-on-surface bg-surface-container">
-                <img className="w-full h-full object-cover" data-alt="3D printed customized realistic dog bust figurine in matte bone-white PLA standing next to an actual golden retriever looking curiously at it." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpGG6wo1HxGSuNZDJYoVYFG3MyPqZGDKYQu_gE8XPPZPKP_fcVFHwR7dbxtT1Ded0YV-lfh0o2iMZctfsUEfe4EUPSZOmdXj7V7thkxwPlCjlv8iqtou2cgFBzbGiCKDWMc_XDbYeExARDyByvehBnF6_nbYn4mdD4EPEOFOPQXTHWvxX4ctCbkjRGz8Vq8fh-bcgZK2lhz1TBoSUUw-b_CR4dv2OqhKoSULb-4Ec" />
+          <div className="md:col-span-4 flex flex-col space-y-3.5">
+            <div className="bg-surface-container-lowest border border-on-surface/10 rounded-2xl p-4 shadow-sm hover:shadow-md transition-all">
+              <div className="w-full h-64 rounded-xl overflow-hidden border border-on-surface/10 bg-[#eef3f9]">
+                <img className="w-full h-full object-cover hover:scale-[1.03] transition-transform duration-300" data-alt="3D printed customized realistic dog bust figurine in matte bone-white PLA standing next to an actual golden retriever looking curiously at it." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpGG6wo1HxGSuNZDJYoVYFG3MyPqZGDKYQu_gE8XPPZPKP_fcVFHwR7dbxtT1Ded0YV-lfh0o2iMZctfsUEfe4EUPSZOmdXj7V7thkxwPlCjlv8iqtou2cgFBzbGiCKDWMc_XDbYeExARDyByvehBnF6_nbYn4mdD4EPEOFOPQXTHWvxX4ctCbkjRGz8Vq8fh-bcgZK2lhz1TBoSUUw-b_CR4dv2OqhKoSULb-4Ec" />
               </div>
-              <div className="pt-3 flex items-center justify-between font-spec-code text-spec-sm text-on-surface">
-                <span className="font-bold">@riya.makes</span>
-                <span>her dog • 15cm</span>
+              <div className="pt-3 flex items-center justify-between font-spec-code text-[12px] text-on-surface">
+                <span className="font-bold text-primary">@riya.makes</span>
+                <span className="text-on-surface-variant">Dog Bust • 15cm</span>
               </div>
             </div>
-            {/* Speech bubble sticker 1 */}
-            <div className="bg-secondary-container text-on-surface border-[3px] border-on-surface rounded-[20px] p-4 neo-shadow-sm rotate-[2deg] relative">
-              <p className="font-body-md text-body-md font-medium text-on-surface">
-                “Turned my phone camera sketch into an actual desk pet. Resolution is insane!”
+            <div className="bg-[#eff5fd] border border-primary/20 rounded-2xl p-4 text-on-surface">
+              <p className="font-body-md text-[14px] font-medium text-on-surface">
+                “Turned my phone camera sketch into an actual desk pet. Resolution and layer quality is remarkable.”
               </p>
-              <span className="font-spec-code text-spec-sm block mt-2 font-bold uppercase">— Riya M., Bengaluru</span>
+              <span className="font-spec-code text-[11px] block mt-2 font-bold uppercase text-primary">— Riya M., Bengaluru</span>
             </div>
           </div>
           {/* Community Item 2 */}
-          <div className="md:col-span-4 flex flex-col space-y-4">
-            {/* Speech bubble sticker 2 (top) */}
-            <div className="bg-surface-container-lowest text-on-surface border-[3px] border-on-surface rounded-[20px] p-4 neo-shadow-sm -rotate-2 relative">
-              <p className="font-body-md text-body-md font-medium text-on-surface">
+          <div className="md:col-span-4 flex flex-col space-y-3.5">
+            <div className="bg-[#eff5fd] border border-primary/20 rounded-2xl p-4 text-on-surface">
+              <p className="font-body-md text-[14px] font-medium text-on-surface">
                 “Saved me from spending $150 on OEM replacement parts. Dimensions were dead accurate.”
               </p>
-              <span className="font-spec-code text-spec-sm block mt-2 font-bold uppercase">— Karan S., Pune</span>
+              <span className="font-spec-code text-[11px] block mt-2 font-bold uppercase text-primary">— Karan S., Pune</span>
             </div>
-            <div className="bg-surface-container-lowest border-[3px] border-on-surface rounded-[20px] p-4 neo-shadow rotate-[1deg]">
-              <div className="w-full h-72 rounded-xl overflow-hidden border-[2px] border-on-surface bg-surface-container">
-                <img className="w-full h-full object-cover" data-alt="High-performance custom GPU anti-sag support bracket 3D printed in rigid heat-resistant PETG installed inside a glowing gaming PC tower." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxwPmSr4oUrPVyyJVTDnPkjqMcHiMK_B75tpt_qX6nfqMzoiH_uwzMTe0wdlG3ttTILID88xO7CzfbW07xI700eUgC_0i6BMSxtEFZ7sWviqT_ETz3qfX4dnr6LDSCNieh7hhzgL1kUyPpGQ618AjKHBRZugvvYdj4tBBX34DdWiy1738TXeCSFOcI9t4645Pkk2b1AUgQ4HEjOCYUmOdra6uAIh0fybT4DPIRDIo" />
+            <div className="bg-surface-container-lowest border border-on-surface/10 rounded-2xl p-4 shadow-sm hover:shadow-md transition-all">
+              <div className="w-full h-72 rounded-xl overflow-hidden border border-on-surface/10 bg-[#eef3f9]">
+                <img className="w-full h-full object-cover hover:scale-[1.03] transition-transform duration-300" data-alt="High-performance custom GPU anti-sag support bracket 3D printed in rigid heat-resistant PETG installed inside a glowing gaming PC tower." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxwPmSr4oUrPVyyJVTDnPkjqMcHiMK_B75tpt_qX6nfqMzoiH_uwzMTe0wdlG3ttTILID88xO7CzfbW07xI700eUgC_0i6BMSxtEFZ7sWviqT_ETz3qfX4dnr6LDSCNieh7hhzgL1kUyPpGQ618AjKHBRZugvvYdj4tBBX34DdWiy1738TXeCSFOcI9t4645Pkk2b1AUgQ4HEjOCYUmOdra6uAIh0fybT4DPIRDIo" />
               </div>
-              <div className="pt-3 flex items-center justify-between font-spec-code text-spec-sm text-on-surface">
-                <span className="font-bold">@karan_builds</span>
-                <span>GPU bracket • PETG</span>
+              <div className="pt-3 flex items-center justify-between font-spec-code text-[12px] text-on-surface">
+                <span className="font-bold text-primary">@karan_builds</span>
+                <span className="text-on-surface-variant">GPU bracket • PETG</span>
               </div>
             </div>
           </div>
           {/* Community Item 3 */}
-          <div className="md:col-span-4 flex flex-col space-y-4">
-            <div className="bg-surface-container-lowest border-[3px] border-on-surface rounded-[20px] p-4 neo-shadow rotate-[-2deg]">
-              <div className="w-full h-72 rounded-xl overflow-hidden border-[2px] border-on-surface bg-surface-container">
-                <img className="w-full h-full object-cover" data-alt="Curved backlit 3D printed Lithophane lamp panel revealing a detailed family holiday photograph when light illuminates it from behind in a dim room." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnbPJBYxX-VkwjTEUPvmmDDx2-i0JDjyezFJfpyHBLJF8PFqmm4qX7UzobK5pWd9o2U9e0qAwkEhy_KzrGLC4DciQsyJ2sQarLeXFDWvLTBHPRKU7SGySn3X5VdPydVZnQx0YvkF6hwBS1qF8bLWUPKVki92eCYLp1dLuji-PgtRhj4vHEj-J_PawVhum3YIvCkdQQnLUHByf4dJN6tzP4DcS5Y-nCUw979LlsMd4" />
+          <div className="md:col-span-4 flex flex-col space-y-3.5">
+            <div className="bg-surface-container-lowest border border-on-surface/10 rounded-2xl p-4 shadow-sm hover:shadow-md transition-all">
+              <div className="w-full h-72 rounded-xl overflow-hidden border border-on-surface/10 bg-[#eef3f9]">
+                <img className="w-full h-full object-cover hover:scale-[1.03] transition-transform duration-300" data-alt="Curved backlit 3D printed Lithophane lamp panel revealing a detailed family holiday photograph when light illuminates it from behind in a dim room." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnbPJBYxX-VkwjTEUPvmmDDx2-i0JDjyezFJfpyHBLJF8PFqmm4qX7UzobK5pWd9o2U9e0qAwkEhy_KzrGLC4DciQsyJ2sQarLeXFDWvLTBHPRKU7SGySn3X5VdPydVZnQx0YvkF6hwBS1qF8bLWUPKVki92eCYLp1dLuji-PgtRhj4vHEj-J_PawVhum3YIvCkdQQnLUHByf4dJN6tzP4DcS5Y-nCUw979LlsMd4" />
               </div>
-              <div className="pt-3 flex items-center justify-between font-spec-code text-spec-sm text-on-surface">
-                <span className="font-bold">@arjun_creates</span>
-                <span>Curved Lithophane Lamp</span>
+              <div className="pt-3 flex items-center justify-between font-spec-code text-[12px] text-on-surface">
+                <span className="font-bold text-primary">@arjun_creates</span>
+                <span className="text-on-surface-variant">Lithophane Lamp</span>
               </div>
             </div>
-            <div className="bg-surface-container-lowest border-[3px] border-on-surface rounded-[20px] p-4 neo-shadow-sm rotate-[1deg]">
+            <div className="bg-surface-container-lowest border border-on-surface/10 rounded-2xl p-4 shadow-xs">
               <div className="flex items-center gap-3">
-                <span className="material-symbols-outlined text-primary text-[28px]">photo_camera</span>
+                <span className="material-symbols-outlined text-primary text-[26px]">photo_camera</span>
                 <div>
-                  <p className="font-headline-sm text-[16px] text-on-surface">Tag #LAYEREDprint</p>
-                  <p className="font-spec-code text-spec-sm text-on-surface-variant">Get featured + Rs 200 off your next spool</p>
+                  <p className="font-body-md font-bold text-[14px] text-on-surface">Tag #LAYEREDprint</p>
+                  <p className="font-spec-code text-[11px] text-on-surface-variant">Get featured + Rs 200 off your next spool</p>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </section>
+
       {/* SECTION 7: WHY US */}
       <section className="w-full px-gutter-mobile md:px-margin py-space-xl">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           {/* Left Copy Statement */}
-          <div className="lg:col-span-5 flex flex-col space-y-space-sm">
-            <span className="eyebrow eyebrow--manifesto">Quality Manifesto</span>
-            <h2 className="font-headline-lg text-[44px] sm:text-[60px] leading-[1.05] text-on-surface">
-              Layer by layer, we get it right.
+          <div className="lg:col-span-5 flex flex-col space-y-4">
+            <span className="eyebrow-subtle font-spec-code text-[11px] font-bold text-primary tracking-widest uppercase">Calibration Standard</span>
+            <h2 className="font-headline-lg text-[36px] sm:text-[48px] leading-[1.08] text-on-surface">
+              Layer by layer, calibrated to micron tolerance.
             </h2>
             <p className="font-body-lg text-body-lg text-on-surface-variant">
-              Zero stringing. Zero warped corners. We calibrate stepper motors weekly, bake filament in dry boxes, and run active chamber heating on all performance polymers.
+              Zero stringing. Zero warped corners. We calibrate linear advance weekly, store polymers in active dry chambers, and run heated build envelopes on all performance materials.
             </p>
-            <div className="pt-2 flex items-center gap-4">
-              <div className="p-3 bg-secondary-container border-[2px] border-on-surface rounded-xl">
-                <span className="material-symbols-outlined text-on-surface text-[28px]">thermostat</span>
+            <div className="pt-2 flex items-center gap-3.5">
+              <div className="p-2.5 bg-primary/10 text-primary border border-primary/20 rounded-xl">
+                <span className="material-symbols-outlined text-[24px]">thermostat</span>
               </div>
-              <div className="font-spec-code text-spec-sm text-on-surface">
+              <div className="font-spec-code text-[12px] text-on-surface">
                 <strong>Active Heated Enclosures</strong><br />
-                No warping on ABS, Nylon or ASA
+                Consistent adhesion on ABS, Nylon and Carbon-PETG
               </div>
             </div>
           </div>
           {/* Right 2x2 Metric Cards Grid */}
-          <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6">
-            {/* Box 1 (Blue) */}
-            <div className="bg-primary text-on-primary border-[3px] border-on-surface rounded-[20px] p-6 neo-shadow hover:-translate-y-1 transition-transform">
-              <span className="font-badge-display text-[64px] leading-none block">24-72h</span>
-              <span className="font-headline-sm text-headline-sm text-on-primary mt-2 block">Turnaround dispatch</span>
-              <p className="font-spec-code text-spec-sm text-on-primary opacity-80 mt-1">Farm of 32 printers running 24/7</p>
+          <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-5">
+            {/* Box 1 */}
+            <div className="bg-primary text-on-primary rounded-2xl p-6 shadow-sm hover:shadow-md transition-all">
+              <span className="font-badge-display text-[54px] leading-none block">24-72h</span>
+              <span className="font-headline-sm text-[20px] text-on-primary mt-2 block">Turnaround dispatch</span>
+              <p className="font-spec-code text-[11px] text-on-primary/80 mt-1">Farm of 32 calibrated printers active daily</p>
             </div>
-            {/* Box 2 (Light blue) */}
-            <div className="bg-secondary-container text-on-surface border-[3px] border-on-surface rounded-[20px] p-6 neo-shadow hover:-translate-y-1 transition-transform">
-              <span className="font-badge-display text-[64px] leading-none block">0.1mm</span>
-              <span className="font-headline-sm text-headline-sm text-on-surface mt-2 block">Layer precision</span>
-              <p className="font-spec-code text-spec-sm text-on-surface opacity-80 mt-1">Surgical detail without stepping lines</p>
+            {/* Box 2 */}
+            <div className="bg-[#eff4fc] text-on-surface border border-primary/20 rounded-2xl p-6 shadow-sm hover:shadow-md transition-all">
+              <span className="font-badge-display text-[54px] text-primary leading-none block">0.1mm</span>
+              <span className="font-headline-sm text-[20px] text-on-surface mt-2 block">Layer precision</span>
+              <p className="font-spec-code text-[11px] text-on-surface/70 mt-1">Microscopic resolution with minimal stepping</p>
             </div>
-            {/* Box 3 (White) */}
-            <div className="bg-surface-container-lowest text-on-surface border-[3px] border-on-surface rounded-[20px] p-6 neo-shadow hover:-translate-y-1 transition-transform">
-              <span className="font-badge-display text-[64px] leading-none block">Up to 40cm</span>
-              <span className="font-headline-sm text-headline-sm text-on-surface mt-2 block">Single-piece volume</span>
-              <p className="font-spec-code text-spec-sm text-on-surface-variant mt-1">Massive parts without gluing seams</p>
+            {/* Box 3 */}
+            <div className="bg-surface-container-lowest text-on-surface border border-on-surface/10 rounded-2xl p-6 shadow-sm hover:shadow-md transition-all">
+              <span className="font-badge-display text-[54px] text-primary leading-none block">Up to 40cm</span>
+              <span className="font-headline-sm text-[20px] text-on-surface mt-2 block">Single-piece volume</span>
+              <p className="font-spec-code text-[11px] text-on-surface-variant mt-1">Massive monolithic components with zero seams</p>
             </div>
-            {/* Box 4 (Dark Slate) */}
-            <div className="bg-on-surface text-on-primary border-[3px] border-on-surface rounded-[20px] p-6 neo-shadow hover:-translate-y-1 transition-transform">
-              <span className="font-badge-display text-[64px] leading-none block">100%</span>
-              <span className="font-headline-sm text-headline-sm text-on-primary mt-2 block">Free reprint if it fails</span>
-              <p className="font-spec-code text-spec-sm text-on-primary opacity-80 mt-1">No questions asked guarantee</p>
+            {/* Box 4 */}
+            <div className="bg-on-surface text-on-primary rounded-2xl p-6 shadow-sm hover:shadow-md transition-all">
+              <span className="font-badge-display text-[54px] text-[#64a8fe] leading-none block">100%</span>
+              <span className="font-headline-sm text-[20px] text-on-primary mt-2 block">Free reprint guarantee</span>
+              <p className="font-spec-code text-[11px] text-on-primary/70 mt-1">If specs fail dimensional QC, we reprint immediately</p>
             </div>
           </div>
         </div>
       </section>
+
       {/* SECTION 8: FAQ ACCORDION */}
       <section className="faq-section w-full px-gutter-mobile md:px-margin py-space-xl">
-        <div className="max-w-4xl mx-auto flex flex-col space-y-space-md">
-          <div className="section-heading text-center mb-space-sm">
-            <span className="eyebrow eyebrow--faq">Questions Answered</span>
-            <h2 className="font-headline-lg text-[44px] sm:text-[60px] text-on-surface">Frequently Asked Queries</h2>
+        <div className="max-w-3xl mx-auto flex flex-col space-y-4">
+          <div className="section-heading text-center mb-6">
+            <span className="eyebrow-subtle font-spec-code text-[11px] font-bold text-primary tracking-widest uppercase">Knowledge Base</span>
+            <h2 className="font-headline-lg text-[36px] sm:text-[48px] text-on-surface mt-1">Frequently Asked Queries</h2>
           </div>
           {/* Accordion Items */}
-          <div className="space-y-4" id="faq-container">
+          <div className="space-y-3" id="faq-container">
             {/* FAQ 1 */}
-            <div className="bg-surface-container-lowest border-[3px] border-on-surface rounded-[16px] neo-shadow overflow-hidden">
-              <button aria-expanded="false" className="faq-toggle w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none" type="button">
-                <span className="font-headline-sm text-[20px] text-on-surface">Which file formats do you accept?</span>
-                <span className="w-8 h-8 rounded-full border-[2px] border-on-surface bg-surface-container flex items-center justify-center font-bold text-on-surface toggle-icon">+</span>
+            <div className="bg-surface-container-lowest border border-on-surface/12 rounded-xl shadow-xs overflow-hidden">
+              <button aria-expanded="false" className="faq-toggle w-full px-5 py-4 flex items-center justify-between text-left focus:outline-none" type="button">
+                <span className="font-body-md font-bold text-[16px] text-on-surface">Which file formats do you accept?</span>
+                <span className="w-7 h-7 rounded-full bg-surface-container-low text-primary flex items-center justify-center font-bold text-[14px] toggle-icon">+</span>
               </button>
-              <div className="faq-content hidden px-6 pb-5 border-t-[2px] border-on-surface/20 pt-3">
-                <p className="font-body-md text-on-surface-variant">
+              <div className="faq-content hidden px-5 pb-4 border-t border-on-surface/10 pt-3">
+                <p className="font-body-md text-[14px] text-on-surface-variant">
                   We natively accept <strong>STL, OBJ, STEP, 3MF, and DXF</strong> files. If you don't have a 3D model, you can upload clear phone photos, 2D vector logos, or pencil sketches—our CAD designers prepare the printable geometry for you.
                 </p>
               </div>
             </div>
             {/* FAQ 2 */}
-            <div className="bg-surface-container-lowest border-[3px] border-on-surface rounded-[16px] neo-shadow overflow-hidden">
-              <button aria-expanded="false" className="faq-toggle w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none" type="button">
-                <span className="font-headline-sm text-[20px] text-on-surface">Can you print from just a photo or sketch?</span>
-                <span className="w-8 h-8 rounded-full border-[2px] border-on-surface bg-surface-container flex items-center justify-center font-bold text-on-surface toggle-icon">+</span>
+            <div className="bg-surface-container-lowest border border-on-surface/12 rounded-xl shadow-xs overflow-hidden">
+              <button aria-expanded="false" className="faq-toggle w-full px-5 py-4 flex items-center justify-between text-left focus:outline-none" type="button">
+                <span className="font-body-md font-bold text-[16px] text-on-surface">Can you print from just a photo or sketch?</span>
+                <span className="w-7 h-7 rounded-full bg-surface-container-low text-primary flex items-center justify-center font-bold text-[14px] toggle-icon">+</span>
               </button>
-              <div className="faq-content hidden px-6 pb-5 border-t-[2px] border-on-surface/20 pt-3">
-                <p className="font-body-md text-on-surface-variant">
+              <div className="faq-content hidden px-5 pb-4 border-t border-on-surface/10 pt-3">
+                <p className="font-body-md text-[14px] text-on-surface-variant">
                   Yes! Over 40% of our orders start from a simple 2D reference. Upload your image via our quote tool; our in-house modelers review it and share a 3D interactive preview within 2-4 hours.
                 </p>
               </div>
             </div>
             {/* FAQ 3 */}
-            <div className="bg-surface-container-lowest border-[3px] border-on-surface rounded-[16px] neo-shadow overflow-hidden">
-              <button aria-expanded="false" className="faq-toggle w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none" type="button">
-                <span className="font-headline-sm text-[20px] text-on-surface">What is the maximum size print you can do?</span>
-                <span className="w-8 h-8 rounded-full border-[2px] border-on-surface bg-surface-container flex items-center justify-center font-bold text-on-surface toggle-icon">+</span>
+            <div className="bg-surface-container-lowest border border-on-surface/12 rounded-xl shadow-xs overflow-hidden">
+              <button aria-expanded="false" className="faq-toggle w-full px-5 py-4 flex items-center justify-between text-left focus:outline-none" type="button">
+                <span className="font-body-md font-bold text-[16px] text-on-surface">What is the maximum size print you can do?</span>
+                <span className="w-7 h-7 rounded-full bg-surface-container-low text-primary flex items-center justify-center font-bold text-[14px] toggle-icon">+</span>
               </button>
-              <div className="faq-content hidden px-6 pb-5 border-t-[2px] border-on-surface/20 pt-3">
-                <p className="font-body-md text-on-surface-variant">
+              <div className="faq-content hidden px-5 pb-4 border-t border-on-surface/10 pt-3">
+                <p className="font-body-md text-[14px] text-on-surface-variant">
                   Our continuous large-format printers handle up to <strong>400 × 400 × 450 mm</strong> in a single seamless block. Larger models (like cosplay armor or architectural models) are sliced into interlocking indexed parts.
                 </p>
               </div>
             </div>
             {/* FAQ 4 */}
-            <div className="bg-surface-container-lowest border-[3px] border-on-surface rounded-[16px] neo-shadow overflow-hidden">
-              <button aria-expanded="false" className="faq-toggle w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none" type="button">
-                <span className="font-headline-sm text-[20px] text-on-surface">How long does shipping take?</span>
-                <span className="w-8 h-8 rounded-full border-[2px] border-on-surface bg-surface-container flex items-center justify-center font-bold text-on-surface toggle-icon">+</span>
+            <div className="bg-surface-container-lowest border border-on-surface/12 rounded-xl shadow-xs overflow-hidden">
+              <button aria-expanded="false" className="faq-toggle w-full px-5 py-4 flex items-center justify-between text-left focus:outline-none" type="button">
+                <span className="font-body-md font-bold text-[16px] text-on-surface">How long does shipping take?</span>
+                <span className="w-7 h-7 rounded-full bg-surface-container-low text-primary flex items-center justify-center font-bold text-[14px] toggle-icon">+</span>
               </button>
-              <div className="faq-content hidden px-6 pb-5 border-t-[2px] border-on-surface/20 pt-3">
-                <p className="font-body-md text-on-surface-variant">
+              <div className="faq-content hidden px-5 pb-4 border-t border-on-surface/10 pt-3">
+                <p className="font-body-md text-[14px] text-on-surface-variant">
                   Prints are dispatched in 24 to 72 hours depending on size. We ship via express air courier across India (2-4 days transit). Tracking links are sent straight to your WhatsApp and email.
                 </p>
               </div>
             </div>
             {/* FAQ 5 */}
-            <div className="bg-surface-container-lowest border-[3px] border-on-surface rounded-[16px] neo-shadow overflow-hidden">
-              <button aria-expanded="false" className="faq-toggle w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none" type="button">
-                <span className="font-headline-sm text-[20px] text-on-surface">Can I get my print hand-painted or sanded?</span>
-                <span className="w-8 h-8 rounded-full border-[2px] border-on-surface bg-surface-container flex items-center justify-center font-bold text-on-surface toggle-icon">+</span>
+            <div className="bg-surface-container-lowest border border-on-surface/12 rounded-xl shadow-xs overflow-hidden">
+              <button aria-expanded="false" className="faq-toggle w-full px-5 py-4 flex items-center justify-between text-left focus:outline-none" type="button">
+                <span className="font-body-md font-bold text-[16px] text-on-surface">Can I get my print hand-painted or sanded?</span>
+                <span className="w-7 h-7 rounded-full bg-surface-container-low text-primary flex items-center justify-center font-bold text-[14px] toggle-icon">+</span>
               </button>
-              <div className="faq-content hidden px-6 pb-5 border-t-[2px] border-on-surface/20 pt-3">
-                <p className="font-body-md text-on-surface-variant">
+              <div className="faq-content hidden px-5 pb-4 border-t border-on-surface/10 pt-3">
+                <p className="font-body-md text-[14px] text-on-surface-variant">
                   Absolutely. Choose between Raw (authentic clean layer lines), Sanded Matte (micro-abrasive smoothing), or Studio Painted (hand-primed, painted, and matte-varnished by our miniature artists).
                 </p>
               </div>
@@ -798,35 +808,29 @@ export default function Storefront() {
           </div>
         </div>
       </section>
+
       {/* SECTION 9: CTA BLOCK */}
       <section className="w-full px-gutter-mobile md:px-margin py-space-xl">
-        <div className="relative bg-primary text-on-primary border-[3px] border-on-surface rounded-[24px] neo-shadow-md p-8 sm:p-14 overflow-hidden">
-          {/* Rotated Accent Sticker */}
-          <div className="sticker-note absolute -top-3 right-6 sm:right-16 bg-secondary-container text-on-surface font-badge-md text-badge-md px-5 py-2 border-[3px] border-on-surface neo-shadow rotate-[6deg] select-none z-10">
-            Quote in 2 hrs!
-          </div>
+        <div className="relative bg-primary text-on-primary rounded-[24px] shadow-md p-8 sm:p-14 overflow-hidden">
           <div className="max-w-2xl relative z-10">
-            <h2 className="font-headline-lg text-[52px] sm:text-[80px] leading-[1.02] text-on-primary mb-4">
-              Got an idea? Send it.
+            <span className="font-spec-code text-[11px] font-bold text-on-primary/80 uppercase tracking-widest block mb-2">
+              Ready to Fabricate?
+            </span>
+            <h2 className="font-headline-lg text-[44px] sm:text-[68px] leading-[1.04] text-on-primary mb-4">
+              Got an idea? Send it over.
             </h2>
-            <p className="font-body-lg text-body-lg text-on-primary opacity-90 mb-8 max-w-lg">
-              Zero CAD files needed. Free slicing check. Lock in your print before tonight's queue fills up.
+            <p className="font-body-lg text-body-lg text-on-primary/90 mb-8 max-w-lg">
+              Zero CAD experience needed. Free slicing consultation. Lock in your print before today's build queue closes.
             </p>
             <div className="flex flex-wrap items-center gap-4">
-              <a className="px-8 py-4 bg-surface-container-lowest text-on-surface font-badge-md text-badge-md border-[3px] border-on-surface rounded-xl neo-shadow hover:bg-secondary-container hover:-translate-x-0.5 hover:-translate-y-0.5 active:translate-x-1 active:translate-y-1 active:shadow-none transition-all flex items-center gap-2" href="#custom-quote">
-                Upload now →
+              <a className="px-7 py-3.5 bg-surface-container-lowest text-on-surface font-spec-code text-[13px] font-bold uppercase rounded-xl shadow-sm hover:bg-surface-container-low active:scale-[0.98] transition-all flex items-center gap-2" href="#custom-quote">
+                <span>Upload Now</span>
+                <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
               </a>
-              <span className="font-spec-code text-spec-sm text-on-primary opacity-80">
+              <span className="font-spec-code text-[12px] text-on-primary/80">
                 • No credit card needed for quotes
               </span>
             </div>
-          </div>
-          {/* Subtle background nozzle pattern watermark */}
-          <div className="absolute -bottom-10 -right-10 pointer-events-none opacity-10 select-none">
-            <svg fill="currentColor" height={340} viewBox="0 0 100 100" width={340}>
-              <polygon points="50,10 90,85 10,85" />
-              <rect height={15} width={16} x={42} y={85} />
-            </svg>
           </div>
         </div>
       </section>
