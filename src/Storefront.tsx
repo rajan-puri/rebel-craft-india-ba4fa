@@ -70,10 +70,6 @@ export default function Storefront() {
         <div className="hero-layout grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 xl:gap-10 items-center max-w-[1440px] mx-auto">
           {/* Left Column: Copy & CTAs */}
           <div className="hero-copy lg:col-span-6 flex flex-col space-y-4 reveal-on-scroll">
-            <div className="status-label inline-flex items-center gap-2 self-start bg-surface-container-lowest text-on-surface px-3.5 py-1.5 rounded-full border border-on-surface/15 shadow-sm">
-              <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-              <span className="font-spec-code text-[12px] uppercase font-bold tracking-wider text-on-surface">Nozzle Hot: 215°C • Batch #84 Slicing</span>
-            </div>
             <h1 className="font-headline-lg text-[52px] sm:text-[72px] lg:text-[88px] leading-[1.02] text-on-surface tracking-tight">
               If you can imagine it, we can{" "}
               <span className="inline-block bg-primary text-on-primary font-badge-display text-[54px] sm:text-[76px] lg:text-[92px] px-3.5 py-1 rounded-xl shadow-sm leading-none align-middle mx-1">
