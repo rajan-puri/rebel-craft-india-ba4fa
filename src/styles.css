@@ -14,15 +14,46 @@
   --ink: #121c2a;
   --blue: #0058be;
   --blue-light: #64a8fe;
+
+  /* Emil Kowalski custom easing curves */
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+  --ease-spring: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);
 }
 html { overflow-x: hidden; }
 body { min-width: 320px; }
 
-/* ===== Neobrutalist hard-shadow system ===== */
-.neo-shadow-sm{box-shadow:2px 2px 0px #121c2a;}
-.neo-shadow{box-shadow:3px 3px 0px #121c2a;}
-.neo-shadow-md{box-shadow:4px 4px 0px #121c2a;}
-.neo-btn-active:active{transform:translate(3px,3px);box-shadow:0px 0px 0px #121c2a;}
+/* Emil Kowalski Scroll-Triggered Reveal Animations */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 450ms var(--ease-out), transform 450ms var(--ease-out);
+  will-change: opacity, transform;
+}
+.reveal-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-delay-1 { transition-delay: 60ms; }
+.reveal-delay-2 { transition-delay: 120ms; }
+.reveal-delay-3 { transition-delay: 180ms; }
+.reveal-delay-4 { transition-delay: 240ms; }
+
+/* Subtle Hero Parallax & Float */
+.hero-parallax-host {
+  transition: transform 250ms var(--ease-out);
+  will-change: transform;
+}
+
+/* Card hover zoom on hardware accelerated transform */
+.zoom-subtle {
+  transition: transform 300ms var(--ease-spring);
+  will-change: transform;
+}
+.zoom-subtle:hover {
+  transform: scale(1.035);
+}
 
 /* ===== Typography guardrails ===== */
 main h1, main h2, main h3, footer h3 { text-wrap: balance; }

@@ -97,7 +97,13 @@ function useStorefrontInteractions() {
     let finishCost = 0
     const priceDisplay = document.getElementById("price-display")
     const updatePrice = () => {
-      if (priceDisplay) priceDisplay.textContent = `Rs ${Math.round(480 * sizeMultiplier + materialCost + finishCost).toLocaleString("en-IN")}`
+      if (priceDisplay) {
+        priceDisplay.textContent = `Rs ${Math.round(480 * sizeMultiplier + materialCost + finishCost).toLocaleString("en-IN")}`
+        priceDisplay.style.transform = "scale(1.06)"
+        setTimeout(() => {
+          if (priceDisplay) priceDisplay.style.transform = "scale(1)"
+        }, 150)
+      }
     }
     const setupChipGroup = (selector: string, onSelect: (button: HTMLElement) => void) => {
       const buttons = Array.from(document.querySelectorAll<HTMLElement>(selector))
@@ -144,6 +150,81 @@ function useStorefrontInteractions() {
       }
     }))
 
+    // Emil Kowalski Scroll-Triggered Reveal Animations via IntersectionObserver
+    const revealElements = Array.from(document.querySelectorAll<HTMLElement>(".reveal-on-scroll"))
+    if ("IntersectionObserver" in window && revealElements.length > 0) {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-visible")
+              observer.unobserve(entry.target)
+            }
+          })
+        },
+        { threshold: 0.12, rootMargin: "0px 0px -40px 0px" },
+      )
+      revealElements.forEach((el) => observer.observe(el))
+      cleanups.push(() => observer.disconnect())
+    } else {
+      revealElements.forEach((el) => el.classList.add("is-visible"))
+    }
+
+    // Emil Kowalski Hero Subtle Parallax on Mouse Move (Desktop Only, Reduced Motion Respected)
+    const heroVisual = document.querySelector<HTMLElement>(".hero-visual")
+    if (heroVisual && window.matchMedia("(min-width: 1024px) and (prefers-reduced-motion: no-preference)").matches) {
+      let rafId: number | null = null
+      let targetX = 0
+      let targetY = 0
+      let currentX = 0
+      let currentY = 0
+
+      const onMouseMove = (e: MouseEvent) => {
+        const { innerWidth, innerHeight } = window
+        targetX = (e.clientX / innerWidth - 0.5) * 24
+        targetY = (e.clientY / innerHeight - 0.5) * 20
+      }
+
+      const animateParallax = () => {
+        currentX += (targetX - currentX) * 0.08
+        currentY += (targetY - currentY) * 0.08
+        heroVisual.style.transform = `translate3d(${currentX.toFixed(2)}px, ${currentY.toFixed(2)}px, 0)`
+        rafId = requestAnimationFrame(animateParallax)
+      }
+
+      window.addEventListener("mousemove", onMouseMove, { passive: true })
+      rafId = requestAnimationFrame(animateParallax)
+
+      cleanups.push(() => {
+        window.removeEventListener("mousemove", onMouseMove)
+        if (rafId) cancelAnimationFrame(rafId)
+        heroVisual.style.transform = ""
+      })
+    }
+
+    // Emil Kowalski Magnetic Micro-Interaction on Primary Buttons
+    const magneticButtons = Array.from(document.querySelectorAll<HTMLElement>(".btn-primary-specimen, .btn-secondary-specimen, .site-cta"))
+    if (window.matchMedia("(min-width: 1024px) and (hover: hover)").matches) {
+      magneticButtons.forEach((btn) => {
+        let btnRaf: number | null = null
+        const onBtnMove = (e: MouseEvent) => {
+          const rect = btn.getBoundingClientRect()
+          const x = (e.clientX - (rect.left + rect.width / 2)) * 0.22
+          const y = (e.clientY - (rect.top + rect.height / 2)) * 0.22
+          if (btnRaf) cancelAnimationFrame(btnRaf)
+          btnRaf = requestAnimationFrame(() => {
+            btn.style.transform = `translate3d(${x.toFixed(1)}px, ${y.toFixed(1)}px, 0)`
+          })
+        }
+        const onBtnLeave = () => {
+          if (btnRaf) cancelAnimationFrame(btnRaf)
+          btn.style.transform = ""
+        }
+        listen(btn, "mousemove", onBtnMove)
+        listen(btn, "mouseleave", onBtnLeave)
+      })
+    }
+
     return () => cleanups.reverse().forEach((cleanup) => cleanup())
   }, [])
 }
@@ -165,6 +246,9 @@ export default function App() {
           rings={10}
           scale={0.96}
           speed={0.55}
+          autoRotate={true}
+          ripple={true}
+          shadow={true}
           glow="#2170e4"
           background="#f8f9ff"
           transparent

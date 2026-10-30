@@ -69,7 +69,7 @@ export default function Storefront() {
       <section className="hero-section w-full px-gutter-mobile md:px-margin pt-space-lg pb-space-xl">
         <div className="hero-layout grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 xl:gap-10 items-center max-w-[1440px] mx-auto">
           {/* Left Column: Copy & CTAs */}
-          <div className="hero-copy lg:col-span-6 flex flex-col space-y-4">
+          <div className="hero-copy lg:col-span-6 flex flex-col space-y-4 reveal-on-scroll">
             <div className="status-label inline-flex items-center gap-2 self-start bg-surface-container-lowest text-on-surface px-3.5 py-1.5 rounded-full border border-on-surface/15 shadow-sm">
               <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
               <span className="font-spec-code text-[12px] uppercase font-bold tracking-wider text-on-surface">Nozzle Hot: 215°C • Batch #84 Slicing</span>
@@ -108,13 +108,13 @@ export default function Storefront() {
           </div>
 
           {/* Right Column: Interactive keycap orb */}
-          <div className="hero-visual lg:col-span-6 relative min-h-[480px] lg:min-h-[640px] flex items-center justify-center lg:justify-start xl:justify-center p-0">
+          <div className="hero-visual lg:col-span-6 relative min-h-[480px] lg:min-h-[640px] flex items-center justify-center lg:justify-start xl:justify-center p-0 reveal-on-scroll reveal-delay-2">
             <div className="orb-react-host" id="keycap-orb-react-root" />
           </div>
         </div>
       </section>
       {/* SECTION: CATEGORY NAVIGATION (From User Reference: 8 Categories) */}
-      <section aria-label="Shop by category" className="categories-section w-full px-gutter-mobile md:px-margin py-space-lg">
+      <section aria-label="Shop by category" className="categories-section w-full px-gutter-mobile md:px-margin py-space-lg reveal-on-scroll">
         <div className="section-heading flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-6">
           <div>
             <span className="eyebrow-subtle font-spec-code text-[11px] font-bold text-primary tracking-widest uppercase">Browse by Category</span>
@@ -133,7 +133,7 @@ export default function Storefront() {
           {/* Card 1: Figurines & Collectibles */}
           <a
             href="#ready-to-ship"
-            className="group relative bg-[#f2f4f7] rounded-3xl overflow-hidden border border-black/5 shadow-xs hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col"
+            className="group relative bg-[#f2f4f7] rounded-3xl overflow-hidden border border-black/5 shadow-xs hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col reveal-on-scroll reveal-delay-1"
           >
             <div className="relative aspect-[4/3] w-full overflow-hidden bg-[#e5e9f0]">
               <img
@@ -161,7 +161,7 @@ export default function Storefront() {
           {/* Card 2: Home Decor */}
           <a
             href="#ready-to-ship"
-            className="group relative bg-[#f2f4f7] rounded-3xl overflow-hidden border border-black/5 shadow-xs hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col"
+            className="group relative bg-[#f2f4f7] rounded-3xl overflow-hidden border border-black/5 shadow-xs hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col reveal-on-scroll reveal-delay-2"
           >
             <div className="relative aspect-[4/3] w-full overflow-hidden bg-[#e5e9f0]">
               <img
@@ -189,7 +189,7 @@ export default function Storefront() {
           {/* Card 3: Functional Parts */}
           <a
             href="#custom-quote"
-            className="group relative bg-[#f2f4f7] rounded-3xl overflow-hidden border border-black/5 shadow-xs hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col"
+            className="group relative bg-[#f2f4f7] rounded-3xl overflow-hidden border border-black/5 shadow-xs hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col reveal-on-scroll reveal-delay-3"
           >
             <div className="relative aspect-[4/3] w-full overflow-hidden bg-[#e5e9f0]">
               <img
@@ -217,7 +217,7 @@ export default function Storefront() {
           {/* Card 4: Lighting */}
           <a
             href="#ready-to-ship"
-            className="group relative bg-[#f2f4f7] rounded-3xl overflow-hidden border border-black/5 shadow-xs hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col"
+            className="group relative bg-[#f2f4f7] rounded-3xl overflow-hidden border border-black/5 shadow-xs hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col reveal-on-scroll reveal-delay-4"
           >
             <div className="relative aspect-[4/3] w-full overflow-hidden bg-[#e5e9f0]">
               <img
@@ -245,7 +245,7 @@ export default function Storefront() {
           {/* Card 5: Gifts & Personalised */}
           <a
             href="#custom-quote"
-            className="group relative bg-[#f2f4f7] rounded-3xl overflow-hidden border border-black/5 shadow-xs hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col"
+            className="group relative bg-[#f2f4f7] rounded-3xl overflow-hidden border border-black/5 shadow-xs hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col reveal-on-scroll reveal-delay-1"
           >
             <div className="relative aspect-[4/3] w-full overflow-hidden bg-[#e5e9f0]">
               <img
@@ -273,7 +273,7 @@ export default function Storefront() {
           {/* Card 6: Desk Accessories */}
           <a
             href="#ready-to-ship"
-            className="group relative bg-[#f2f4f7] rounded-3xl overflow-hidden border border-black/5 shadow-xs hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col"
+            className="group relative bg-[#f2f4f7] rounded-3xl overflow-hidden border border-black/5 shadow-xs hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col reveal-on-scroll reveal-delay-2"
           >
             <div className="relative aspect-[4/3] w-full overflow-hidden bg-[#e5e9f0]">
               <img
@@ -301,7 +301,7 @@ export default function Storefront() {
           {/* Card 7: Planters */}
           <a
             href="#ready-to-ship"
-            className="group relative bg-[#f2f4f7] rounded-3xl overflow-hidden border border-black/5 shadow-xs hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col"
+            className="group relative bg-[#f2f4f7] rounded-3xl overflow-hidden border border-black/5 shadow-xs hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col reveal-on-scroll reveal-delay-3"
           >
             <div className="relative aspect-[4/3] w-full overflow-hidden bg-[#e5e9f0]">
               <img
@@ -329,7 +329,7 @@ export default function Storefront() {
           {/* Card 8: Custom 3D Printing */}
           <a
             href="#custom-quote"
-            className="group relative bg-[#f2f4f7] rounded-3xl overflow-hidden border border-black/5 shadow-xs hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col"
+            className="group relative bg-[#f2f4f7] rounded-3xl overflow-hidden border border-black/5 shadow-xs hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col reveal-on-scroll reveal-delay-4"
           >
             <div className="relative aspect-[4/3] w-full overflow-hidden bg-[#e5e9f0]">
               <img
@@ -357,7 +357,7 @@ export default function Storefront() {
       </section>
 
       {/* SECTION: FEATURED DROPS */}
-      <section aria-label="Featured Drops" className="featured-drops-section w-full px-gutter-mobile md:px-margin py-space-xl bg-[#f4f7fb] border-y border-on-surface/10" id="featured-drops">
+      <section aria-label="Featured Drops" className="featured-drops-section w-full px-gutter-mobile md:px-margin py-space-xl bg-[#f4f7fb] border-y border-on-surface/10 reveal-on-scroll" id="featured-drops">
         <div className="w-full max-w-[1440px] mx-auto">
           {/* Header */}
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-6 sm:mb-8">
@@ -377,10 +377,10 @@ export default function Storefront() {
 
           {/* 8-Card Grid (Specimen Catalogue layout) */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {featuredDrops.map((drop) => (
+            {featuredDrops.map((drop, idx) => (
               <article
                 key={drop.id}
-                className="group bg-surface-container-lowest border border-on-surface/10 rounded-2xl shadow-sm overflow-hidden flex flex-col hover:border-primary/40 hover:shadow-md transition-all duration-200"
+                className={`group bg-surface-container-lowest border border-on-surface/10 rounded-2xl shadow-sm overflow-hidden flex flex-col hover:border-primary/40 hover:shadow-md transition-all duration-200 reveal-on-scroll reveal-delay-${(idx % 4) + 1}`}
               >
                 <div className="relative aspect-square w-full bg-[#eef3f9] overflow-hidden">
                   <img
@@ -438,7 +438,7 @@ export default function Storefront() {
       </section>
 
       {/* SECTION 2: CUSTOM PRINT UPLOADER (Interactive Estimator) */}
-      <section className="w-full px-gutter-mobile md:px-margin py-space-xl" id="custom-quote">
+      <section className="w-full px-gutter-mobile md:px-margin py-space-xl reveal-on-scroll" id="custom-quote">
         <div className="w-full bg-surface-container-lowest border border-on-surface/12 rounded-[24px] shadow-sm p-6 sm:p-10">
           {/* Box Header */}
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between pb-6 border-b border-on-surface/10 gap-4">
@@ -515,7 +515,7 @@ export default function Storefront() {
               <div className="bg-[#f0f5fc] border border-primary/20 rounded-2xl p-5 flex items-center justify-between gap-4">
                 <div>
                   <span className="font-spec-code text-[11px] text-on-surface/70 font-bold uppercase tracking-wider block">Estimated Build Cost</span>
-                  <span className="font-badge-display text-[42px] text-primary leading-none" id="price-display">Rs 480</span>
+                  <span className="font-badge-display text-[42px] text-primary leading-none transition-transform duration-200 inline-block" id="price-display">Rs 480</span>
                 </div>
                 <div className="text-right">
                   <span className="lead-time-tag font-spec-code text-[11px] font-bold bg-surface-container-lowest px-3 py-1 border border-on-surface/15 rounded-full inline-block text-on-surface">
@@ -538,7 +538,7 @@ export default function Storefront() {
         </div>
       </section>
       {/* SECTION 3: HOW IT WORKS */}
-      <section className="w-full px-gutter-mobile md:px-margin py-space-xl" id="how-it-works">
+      <section className="w-full px-gutter-mobile md:px-margin py-space-xl reveal-on-scroll" id="how-it-works">
         <div className="section-heading flex flex-col space-y-2 mb-8">
           <span className="eyebrow-subtle font-spec-code text-[11px] font-bold text-primary tracking-widest uppercase">
             Fabrication Protocol
@@ -610,7 +610,7 @@ export default function Storefront() {
       </section>
 
       {/* SECTION 4: FABRICATION DISCIPLINES (Category Showcase using High-Res Reference Imagery) */}
-      <section className="w-full px-gutter-mobile md:px-margin py-space-xl" id="capabilities">
+      <section className="w-full px-gutter-mobile md:px-margin py-space-xl reveal-on-scroll" id="capabilities">
         <div className="section-heading flex flex-col sm:flex-row items-baseline justify-between gap-4 mb-8">
           <div>
             <span className="eyebrow-subtle font-spec-code text-[11px] font-bold text-primary tracking-widest uppercase">Fabrication Capabilities</span>
@@ -726,7 +726,7 @@ export default function Storefront() {
         </div>
       </section>
       {/* SECTION 5: READY TO SHIP (Product Catalog) */}
-      <section className="w-full px-gutter-mobile md:px-margin py-space-xl" id="ready-to-ship">
+      <section className="w-full px-gutter-mobile md:px-margin py-space-xl reveal-on-scroll" id="ready-to-ship">
         <div className="section-heading flex flex-col sm:flex-row items-start sm:items-end justify-between gap-4 mb-space-lg">
           <div>
             <span className="eyebrow eyebrow--catalog">Curated Workshop Stock</span>
@@ -799,7 +799,7 @@ export default function Storefront() {
         </div>
       </section>
       {/* SECTION 6: SHOW US YOUR WEIRD (Community Proof) */}
-      <section className="w-full px-gutter-mobile md:px-margin py-space-xl bg-[#f4f7fb] border-y border-on-surface/10">
+      <section className="w-full px-gutter-mobile md:px-margin py-space-xl bg-[#f4f7fb] border-y border-on-surface/10 reveal-on-scroll">
         <div className="section-heading flex flex-col space-y-2 mb-8">
           <span className="eyebrow-subtle font-spec-code text-[11px] font-bold text-primary tracking-widest uppercase">
             Field Inspection Log
@@ -869,7 +869,7 @@ export default function Storefront() {
       </section>
 
       {/* SECTION 7: WHY US */}
-      <section className="w-full px-gutter-mobile md:px-margin py-space-xl">
+      <section className="w-full px-gutter-mobile md:px-margin py-space-xl reveal-on-scroll">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           {/* Left Copy Statement */}
           <div className="lg:col-span-5 flex flex-col space-y-4">
@@ -921,7 +921,7 @@ export default function Storefront() {
       </section>
 
       {/* SECTION 8: FAQ ACCORDION */}
-      <section className="faq-section w-full px-gutter-mobile md:px-margin py-space-xl">
+      <section className="faq-section w-full px-gutter-mobile md:px-margin py-space-xl reveal-on-scroll">
         <div className="max-w-3xl mx-auto flex flex-col space-y-4">
           <div className="section-heading text-center mb-6">
             <span className="eyebrow-subtle font-spec-code text-[11px] font-bold text-primary tracking-widest uppercase">Knowledge Base</span>
@@ -994,7 +994,7 @@ export default function Storefront() {
       </section>
 
       {/* SECTION 9: CTA BLOCK */}
-      <section className="w-full px-gutter-mobile md:px-margin py-space-xl">
+      <section className="w-full px-gutter-mobile md:px-margin py-space-xl reveal-on-scroll">
         <div className="relative bg-primary text-on-primary rounded-[24px] shadow-md p-8 sm:p-14 overflow-hidden">
           <div className="max-w-2xl relative z-10">
             <span className="font-spec-code text-[11px] font-bold text-on-primary/80 uppercase tracking-widest block mb-2">
