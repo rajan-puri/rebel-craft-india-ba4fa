@@ -876,46 +876,24 @@ export default function Storefront() {
 
       {/* SECTION 9: CTA BLOCK */}
       <section className="w-full px-gutter-mobile md:px-margin py-space-xl reveal-on-scroll">
-        <div className="relative bg-gradient-to-br from-[#0058be] via-[#004fa8] to-[#003b82] text-white rounded-[28px] shadow-lg p-8 sm:p-14 lg:p-16 overflow-hidden text-center flex flex-col items-center justify-center border border-white/10">
-          {/* Subtle Blueprint Grid Background Overlay */}
-          <div
-            className="absolute inset-0 opacity-15 pointer-events-none"
-            style={{
-              backgroundImage: 'radial-gradient(rgba(255,255,255,0.4) 1px, transparent 1px)',
-              backgroundSize: '24px 24px',
-            }}
-          />
-          {/* Ambient Lighting Glow */}
-          <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-96 h-96 bg-[#64a8fe]/25 rounded-full blur-3xl pointer-events-none" />
-
-          <div className="max-w-2xl mx-auto flex flex-col items-center relative z-10">
-            {/* Eyebrow Pill */}
-            <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/15 backdrop-blur-sm border border-white/20 font-spec-code text-[11px] font-bold text-white uppercase tracking-widest mb-4 shadow-xs">
-              <span className="w-2 h-2 rounded-full bg-[#64a8fe] animate-pulse"></span>
-              <span>Ready to Fabricate?</span>
+        <div className="relative bg-primary text-on-primary rounded-[24px] shadow-md p-8 sm:p-14 overflow-hidden">
+          <div className="max-w-4xl relative z-10">
+            <span className="font-spec-code text-[11px] font-bold text-on-primary/80 uppercase tracking-widest block mb-2">
+              Ready to Fabricate?
             </span>
-
-            {/* Main Headline in Space Grotesk */}
-            <h2 className="font-body-md font-bold text-[36px] sm:text-[52px] lg:text-[60px] leading-[1.08] tracking-tight text-white mb-4 text-center">
+            <h2 className="font-headline-lg text-[32px] sm:text-[46px] lg:text-[56px] xl:text-[62px] leading-[1.08] text-on-primary mb-4 whitespace-normal sm:whitespace-nowrap">
               Got an idea? Send it over.
             </h2>
-
-            {/* Description */}
-            <p className="font-body-md text-[16px] sm:text-[18px] text-white/90 leading-relaxed mb-8 max-w-lg mx-auto text-center font-normal">
+            <p className="font-body-lg text-body-lg text-on-primary/90 mb-8 max-w-lg">
               Zero CAD experience needed. Free slicing consultation. Lock in your print before today's build queue closes.
             </p>
-
-            {/* Centered CTA Button & Disclaimer */}
-            <div className="flex flex-col items-center gap-3 w-full">
-              <a
-                className="px-8 py-3.5 sm:py-4 bg-surface-container-lowest text-on-surface font-spec-code text-[14px] font-bold uppercase rounded-xl shadow-md hover:shadow-xl hover:bg-surface-container-low hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] transition-all flex items-center justify-center gap-2.5"
-                href="#custom-quote"
-              >
+            <div className="flex flex-wrap items-center gap-4">
+              <a className="px-7 py-3.5 bg-surface-container-lowest text-on-surface font-spec-code text-[13px] font-bold uppercase rounded-xl shadow-sm hover:bg-surface-container-low active:scale-[0.98] transition-all flex items-center gap-2" href="#custom-quote">
                 <span>Upload Now</span>
-                <span className="material-symbols-outlined text-[18px] text-primary">arrow_forward</span>
+                <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
               </a>
-              <span className="font-spec-code text-[12px] text-white/75 font-medium tracking-wide">
-                • No credit card needed for quotes •
+              <span className="font-spec-code text-[12px] text-on-primary/80">
+                • No credit card needed for quotes
               </span>
             </div>
           </div>
