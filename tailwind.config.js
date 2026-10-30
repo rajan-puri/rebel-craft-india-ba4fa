@@ -27,8 +27,8 @@ export default {
       },
       fontFamily: {
         "headline-md": ["Bagel Fat One"], "headline-sm": ["Bagel Fat One"], "badge-md": ["Londrina Solid"],
-        display: ["Bagel Fat One"], "spec-code": ["JetBrains Mono", "monospace"], "headline-lg-mobile": ["Bagel Fat One"],
-        "spec-sm": ["JetBrains Mono", "monospace"], "body-md": ["Space Grotesk"], "headline-lg": ["Bagel Fat One"],
+        display: ["Bagel Fat One"], "spec-code": ["Space Grotesk", "sans-serif"], "headline-lg-mobile": ["Bagel Fat One"],
+        "spec-sm": ["Space Grotesk", "sans-serif"], "body-md": ["Space Grotesk"], "headline-lg": ["Bagel Fat One"],
         "body-lg": ["Space Grotesk"], "badge-display": ["Londrina Solid"], "display-mobile": ["Bagel Fat One"]
       },
       fontSize: {
