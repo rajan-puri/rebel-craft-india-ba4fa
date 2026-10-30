@@ -113,79 +113,244 @@ export default function Storefront() {
           </div>
         </div>
       </section>
-      {/* SECTION: CATEGORY NAVIGATION (Specimen Classification) */}
+      {/* SECTION: CATEGORY NAVIGATION (From User Reference: 8 Categories) */}
       <section aria-label="Shop by category" className="categories-section w-full px-gutter-mobile md:px-margin py-space-lg">
         <div className="section-heading flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-6">
           <div>
-            <span className="eyebrow-subtle font-spec-code text-[11px] font-bold text-primary tracking-widest uppercase">Specimen Classification</span>
+            <span className="eyebrow-subtle font-spec-code text-[11px] font-bold text-primary tracking-widest uppercase">Browse by Category</span>
             <h2 className="font-headline-lg text-[32px] sm:text-[44px] text-on-surface mt-1">
-              Start with what you&rsquo;re making
+              Explore Our 3D Print Collections
             </h2>
           </div>
           <div className="flex items-center gap-2 self-start bg-surface-container-low px-3.5 py-1.5 border border-on-surface/10 rounded-full">
             <span aria-hidden="true" className="material-symbols-outlined text-primary text-[17px]">category</span>
-            <span className="font-spec-code text-[12px] text-on-surface/80">06 categories &middot; verified build geometries</span>
+            <span className="font-spec-code text-[12px] text-on-surface/80">08 curated categories &middot; precision fabrication</span>
           </div>
         </div>
-        <div className="categories-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          <a className="category-specimen-tile group p-5 bg-surface-container-lowest border border-on-surface/10 rounded-2xl hover:border-primary/40 hover:shadow-md transition-all flex flex-col justify-between" href="#custom-quote">
-            <div className="flex items-start justify-between">
-              <span className="font-spec-code text-[12px] font-bold text-primary">01 / ENG</span>
-              <span className="material-symbols-outlined text-on-surface-variant group-hover:text-primary group-hover:translate-x-0.5 transition-all text-[20px]">arrow_forward</span>
+
+        {/* 8-Card Grid matching exact reference design with high-quality retina assets */}
+        <div className="categories-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          {/* Card 1: Figurines & Collectibles */}
+          <a
+            href="#ready-to-ship"
+            className="group relative bg-[#f2f4f7] rounded-3xl overflow-hidden border border-black/5 shadow-xs hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col"
+          >
+            <div className="relative aspect-[4/3] w-full overflow-hidden bg-[#e5e9f0]">
+              <img
+                src="/categories/figurines-photo.png"
+                alt="Figurines & Collectibles"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                loading="lazy"
+              />
             </div>
-            <div className="mt-4">
-              <h3 className="font-headline-sm text-[20px] text-on-surface group-hover:text-primary transition-colors">Functional Parts</h3>
-              <p className="font-body-md text-[14px] text-on-surface-variant mt-1">Load-bearing brackets, motor mounts and printed tooling jigs.</p>
-            </div>
-          </a>
-          <a className="category-specimen-tile group p-5 bg-surface-container-lowest border border-on-surface/10 rounded-2xl hover:border-primary/40 hover:shadow-md transition-all flex flex-col justify-between" href="#ready-to-ship">
-            <div className="flex items-start justify-between">
-              <span className="font-spec-code text-[12px] font-bold text-primary">02 / INTERIOR</span>
-              <span className="material-symbols-outlined text-on-surface-variant group-hover:text-primary group-hover:translate-x-0.5 transition-all text-[20px]">arrow_forward</span>
-            </div>
-            <div className="mt-4">
-              <h3 className="font-headline-sm text-[20px] text-on-surface group-hover:text-primary transition-colors">Desk &amp; Home</h3>
-              <p className="font-body-md text-[14px] text-on-surface-variant mt-1">Organizers, Voronoi lamps and small-space architectural upgrades.</p>
-            </div>
-          </a>
-          <a className="category-specimen-tile group p-5 bg-surface-container-lowest border border-on-surface/10 rounded-2xl hover:border-primary/40 hover:shadow-md transition-all flex flex-col justify-between" href="#ready-to-ship">
-            <div className="flex items-start justify-between">
-              <span className="font-spec-code text-[12px] font-bold text-primary">03 / DETAIL</span>
-              <span className="material-symbols-outlined text-on-surface-variant group-hover:text-primary group-hover:translate-x-0.5 transition-all text-[20px]">arrow_forward</span>
-            </div>
-            <div className="mt-4">
-              <h3 className="font-headline-sm text-[20px] text-on-surface group-hover:text-primary transition-colors">Miniatures</h3>
-              <p className="font-body-md text-[14px] text-on-surface-variant mt-1">High-density tabletop figures, dioramas and scatter terrain.</p>
-            </div>
-          </a>
-          <a className="category-specimen-tile group p-5 bg-surface-container-lowest border border-on-surface/10 rounded-2xl hover:border-primary/40 hover:shadow-md transition-all flex flex-col justify-between" href="#custom-quote">
-            <div className="flex items-start justify-between">
-              <span className="font-spec-code text-[12px] font-bold text-primary">04 / IDENT</span>
-              <span className="material-symbols-outlined text-on-surface-variant group-hover:text-primary group-hover:translate-x-0.5 transition-all text-[20px]">arrow_forward</span>
-            </div>
-            <div className="mt-4">
-              <h3 className="font-headline-sm text-[20px] text-on-surface group-hover:text-primary transition-colors">Nameplates &amp; Tags</h3>
-              <p className="font-body-md text-[14px] text-on-surface-variant mt-1">Dual-color tactile keychains, signage, badges and tags.</p>
+            <div className="p-5 flex items-end justify-between bg-gradient-to-t from-[#f2f4f7] to-[#f2f4f7]/90 mt-auto">
+              <div>
+                <h3 className="font-body-md font-bold text-[18px] text-on-surface leading-tight group-hover:text-primary transition-colors">
+                  Figurines &amp; Collectibles
+                </h3>
+                <p className="font-spec-code text-[10px] font-bold text-on-surface-variant/70 tracking-wider uppercase mt-1">
+                  ANIME &bull; MOVIES &bull; CUSTOM
+                </p>
+              </div>
+              <span className="w-9 h-9 rounded-full bg-white/90 group-hover:bg-primary group-hover:text-white text-on-surface shadow-xs flex items-center justify-center transition-all flex-shrink-0 ml-3">
+                <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
+              </span>
             </div>
           </a>
-          <a className="category-specimen-tile group p-5 bg-surface-container-lowest border border-on-surface/10 rounded-2xl hover:border-primary/40 hover:shadow-md transition-all flex flex-col justify-between" href="#custom-quote">
-            <div className="flex items-start justify-between">
-              <span className="font-spec-code text-[12px] font-bold text-primary">05 / PROTO</span>
-              <span className="material-symbols-outlined text-on-surface-variant group-hover:text-primary group-hover:translate-x-0.5 transition-all text-[20px]">arrow_forward</span>
+
+          {/* Card 2: Home Decor */}
+          <a
+            href="#ready-to-ship"
+            className="group relative bg-[#f2f4f7] rounded-3xl overflow-hidden border border-black/5 shadow-xs hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col"
+          >
+            <div className="relative aspect-[4/3] w-full overflow-hidden bg-[#e5e9f0]">
+              <img
+                src="/categories/home-decor-photo.png"
+                alt="Home Decor"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                loading="lazy"
+              />
             </div>
-            <div className="mt-4">
-              <h3 className="font-headline-sm text-[20px] text-on-surface group-hover:text-primary transition-colors">Prototypes</h3>
-              <p className="font-body-md text-[14px] text-on-surface-variant mt-1">Same-week mechanical fit validation before high-volume molding.</p>
+            <div className="p-5 flex items-end justify-between bg-gradient-to-t from-[#f2f4f7] to-[#f2f4f7]/90 mt-auto">
+              <div>
+                <h3 className="font-body-md font-bold text-[18px] text-on-surface leading-tight group-hover:text-primary transition-colors">
+                  Home Decor
+                </h3>
+                <p className="font-spec-code text-[10px] font-bold text-on-surface-variant/70 tracking-wider uppercase mt-1">
+                  VASES &bull; LAMPS &bull; ART PIECES
+                </p>
+              </div>
+              <span className="w-9 h-9 rounded-full bg-white/90 group-hover:bg-primary group-hover:text-white text-on-surface shadow-xs flex items-center justify-center transition-all flex-shrink-0 ml-3">
+                <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
+              </span>
             </div>
           </a>
-          <a className="category-specimen-tile group p-5 bg-surface-container-lowest border border-on-surface/10 rounded-2xl hover:border-primary/40 hover:shadow-md transition-all flex flex-col justify-between" href="#ready-to-ship">
-            <div className="flex items-start justify-between">
-              <span className="font-spec-code text-[12px] font-bold text-primary">06 / CUSTOM</span>
-              <span className="material-symbols-outlined text-on-surface-variant group-hover:text-primary group-hover:translate-x-0.5 transition-all text-[20px]">arrow_forward</span>
+
+          {/* Card 3: Functional Parts */}
+          <a
+            href="#custom-quote"
+            className="group relative bg-[#f2f4f7] rounded-3xl overflow-hidden border border-black/5 shadow-xs hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col"
+          >
+            <div className="relative aspect-[4/3] w-full overflow-hidden bg-[#e5e9f0]">
+              <img
+                src="/categories/functional-parts-photo.png"
+                alt="Functional Parts"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                loading="lazy"
+              />
             </div>
-            <div className="mt-4">
-              <h3 className="font-headline-sm text-[20px] text-on-surface group-hover:text-primary transition-colors">Gifts &amp; Custom</h3>
-              <p className="font-body-md text-[14px] text-on-surface-variant mt-1">Milestone portraits, customized lithophanes and pet busts.</p>
+            <div className="p-5 flex items-end justify-between bg-gradient-to-t from-[#f2f4f7] to-[#f2f4f7]/90 mt-auto">
+              <div>
+                <h3 className="font-body-md font-bold text-[18px] text-on-surface leading-tight group-hover:text-primary transition-colors">
+                  Functional Parts
+                </h3>
+                <p className="font-spec-code text-[10px] font-bold text-on-surface-variant/70 tracking-wider uppercase mt-1">
+                  PROTOTYPES &bull; REPLACEMENTS &bull; TOOLS
+                </p>
+              </div>
+              <span className="w-9 h-9 rounded-full bg-white/90 group-hover:bg-primary group-hover:text-white text-on-surface shadow-xs flex items-center justify-center transition-all flex-shrink-0 ml-3">
+                <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
+              </span>
+            </div>
+          </a>
+
+          {/* Card 4: Lighting */}
+          <a
+            href="#ready-to-ship"
+            className="group relative bg-[#f2f4f7] rounded-3xl overflow-hidden border border-black/5 shadow-xs hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col"
+          >
+            <div className="relative aspect-[4/3] w-full overflow-hidden bg-[#e5e9f0]">
+              <img
+                src="/categories/lighting-photo.png"
+                alt="Lighting"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                loading="lazy"
+              />
+            </div>
+            <div className="p-5 flex items-end justify-between bg-gradient-to-t from-[#f2f4f7] to-[#f2f4f7]/90 mt-auto">
+              <div>
+                <h3 className="font-body-md font-bold text-[18px] text-on-surface leading-tight group-hover:text-primary transition-colors">
+                  Lighting
+                </h3>
+                <p className="font-spec-code text-[10px] font-bold text-on-surface-variant/70 tracking-wider uppercase mt-1">
+                  DESK LAMPS &bull; NIGHT LIGHTS &bull; CUSTOM
+                </p>
+              </div>
+              <span className="w-9 h-9 rounded-full bg-white/90 group-hover:bg-primary group-hover:text-white text-on-surface shadow-xs flex items-center justify-center transition-all flex-shrink-0 ml-3">
+                <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
+              </span>
+            </div>
+          </a>
+
+          {/* Card 5: Gifts & Personalised */}
+          <a
+            href="#custom-quote"
+            className="group relative bg-[#f2f4f7] rounded-3xl overflow-hidden border border-black/5 shadow-xs hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col"
+          >
+            <div className="relative aspect-[4/3] w-full overflow-hidden bg-[#e5e9f0]">
+              <img
+                src="/categories/gifts-personalised-photo.png"
+                alt="Gifts & Personalised"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                loading="lazy"
+              />
+            </div>
+            <div className="p-5 flex items-end justify-between bg-gradient-to-t from-[#f2f4f7] to-[#f2f4f7]/90 mt-auto">
+              <div>
+                <h3 className="font-body-md font-bold text-[18px] text-on-surface leading-tight group-hover:text-primary transition-colors">
+                  Gifts &amp; Personalised
+                </h3>
+                <p className="font-spec-code text-[10px] font-bold text-on-surface-variant/70 tracking-wider uppercase mt-1">
+                  CUSTOM NAMES &bull; FRAMES &bull; KEEPSAKES
+                </p>
+              </div>
+              <span className="w-9 h-9 rounded-full bg-white/90 group-hover:bg-primary group-hover:text-white text-on-surface shadow-xs flex items-center justify-center transition-all flex-shrink-0 ml-3">
+                <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
+              </span>
+            </div>
+          </a>
+
+          {/* Card 6: Desk Accessories */}
+          <a
+            href="#ready-to-ship"
+            className="group relative bg-[#f2f4f7] rounded-3xl overflow-hidden border border-black/5 shadow-xs hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col"
+          >
+            <div className="relative aspect-[4/3] w-full overflow-hidden bg-[#e5e9f0]">
+              <img
+                src="/categories/desk-accessories-photo.png"
+                alt="Desk Accessories"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                loading="lazy"
+              />
+            </div>
+            <div className="p-5 flex items-end justify-between bg-gradient-to-t from-[#f2f4f7] to-[#f2f4f7]/90 mt-auto">
+              <div>
+                <h3 className="font-body-md font-bold text-[18px] text-on-surface leading-tight group-hover:text-primary transition-colors">
+                  Desk Accessories
+                </h3>
+                <p className="font-spec-code text-[10px] font-bold text-on-surface-variant/70 tracking-wider uppercase mt-1">
+                  ORGANIZERS &bull; STANDS &bull; HOLDERS
+                </p>
+              </div>
+              <span className="w-9 h-9 rounded-full bg-white/90 group-hover:bg-primary group-hover:text-white text-on-surface shadow-xs flex items-center justify-center transition-all flex-shrink-0 ml-3">
+                <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
+              </span>
+            </div>
+          </a>
+
+          {/* Card 7: Planters */}
+          <a
+            href="#ready-to-ship"
+            className="group relative bg-[#f2f4f7] rounded-3xl overflow-hidden border border-black/5 shadow-xs hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col"
+          >
+            <div className="relative aspect-[4/3] w-full overflow-hidden bg-[#e5e9f0]">
+              <img
+                src="/categories/planters-photo.png"
+                alt="Planters"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                loading="lazy"
+              />
+            </div>
+            <div className="p-5 flex items-end justify-between bg-gradient-to-t from-[#f2f4f7] to-[#f2f4f7]/90 mt-auto">
+              <div>
+                <h3 className="font-body-md font-bold text-[18px] text-on-surface leading-tight group-hover:text-primary transition-colors">
+                  Planters
+                </h3>
+                <p className="font-spec-code text-[10px] font-bold text-on-surface-variant/70 tracking-wider uppercase mt-1">
+                  INDOOR &bull; OUTDOOR &bull; CREATIVE
+                </p>
+              </div>
+              <span className="w-9 h-9 rounded-full bg-white/90 group-hover:bg-primary group-hover:text-white text-on-surface shadow-xs flex items-center justify-center transition-all flex-shrink-0 ml-3">
+                <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
+              </span>
+            </div>
+          </a>
+
+          {/* Card 8: Custom 3D Printing */}
+          <a
+            href="#custom-quote"
+            className="group relative bg-[#f2f4f7] rounded-3xl overflow-hidden border border-black/5 shadow-xs hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col"
+          >
+            <div className="relative aspect-[4/3] w-full overflow-hidden bg-[#e5e9f0]">
+              <img
+                src="/categories/custom-3d-printing-photo.png"
+                alt="Custom 3D Printing"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                loading="lazy"
+              />
+            </div>
+            <div className="p-5 flex items-end justify-between bg-gradient-to-t from-[#f2f4f7] to-[#f2f4f7]/90 mt-auto">
+              <div>
+                <h3 className="font-body-md font-bold text-[18px] text-on-surface leading-tight group-hover:text-primary transition-colors">
+                  Custom 3D Printing
+                </h3>
+                <p className="font-spec-code text-[10px] font-bold text-on-surface-variant/70 tracking-wider uppercase mt-1">
+                  YOUR IDEA &bull; OUR PRINT &bull; ENDLESS
+                </p>
+              </div>
+              <span className="w-9 h-9 rounded-full bg-white/90 group-hover:bg-primary group-hover:text-white text-on-surface shadow-xs flex items-center justify-center transition-all flex-shrink-0 ml-3">
+                <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
+              </span>
             </div>
           </a>
         </div>
@@ -444,13 +609,13 @@ export default function Storefront() {
         </div>
       </section>
 
-      {/* SECTION 4: WHAT CAN WE PRINT (Specimen Showcase Grid) */}
-      <section className="w-full px-gutter-mobile md:px-margin py-space-xl">
+      {/* SECTION 4: FABRICATION DISCIPLINES (Category Showcase using High-Res Reference Imagery) */}
+      <section className="w-full px-gutter-mobile md:px-margin py-space-xl" id="capabilities">
         <div className="section-heading flex flex-col sm:flex-row items-baseline justify-between gap-4 mb-8">
           <div>
-            <span className="eyebrow-subtle font-spec-code text-[11px] font-bold text-primary tracking-widest uppercase">Print Portfolio</span>
+            <span className="eyebrow-subtle font-spec-code text-[11px] font-bold text-primary tracking-widest uppercase">Fabrication Capabilities</span>
             <h2 className="font-headline-lg text-[32px] sm:text-[46px] text-on-surface mt-1">
-              What can we print? <span className="text-primary">(Any geometry)</span>
+              Engineered for every discipline
             </h2>
           </div>
           <span className="font-spec-code text-[12px] font-bold text-on-surface bg-surface-container-low px-3.5 py-1.5 border border-on-surface/10 rounded-full">
@@ -458,71 +623,90 @@ export default function Storefront() {
           </span>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-12 gap-5">
-          {/* Tile 1 (Large 7 cols): Figurines */}
-          <div className="md:col-span-7 bg-surface-container-lowest border border-on-surface/10 rounded-2xl p-6 shadow-sm hover:border-primary/40 hover:shadow-md transition-all flex flex-col justify-between">
+          {/* Tile 1 (Large 7 cols): Collectibles & Figurine Studio */}
+          <div className="md:col-span-7 bg-surface-container-lowest border border-on-surface/10 rounded-3xl p-6 shadow-sm hover:border-primary/40 hover:shadow-md transition-all flex flex-col justify-between">
             <div className="flex items-center justify-between mb-4">
-              <h3 className="font-headline-sm text-[22px] text-on-surface">Figurines and gifts</h3>
-              <span className="font-spec-code text-[11px] font-bold px-2.5 py-1 bg-surface-container-low text-primary border border-primary/20 rounded-full">RESIN &amp; HIGH-RES PLA</span>
+              <div>
+                <span className="font-spec-code text-[11px] font-bold text-primary uppercase tracking-wider block">Discipline 01</span>
+                <h3 className="font-headline-sm text-[22px] text-on-surface">Figurines &amp; Collectibles</h3>
+              </div>
+              <span className="font-spec-code text-[11px] font-bold px-3 py-1 bg-surface-container-low text-primary border border-primary/20 rounded-full">RESIN &bull; 8K DETAIL</span>
             </div>
-            <div className="w-full h-72 rounded-xl overflow-hidden border border-on-surface/10 bg-[#eef3f9] mb-4">
-              <img className="w-full h-full object-cover hover:scale-[1.03] transition-transform duration-300" data-alt="Collection of highly detailed tabletop fantasy miniature figures printed in resin and matte grey filament with ultra-crisp armor textures on a wooden crafting table." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCW5JYnbf5KihUitv567Scu_dIkejBnsgljcoaAbpEyxZ_19L0rhkOSkmfyFuXJ_ABxMsCjT1H-8r7qAGib9iVOtg6J2BTVZeN339XlG8ZDCN0AXmvY1Al_XNr_AZYkY1oUsm4-Z28lzbLkXxFv9cBxHq-qPJdP6Pi2M0RJhMsRF75ZR4hX6_BDQ2b7rc6K8pDjJW4hBIQ6P7OiNoKv2PXjGRQo_VEpUjgH3faS9vE" />
+            <div className="w-full h-80 rounded-2xl overflow-hidden border border-on-surface/10 bg-[#eef3f9] mb-4">
+              <img className="w-full h-full object-cover hover:scale-[1.03] transition-transform duration-300" alt="Figurines & Collectibles" src="/categories/figurines-photo.png" />
             </div>
-            <p className="font-body-md text-[14px] text-on-surface-variant">Custom portraits, anime collectibles, and customized avatars ready for desktop display.</p>
+            <p className="font-body-md text-[14px] text-on-surface-variant">
+              Ultra-high density anime sculptures, game miniatures, and character busts printed with micro-micron layer resolution.
+            </p>
           </div>
-          {/* Tile 2 (5 cols): Cosplay & Props */}
-          <div className="md:col-span-5 bg-surface-container-lowest border border-on-surface/10 rounded-2xl p-6 shadow-sm hover:border-primary/40 hover:shadow-md transition-all flex flex-col justify-between">
+
+          {/* Tile 2 (5 cols): Functional Mechanical Engineering */}
+          <div className="md:col-span-5 bg-surface-container-lowest border border-on-surface/10 rounded-3xl p-6 shadow-sm hover:border-primary/40 hover:shadow-md transition-all flex flex-col justify-between">
             <div className="flex items-center justify-between mb-4">
-              <h3 className="font-headline-sm text-[22px] text-on-surface">Cosplay and props</h3>
-              <span className="font-spec-code text-[11px] font-bold px-2.5 py-1 bg-surface-container-low text-primary border border-primary/20 rounded-full">LARGE VOLUME</span>
+              <div>
+                <span className="font-spec-code text-[11px] font-bold text-primary uppercase tracking-wider block">Discipline 02</span>
+                <h3 className="font-headline-sm text-[22px] text-on-surface">Functional Parts</h3>
+              </div>
+              <span className="font-spec-code text-[11px] font-bold px-3 py-1 bg-surface-container-low text-primary border border-primary/20 rounded-full">PETG &bull; TOUGH</span>
             </div>
-            <div className="w-full h-72 rounded-xl overflow-hidden border border-on-surface/10 bg-[#eef3f9] mb-4">
-              <img className="w-full h-full object-cover hover:scale-[1.03] transition-transform duration-300" data-alt="A life-sized wearable futuristic cyberpunk sci-fi helmet printed in split sections with visible interlocking tabs and smooth satin surface finish." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBD5-DI0nDKUP7Yhp-P7u-UR8I4Ha09Moo2saB4enFKK_fWrjfE1VR9lJ_Bg5HU6VOVf3kFqCPHgRgk-SrQDs-sKVVJUpeOQaHLlE9pg2LPoi3cyFI0U91_T1AByKCkxiNx0rVT8xMwqH2cQ9xsFZm7IXpRYsdezHYsGPTjfIcBXExIHMl1Q5tQ6tPt0Ze1jrPJ0DBgt0JRSnjo9xyZNp3xlFNuGs3TgFblDinwuag" />
+            <div className="w-full h-80 rounded-2xl overflow-hidden border border-on-surface/10 bg-[#eef3f9] mb-4">
+              <img className="w-full h-full object-cover hover:scale-[1.03] transition-transform duration-300" alt="Functional Parts" src="/categories/functional-parts-photo.png" />
             </div>
-            <p className="font-body-md text-[14px] text-on-surface-variant">Multi-part wearable gear, weapons, masks, and life-size convention display pieces.</p>
+            <p className="font-body-md text-[14px] text-on-surface-variant">
+              Load-bearing gears, replacement brackets, mounting jigs, and end-use mechanical components.
+            </p>
           </div>
-          {/* Tile 3 (4 cols): Lamps and decor */}
-          <div className="md:col-span-4 bg-surface-container-lowest border border-on-surface/10 rounded-2xl p-5 shadow-sm hover:border-primary/40 hover:shadow-md transition-all flex flex-col justify-between">
+
+          {/* Tile 3 (4 cols): Ambient Lighting & Parametric Shades */}
+          <div className="md:col-span-4 bg-surface-container-lowest border border-on-surface/10 rounded-3xl p-5 shadow-sm hover:border-primary/40 hover:shadow-md transition-all flex flex-col justify-between">
             <div className="flex items-center justify-between mb-3">
-              <h3 className="font-headline-sm text-[18px] text-on-surface">Lamps &amp; decor</h3>
+              <h3 className="font-headline-sm text-[18px] text-on-surface">Lighting &amp; Lamps</h3>
+              <span className="font-spec-code text-[10px] font-bold text-primary bg-primary/10 px-2 py-0.5 rounded">DIFFUSION</span>
             </div>
-            <div className="w-full h-52 rounded-xl overflow-hidden border border-on-surface/10 bg-[#eef3f9] mb-3">
-              <img className="w-full h-full object-cover hover:scale-[1.03] transition-transform duration-300" data-alt="Complex 3D printed translucent geometric parametric lampshade casting intricate cellular shadow patterns on a bedroom wall." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYJkOEiu-VwCFnlqS5nTONrXLtz06SbCuI939MenqA47P8xVsDOil8TuyczK_juiWsJ33ZuW5NA1e2jpC2p02biT1mi7ECQ2VtzXwZ6d0p9RNjUrkLUrnGji3xWxUqWCNuxPRO2kyC3ewl--uPkChhDSNXhXWhvbcN_J6xFCID8oxkRLgHrWDOaBD_VQPegK-WHFl-Mbq59oC16Q2ndlMaEE4J88_-HSjlk9ddNIg" />
+            <div className="w-full h-56 rounded-2xl overflow-hidden border border-on-surface/10 bg-[#eef3f9] mb-3">
+              <img className="w-full h-full object-cover hover:scale-[1.03] transition-transform duration-300" alt="Lighting" src="/categories/lighting-photo.png" />
             </div>
-            <p className="font-body-md text-[13px] text-on-surface-variant">Diffusion shades, Voronoi vases, and ambient wall art.</p>
+            <p className="font-body-md text-[13px] text-on-surface-variant">Spiral mood lamps, desk illuminators, and parametric shades with flawless light diffusion.</p>
           </div>
-          {/* Tile 4 (4 cols): Gadgets and stands */}
-          <div className="md:col-span-4 bg-surface-container-lowest border border-on-surface/10 rounded-2xl p-5 shadow-sm hover:border-primary/40 hover:shadow-md transition-all flex flex-col justify-between">
+
+          {/* Tile 4 (4 cols): Planters & Organic Sculptures */}
+          <div className="md:col-span-4 bg-surface-container-lowest border border-on-surface/10 rounded-3xl p-5 shadow-sm hover:border-primary/40 hover:shadow-md transition-all flex flex-col justify-between">
             <div className="flex items-center justify-between mb-3">
-              <h3 className="font-headline-sm text-[18px] text-on-surface">Gadgets &amp; stands</h3>
+              <h3 className="font-headline-sm text-[18px] text-on-surface">Creative Planters</h3>
+              <span className="font-spec-code text-[10px] font-bold text-primary bg-primary/10 px-2 py-0.5 rounded">ORGANIC</span>
             </div>
-            <div className="w-full h-52 rounded-xl overflow-hidden border border-on-surface/10 bg-[#eef3f9] mb-3">
-              <img className="w-full h-full object-cover hover:scale-[1.03] transition-transform duration-300" data-alt="Minimalist ergonomic mechanical keyboard stand and braided cable organizer dock printed in matte textured polymer on an organized workstation." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwX2DNHvU4GgerXPIOn3W_eXRUIobSnZNaScL5kLaYUtqDkH6_CQrpTkpCNMIHDMSC6qsEh9C3bh5r8TEalcospgkW7Ciae7-gO6BRYAq82h7dW9t-T7X-NJRmAXOADULFbgXH3RBenF_PQ34yKMhqcM9yuG_Vq752UuBPXTV1W6vYhXMVSAQhWSfsB5HwaznfNQowK4UAACgxvYUHGQGga1foe-oghWykTTeMpdg" />
+            <div className="w-full h-56 rounded-2xl overflow-hidden border border-on-surface/10 bg-[#eef3f9] mb-3">
+              <img className="w-full h-full object-cover hover:scale-[1.03] transition-transform duration-300" alt="Planters" src="/categories/planters-photo.png" />
             </div>
-            <p className="font-body-md text-[13px] text-on-surface-variant">Desk organizers, MagSafe cradles, headset trees.</p>
+            <p className="font-body-md text-[13px] text-on-surface-variant">Character plant pots, indoor succulent holders, and creative botanical vessels.</p>
           </div>
-          {/* Tile 5 (4 cols): Spare parts */}
-          <div className="md:col-span-4 bg-surface-container-lowest border border-on-surface/10 rounded-2xl p-5 shadow-sm hover:border-primary/40 hover:shadow-md transition-all flex flex-col justify-between">
+
+          {/* Tile 5 (4 cols): Architectural & Custom Scale Models */}
+          <div className="md:col-span-4 bg-surface-container-lowest border border-on-surface/10 rounded-3xl p-5 shadow-sm hover:border-primary/40 hover:shadow-md transition-all flex flex-col justify-between">
             <div className="flex items-center justify-between mb-3">
-              <h3 className="font-headline-sm text-[18px] text-on-surface">Spare parts</h3>
+              <h3 className="font-headline-sm text-[18px] text-on-surface">Custom 3D Printing</h3>
+              <span className="font-spec-code text-[10px] font-bold text-primary bg-primary/10 px-2 py-0.5 rounded">ANY SCALE</span>
             </div>
-            <div className="w-full h-52 rounded-xl overflow-hidden border border-on-surface/10 bg-[#eef3f9] mb-3">
-              <img className="w-full h-full object-cover hover:scale-[1.03] transition-transform duration-300" data-alt="Functional engineering prototype mechanical gears, brackets, and motor couplings in tough PETG filament alongside metal bolts and nuts." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA12zLC1w8lwTCsKGMPUIzv9yNb4MnCWuEoAQkGF-JOgrsy6vdZRY8yVc8srNX0s0QFpVrRw4C2KbXhicH7LYETVGTQapT1lI3ZhNh_9zqPtdSuR-lBkKhkgGVWdHvgzwhpE6pkGUFHWoc6HrSeasqfKgqrDTUznMy3vP_7PstH0Lc1NODzzlM4MFv95EHfZFhJvgRgUOzUTO6cBfeIWxmDm12PvHMrSJp6X02b87o" />
+            <div className="w-full h-56 rounded-2xl overflow-hidden border border-on-surface/10 bg-[#eef3f9] mb-3">
+              <img className="w-full h-full object-cover hover:scale-[1.03] transition-transform duration-300" alt="Custom 3D Printing" src="/categories/custom-3d-printing-photo.png" />
             </div>
-            <p className="font-body-md text-[13px] text-on-surface-variant">Discontinued appliance gears, latches &amp; mounts.</p>
+            <p className="font-body-md text-[13px] text-on-surface-variant">Architectural scale models, unique prototypes, and bespoke one-of-a-kind physical parts.</p>
           </div>
-          {/* Tile 6 (6 cols): Nameplates and keychains */}
-          <div className="md:col-span-6 bg-surface-container-lowest border border-on-surface/10 rounded-2xl p-6 shadow-sm hover:border-primary/40 hover:shadow-md transition-all flex flex-col justify-between">
+
+          {/* Tile 6 (6 cols): Gifts & Personalised Keepsakes */}
+          <div className="md:col-span-6 bg-surface-container-lowest border border-on-surface/10 rounded-3xl p-6 shadow-sm hover:border-primary/40 hover:shadow-md transition-all flex flex-col justify-between">
             <div className="flex items-center justify-between mb-3">
-              <h3 className="font-headline-sm text-[20px] text-on-surface">Nameplates &amp; keychains</h3>
-              <span className="font-spec-code text-[11px] font-bold text-primary bg-surface-container-low px-2.5 py-0.5 rounded border border-primary/20">DUAL COLOR</span>
+              <h3 className="font-headline-sm text-[20px] text-on-surface">Gifts &amp; Personalised</h3>
+              <span className="font-spec-code text-[11px] font-bold text-primary bg-surface-container-low px-2.5 py-0.5 rounded border border-primary/20">LITHOPHANE</span>
             </div>
-            <div className="w-full h-48 rounded-xl overflow-hidden border border-on-surface/10 bg-[#eef3f9] mb-3">
-              <img className="w-full h-full object-cover hover:scale-[1.03] transition-transform duration-300" data-alt="Top-down shot of vibrant dual-extrusion tactile keychains with embossed typography and bold contrasting lettering on a desk." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEl2ZEwG1PZ9qQPsML4gSyTAEP3wo31HlsotJwGgRl9UDHvoUGbQReQ-b7TjrakA-_zsQ5UXDecACuAs04BHyRUlZFJLSMZVOjvcm52Mjc1A51HEC80u3Thxdl0sAvNS2MkJ1blouhxpvHkDxWqPE-HQvcrxcepxiwtwhT5QGDJD5-yyvKFuQULMS_FYFbUFG9eI1mBKL5Kiwy-uIvyZNX4sye5KESenZtAzmIzWA" />
+            <div className="w-full h-52 rounded-2xl overflow-hidden border border-on-surface/10 bg-[#eef3f9] mb-3">
+              <img className="w-full h-full object-cover hover:scale-[1.03] transition-transform duration-300" alt="Gifts & Personalised" src="/categories/gifts-personalised-photo.png" />
             </div>
-            <p className="font-body-md text-[14px] text-on-surface-variant">Custom gamer tags, luggage labels, and company tokens.</p>
+            <p className="font-body-md text-[14px] text-on-surface-variant">Custom portrait frames, anniversary keepsakes, and personalized dual-color tags.</p>
           </div>
-          {/* Tile 7 (6 cols): Atelier WhatsApp concierge */}
-          <div className="md:col-span-6 bg-primary text-on-primary rounded-2xl p-6 shadow-sm hover:bg-[#00479b] transition-all flex flex-col justify-between">
+
+          {/* Tile 7 (6 cols): Direct Slicer Concierge */}
+          <div className="md:col-span-6 bg-primary text-on-primary rounded-3xl p-6 shadow-sm hover:bg-[#00479b] transition-all flex flex-col justify-between">
             <div>
               <span className="font-spec-code text-[11px] font-bold uppercase tracking-widest text-on-primary/80">Direct Concierge</span>
               <h3 className="font-headline-lg text-[28px] sm:text-[34px] text-on-primary leading-tight mt-1 mb-2">
@@ -533,9 +717,9 @@ export default function Storefront() {
               </p>
             </div>
             <div className="pt-6">
-              <a className="inline-flex items-center gap-2 px-6 py-3 bg-surface-container-lowest text-on-surface font-spec-code text-[12px] font-bold uppercase rounded-xl shadow-xs hover:bg-surface-container-low active:scale-[0.98] transition-all" href="#">
-                <span>Chat with Fabrication Engineer</span>
-                <span className="material-symbols-outlined text-[18px]">chat</span>
+              <a className="inline-flex items-center gap-2 px-6 py-3 bg-surface-container-lowest text-on-surface font-spec-code text-[12px] font-bold uppercase rounded-xl shadow-xs hover:bg-surface-container-low active:scale-[0.98] transition-all" href="#custom-quote">
+                <span>Start Custom Build</span>
+                <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
               </a>
             </div>
           </div>
