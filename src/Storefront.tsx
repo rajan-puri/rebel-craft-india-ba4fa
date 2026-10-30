@@ -682,8 +682,8 @@ export default function Storefront() {
           </a>
         </div>
       </section>
-      {/* SECTION 6: SHOW US YOUR WEIRD (Community Proof) */}
-      <section className="w-full px-gutter-mobile md:px-margin py-space-xl bg-[#f4f7fb] border-y border-on-surface/10 reveal-on-scroll">
+      {/* SECTION 5: SHOW US YOUR WEIRD (Community Proof) */}
+      <section className="w-full px-gutter-mobile md:px-margin py-space-xl bg-[#f4f7fb] border-y border-on-surface/10 reveal-on-scroll" id="wild-proof">
         <div className="section-heading flex flex-col space-y-2 mb-8">
           <span className="eyebrow-subtle font-spec-code text-[11px] font-bold text-primary tracking-widest uppercase">
             Field Inspection Log

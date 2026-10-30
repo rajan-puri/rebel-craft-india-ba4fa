@@ -301,10 +301,8 @@ function useStorefrontInteractions() {
       }
 
       // Community / Wild Proof Column Items Stagger
-      const communityCols = gsap.utils.toArray<HTMLElement>("section:has(#faq-container) - prev, .faq-section, section:has(#custom-quote) + section")
-      const wildSection = document.querySelector("section.bg-\\[\\#f4f7fb\\].border-y")
-      if (wildSection) {
-        const wildItems = wildSection.querySelectorAll(".grid > div")
+      const wildItems = gsap.utils.toArray<HTMLElement>("#wild-proof .grid > div, .community-proof .grid > div")
+      if (wildItems.length > 0) {
         gsap.fromTo(
           wildItems,
           { opacity: 0, y: 28 },
@@ -315,7 +313,7 @@ function useStorefrontInteractions() {
             stagger: 0.12,
             ease: "power2.out",
             scrollTrigger: {
-              trigger: wildSection,
+              trigger: wildItems[0].parentElement || wildItems[0],
               start: "top 82%",
               toggleActions: "play none none none",
             },
